@@ -1,3 +1,5 @@
+import manageTasks from "./tasks";
+
 const floatMenu = () => {
     let toggleIsHidden = true;
     const toggleFloatNewProject = document.getElementById("myfloat-new-project");
@@ -14,6 +16,7 @@ const floatMenu = () => {
 
     toggleFloatNewTask.addEventListener("click", () => {
         handleToogle();
+        manageTasks();
     });
 
     function showToggle() {
