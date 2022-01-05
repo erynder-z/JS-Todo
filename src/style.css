@@ -94,7 +94,8 @@ body {
 @media all and (max-width:500px) {
     .sidebar {
         position: absolute;
-        left: -15%;
+        left: -45%;
+        width: 50vw;
     }
 
     .logo {
