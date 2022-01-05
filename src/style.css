@@ -17,7 +17,43 @@ body {
     background: rgb(154, 154, 226);
 }
 
-@media all and (max-width:500px) {
+.logo {
+    display: block;
+    background: blue;
+    color: white;
+}
 
+.menu {
+    display: none;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: 90vh;
+    background: gray;
+}
+
+
+@media all and (max-width:500px) {
+    .sidebar {
+        position: absolute;
+        left: -15%;
+    }
+
+    .logo {
+        display: none;
+    }
+    
+    .menu {
+        display: block;
+        background: crimson;
+        color: white;
+    }
+
+    .slide {
+        position: unset;
+    }
  
 }
