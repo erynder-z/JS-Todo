@@ -35,6 +35,10 @@ body {
     background: gray;
 }
 
+.footer {
+    height: 3vh;
+}
+
 
 @media all and (max-width:500px) {
     .sidebar {
