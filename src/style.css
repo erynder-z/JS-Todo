@@ -35,6 +35,17 @@ body {
     background: gray;
 }
 
+.main-wrapper {
+    display: flex;
+}
+
+.content-area {
+    display: flex;
+    background: lightgreen;
+    height: 90vh;
+    width: 80vw;
+}
+
 .footer {
     height: 3vh;
 }
@@ -56,8 +67,17 @@ body {
         color: white;
     }
 
+    .main-wrapper {
+        display: flex;
+
+    }
+
+    .content-area {
+        width: 100vw;
+    }
+
     .slide {
-        position: unset;
+        left: 0;
     }
  
 }
