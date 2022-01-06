@@ -3,10 +3,12 @@ const createModal = () => {
     const contentDiv = document.getElementById("main");
 
     const modal = document.createElement("div");
+    modal.id = "inputModal";
     modal.classList.add("modal");
 
     const closeBtn = document.createElement("div");
     closeBtn.classList.add("close-button");
+    closeBtn.onclick = toggleModal;
     closeBtn.innerText = "X";
 
     const wrapper = document.createElement("div");
@@ -59,4 +61,13 @@ const createModal = () => {
     contentDiv.appendChild(modal);
 }
 
-export default createModal;
+const toggleModal = () => {
+    const getModal = document.getElementById("inputModal");
+    getModal.classList.toggle("hidden");
+}
+
+
+export {
+    createModal,
+    toggleModal
+}
