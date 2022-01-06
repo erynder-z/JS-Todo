@@ -1,8 +1,6 @@
 import tasks from "..";
-import {
-    createTask,
-    deleteTask
- } from "./tasks";
+import { createTask, deleteTask } from "./tasks";
+import { toggleModal } from "./modal";
 
 const floatMenu = () => {
     let toggleIsHidden = true;
@@ -17,13 +15,11 @@ const floatMenu = () => {
     toggleFloatNewProject.addEventListener("click", () => {
         handleToogle();
         deleteTask();
-        console.log(tasks);
     });
 
     toggleFloatNewTask.addEventListener("click", () => {
         handleToogle();
-        createTask();
-        console.log(tasks);
+        toggleModal();
     });
 
     function showToggle() {
