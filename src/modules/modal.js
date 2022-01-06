@@ -49,8 +49,11 @@ const createModal = () => {
     const addBtn = document.createElement("button");
     addBtn.id = "addBtn";
     addBtn.classList.add("add-button");
-    addBtn.onclick = createTask;
     addBtn.innerText = "save task";
+    addBtn.addEventListener("click", () => {
+        createTask();
+        toggleModal();
+    });
 
     modal.appendChild(closeBtn);
     modal.appendChild(wrapper);
