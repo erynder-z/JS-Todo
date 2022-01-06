@@ -5,6 +5,7 @@ const createModal = () => {
     const modal = document.createElement("div");
     modal.id = "inputModal";
     modal.classList.add("modal");
+    modal.classList.add("hidden");
 
     const closeBtn = document.createElement("div");
     closeBtn.classList.add("close-button");
