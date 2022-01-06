@@ -8,7 +8,6 @@ import {createModal, toggleModal} from "./modules/modal";
 import showAllTasks from "./modules/showAllTasks";
 
 
-
 toggleSidebar();
 floatMenu();
 createModal();

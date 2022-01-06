@@ -2,9 +2,17 @@ import {
     tasks
 } from "./tasks";
 
+
 const showAllTasks = () => {
 
     const contentDiv = document.getElementById("mainContent");
+
+
+    let heading = document.createElement("h1");
+    heading.classList.add("allTasks-heading");
+    heading.textContent = "All Tasks";
+
+    contentDiv.appendChild(heading);
 
     let taskContainer = document.createElement("div");
     taskContainer.classList.add("task-container");
@@ -40,14 +48,14 @@ const showAllTasks = () => {
 
     for (let i = 0; i < tasks.length; i++) {
         deleteBtn.textContent = "X";
-        taskDescriptionHeading.textContent = "Title:";
+        taskTitleHeading.textContent = "Title:";
         taskTitle.textContent = tasks[i].title;
         taskDescriptionHeading.textContent = "Description:";
         taskDescription.textContent = tasks[i].description;
         dueDateHeading.textContent = "Due:";
         dueDate.textContent = tasks[i].dueDate;
         priorityHeading.textContent = "Priority:";
-        priority.textContent = tasks[i].prioroty;
+        priority.textContent = tasks[i].priority;
 
         contentDiv.appendChild(taskContainer);
         taskContainer.setAttribute("id", tasks.indexOf(tasks[i]));

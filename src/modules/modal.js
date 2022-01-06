@@ -3,7 +3,7 @@ import { createTask } from "./tasks";
 
 const createModal = () => {
 
-    const contentDiv = document.getElementById("mainContent");
+    const modalDiv = document.getElementById("modalContent");
 
     const modal = document.createElement("div");
     modal.id = "inputModal";
@@ -54,6 +54,7 @@ const createModal = () => {
     addBtn.addEventListener("click", () => {
         createTask();
         toggleModal();
+        showAllTasks();
     });
 
     modal.appendChild(closeBtn);
@@ -66,7 +67,7 @@ const createModal = () => {
     wrapper.appendChild(notesInput);
     wrapper.appendChild(addBtn);
 
-    contentDiv.appendChild(modal);
+    modalDiv.appendChild(modal);
 }
 
 const toggleModal = () => {
