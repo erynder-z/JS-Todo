@@ -1,5 +1,5 @@
 
-export const tasks = [];
+const tasks = [];
 
 const createTask = () => {
 
@@ -23,12 +23,18 @@ const createTask = () => {
             deleteTask: function () {
                 console.log("delete Task!");
             }
-
         }
     }
 
-    let newTask = taskFactory("Titel", "Beschreibung", "Morgen", "Hoch", "Notiz", "offen");
+    const title = document.getElementById("titleInput");
+    const description = document.getElementById("descriptionInput");
+    const dueDate = document.getElementById("dueDateInput");
+    const priority = document.getElementById("priorityInput");
+    const notes = document.getElementById("notesInput");
+
+    let newTask = taskFactory(title.value, description.value, dueDate.value, priority.value, notes.value, "offen");
     tasks.push(newTask);
+    console.log(tasks);
 }
 
 const deleteTask = () => {
@@ -36,6 +42,7 @@ const deleteTask = () => {
 }
 
 export {
+    tasks,
     createTask,
     deleteTask
 }

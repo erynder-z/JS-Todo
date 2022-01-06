@@ -1,3 +1,5 @@
+import { createTask } from "./tasks";
+
 const createModal = () => {
 
     const contentDiv = document.getElementById("main");
@@ -47,6 +49,7 @@ const createModal = () => {
     const addBtn = document.createElement("button");
     addBtn.id = "addBtn";
     addBtn.classList.add("add-button");
+    addBtn.onclick = createTask;
     addBtn.innerText = "save task";
 
     modal.appendChild(closeBtn);
