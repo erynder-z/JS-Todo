@@ -1,4 +1,8 @@
-import manageTasks from "./tasks";
+import tasks from "..";
+import {
+    createTask,
+    deleteTask
+ } from "./tasks";
 
 const floatMenu = () => {
     let toggleIsHidden = true;
@@ -12,11 +16,14 @@ const floatMenu = () => {
 
     toggleFloatNewProject.addEventListener("click", () => {
         handleToogle();
+        deleteTask();
+        console.log(tasks);
     });
 
     toggleFloatNewTask.addEventListener("click", () => {
         handleToogle();
-        manageTasks();
+        createTask();
+        console.log(tasks);
     });
 
     function showToggle() {

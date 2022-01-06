@@ -1,6 +1,7 @@
-import tasks from "../index";
 
-const manageTasks = () => {
+export const tasks = [];
+
+const createTask = () => {
 
     const taskFactory = (title, description, dueDate, priority, notes, status) => {
         return {
@@ -29,7 +30,13 @@ const manageTasks = () => {
     let newTask = taskFactory("Titel", "Beschreibung", "Morgen", "Hoch", "Notiz", "offen");
 
     tasks.push(newTask);
-    console.log(tasks);
 }
 
-export default manageTasks
+const deleteTask = () => {
+    tasks.pop();
+}
+
+export {
+    createTask,
+    deleteTask
+}
