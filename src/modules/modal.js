@@ -1,8 +1,9 @@
+import showAllTasks from "./showAllTasks";
 import { createTask } from "./tasks";
 
 const createModal = () => {
 
-    const contentDiv = document.getElementById("main");
+    const contentDiv = document.getElementById("mainContent");
 
     const modal = document.createElement("div");
     modal.id = "inputModal";
