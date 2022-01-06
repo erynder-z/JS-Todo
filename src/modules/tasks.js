@@ -28,7 +28,6 @@ const createTask = () => {
     }
 
     let newTask = taskFactory("Titel", "Beschreibung", "Morgen", "Hoch", "Notiz", "offen");
-
     tasks.push(newTask);
 }
 
