@@ -1,4 +1,4 @@
-import clearContent from "./clearContent";
+import clearMainContent from "./clearContent";
 import renderTasks from "./renderTasks";
 import {
     tasks
@@ -7,7 +7,7 @@ import {
 const contentDiv = document.getElementById("mainContent");
 
 const showAllTasks = () => {
-    clearContent();
+    clearMainContent();
 
     const headingContainer = document.createElement("div");
     headingContainer.id = "headingContainer"

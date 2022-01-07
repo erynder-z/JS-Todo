@@ -1,6 +1,6 @@
-const clearContent = () => {
+const clearMainContent = () => {
     const contentDiv = document.getElementById("mainContent");
     contentDiv.innerHTML = "";
 }
 
-export default clearContent
+export default clearMainContent
