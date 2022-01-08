@@ -41,10 +41,33 @@ body {
 
 .content-area {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     background: lightgreen;
     height: 90vh;
     width: 80vw;
+}
+
+.taskList-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.task-container {
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    background: antiquewhite;
+    border: solid 1px black;
+}
+
+.delete-button {
+    align-self: flex-end;
+}
+
+.task-title, .task-description, .dueDate, .priority, .notes {
+    font-size: 20px;
 }
 
 .footer {
@@ -89,12 +112,14 @@ body {
   
 .modal {
     display: flex;
-    height: 30vh;
-    width: 75vw;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 40vh;
+    width: 40vh;
     position: absolute;
-    left: 12.5%;
+    left: 45%;
     top: 33.3%;
-    background: white;
+    background: seashell;
     z-index: 1;
 }
 
@@ -103,6 +128,16 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 10px;
+}
+
+.modal-wrapper> * {
+    width: 90%;
+}
+
+.close-button {
+    margin-right: 5%;
+    align-self: flex-end;
 }
 
   .hidden {
@@ -136,6 +171,15 @@ body {
         padding: 25px;
     }
 
+    .taskList-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .task-container {
+        width: 80vw;
+    }
+
     .slide {
         left: 0;
     }
@@ -160,6 +204,13 @@ body {
         width: 60px;
         height: 60px;
       }
+
+      .modal {
+        height: 40vh;
+        width: 75vw;
+        left: 12.5%;
+        top: 33.3
+    }
  
 }
 
