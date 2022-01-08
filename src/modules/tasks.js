@@ -40,7 +40,7 @@ const createTask = () => {
             },
 
             deleteTask: function () {
-                console.log("delete Task!");
+                tasks.splice(this);
             }
         }
     }
@@ -58,7 +58,8 @@ const createTask = () => {
 
 const deleteTask = (parentNodeID) => {
     document.getElementById(parentNodeID).remove();
-    tasks.splice(parentNodeID, 1);
+    /* tasks.splice(parentNodeID, 1); */
+    tasks[parentNodeID].deleteTask;
     return tasks;
 }
 
