@@ -38,7 +38,7 @@ tasks.forEach(task => {
     taskContainer.appendChild(taskTitle);
 
     const taskDescriptionHeading = document.createElement("div");
-    taskDescriptionHeading.classList.add("task-description");
+    taskDescriptionHeading.classList.add("task-description-heading");
     taskDescriptionHeading.textContent = "Description:";
     taskContainer.appendChild(taskDescriptionHeading);
 
@@ -73,7 +73,7 @@ tasks.forEach(task => {
     taskContainer.appendChild(notesHeading);
 
     const notes = document.createElement("div");
-    notes.classList.add("priority");
+    notes.classList.add("notes");
     notes.textContent = task.notes;
     taskContainer.appendChild(notes);
 });
