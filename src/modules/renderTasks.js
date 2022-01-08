@@ -76,6 +76,11 @@ tasks.forEach(task => {
     notes.classList.add("notes");
     notes.textContent = task.notes;
     taskContainer.appendChild(notes);
+
+    const marktCompleteBtn = document.createElement("button");
+    marktCompleteBtn.classList.add("mark-complete-button");
+    marktCompleteBtn.textContent = "mark momplete";
+    taskContainer.appendChild(marktCompleteBtn);
 });
 
 activateButtons();
