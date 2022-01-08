@@ -16,6 +16,7 @@ contentDiv.appendChild(taskListContainer);
 
 tasks.forEach(task => {
     const taskContainer = document.createElement("div");
+    taskContainer.setAttribute("id", tasks.indexOf(task)); 
     taskContainer.classList.add("task-container");
     taskListContainer.appendChild(taskContainer);
 
