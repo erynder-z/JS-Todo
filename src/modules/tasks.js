@@ -1,6 +1,24 @@
 import activateButtons from "./buttons";
 
-const tasks = [];
+/* const tasks = []; */
+
+const tasks = [{
+        title: "Code",
+        description: "Code a Todo-App",
+        dueDate: "22/01/10",
+        priority: "high",
+        notes: "fun stuff!!",
+        status: "open"
+    },
+    {
+        title: "Work out",
+        description: "Back training",
+        dueDate: "22/01/31",
+        priority: "high",
+        notes: "make it happen!",
+        status: "open"
+    },
+]
 
 const createTask = () => {
 
