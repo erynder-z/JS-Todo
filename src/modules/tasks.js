@@ -1,3 +1,4 @@
+import activateButtons from "./buttons";
 
 const tasks = [];
 
@@ -37,8 +38,10 @@ const createTask = () => {
     console.log(tasks);
 }
 
-const deleteTask = () => {
-    tasks.pop();
+const deleteTask = (parentNodeID) => {
+    document.getElementById(parentNodeID).remove();
+    tasks.splice(parentNodeID, 1);
+    return tasks;
 }
 
 export {
