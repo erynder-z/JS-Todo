@@ -1,4 +1,3 @@
-import tasks from "..";
 import { createTask, deleteTask } from "./tasks";
 import { toggleModal } from "./modal";
 
@@ -14,7 +13,6 @@ const floatMenu = () => {
 
     toggleFloatNewProject.addEventListener("click", () => {
         handleToogle();
-        deleteTask();
     });
 
     toggleFloatNewTask.addEventListener("click", () => {
