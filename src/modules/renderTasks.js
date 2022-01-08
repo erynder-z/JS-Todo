@@ -1,3 +1,4 @@
+import activateButtons from "./buttons";
 import {
     tasks
 } from "./tasks";
@@ -76,6 +77,8 @@ tasks.forEach(task => {
     notes.textContent = task.notes;
     taskContainer.appendChild(notes);
 });
+
+activateButtons();
 }
 
 export default renderTasks
