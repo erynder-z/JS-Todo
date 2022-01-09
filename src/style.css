@@ -44,7 +44,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     background: lightgreen;
-    height: 90vh;
+    min-height: 90vh;
     width: 80vw;
 }
 
@@ -158,7 +158,8 @@ body {
     .sidebar {
         position: absolute;
         left: -45%;
-        width: 50vw;
+        width: 50vw;    
+        min-height: 90vh;
     }
 
     .logo {
