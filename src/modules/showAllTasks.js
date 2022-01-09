@@ -1,4 +1,5 @@
-import clearMainContent from "./clearContent";
+
+import { clearMainContent } from "./clearContent";
 import renderTasks from "./renderTasks";
 import {
     tasks

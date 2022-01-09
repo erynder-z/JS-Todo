@@ -1,5 +1,6 @@
 import activateButtons from "./buttons";
-import clearMainContent from "./clearContent";
+import { clearContentArea, clearMainContent } from "./clearContent";
+
 import renderTasks from "./renderTasks";
 
 /* const tasks = []; */
@@ -33,13 +34,13 @@ const createTask = () => {
             notes,
             status,
 
-/*             toggleStatus: function () {
-                tasks[this].status = "done";
-                console.log("test"); //something
-            }, */
+            toggleStatus: function () {
+                this.status = "done";
+            },
 
             deleteTask: function (objectID) {
                 tasks.splice(objectID, 1);
+                console.log(this);
             }
         }
     }
@@ -57,19 +58,19 @@ const createTask = () => {
 
 const deleteTask = (objectID) => {
     tasks[objectID].deleteTask(objectID);
-    clearMainContent();
+    clearContentArea();
     renderTasks();
     return tasks;
 }
 
-/* const markTaskComplete = (objectID) => {
-    tasks[objectID].toggleStatus;
+const markTaskComplete = (objectID) => {
+    tasks[objectID].toggleStatus();
     return tasks;
-} */
+}
 
 export {
     tasks,
     createTask,
     deleteTask,
-   /*  markTaskComplete */
+    markTaskComplete
 }

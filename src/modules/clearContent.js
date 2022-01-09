@@ -3,4 +3,12 @@ const clearMainContent = () => {
     contentDiv.innerHTML = "";
 }
 
-export default clearMainContent
+const clearContentArea = () => {
+    const contentArea = document.querySelector(".taskList-container");
+    contentArea.innerHTML = "";
+}
+
+export{
+    clearMainContent,
+    clearContentArea
+}
