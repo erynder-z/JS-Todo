@@ -83,7 +83,7 @@ tasks.forEach(task => {
     taskContainer.appendChild(marktCompleteBtn);
 
     const editBtn = document.createElement("button");
-    editBtn.classList.add("mark-complete-button");
+    editBtn.classList.add("edit-button");
     editBtn.textContent = "edit task";
     taskContainer.appendChild(editBtn);
 });
