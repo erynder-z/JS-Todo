@@ -43,16 +43,15 @@ const createTask = () => {
 
             spliceTask: function (objectID) {
                 tasks.splice(objectID, 1);
-            }
+            },
 
-           /*  editProperties: function (currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes) {
-                console.log(this);
+            editProperties: function (currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes) {
                 this.title = currentTitle;
                 this.description = currentDescription;
                 this.dueDate = currentDueDate;
                 this.priority = currentPriority;
                 this.notes = currentNotes;
-            } */
+            }
         }
     }
 
@@ -90,20 +89,10 @@ const retrieveTaskDetails = (objectID) => {
     createEditTaskModal(objectID, currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes);
 }
 
-const modifyTask = (objectID, currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes) => {
-    console.log(tasks[objectID]);
-    tasks[objectID].title = currentTitle;
-    tasks[objectID].description = currentDescription;
-    tasks[objectID].dueDate = currentDueDate;
-    tasks[objectID].priority = currentPriority;
-    tasks[objectID].notes = currentNotes;
-}
-
 export {
     tasks,
     createTask,
     deleteTask,
     markTaskComplete,
-    retrieveTaskDetails,
-    modifyTask
+    retrieveTaskDetails
 }

@@ -1,5 +1,6 @@
 import showAllTasks from "./showAllTasks";
 import {
+    tasks,
     createTask,
     modifyTask
 } from "./tasks";
@@ -129,7 +130,7 @@ const createEditTaskModal = (objectID, currentTitle, currentDescription, current
     addBtn.classList.add("add-button");
     addBtn.innerText = "save task";
     addBtn.addEventListener("click", () => {
-        modifyTask(objectID, titleInput.value, descriptionInput.value, dueDateInput.value, priorityInput.value, notesInput.value);
+        tasks[objectID].editProperties(titleInput.value, descriptionInput.value, dueDateInput.value, priorityInput.value, notesInput.value);
         toggleEditTaskModal();
         showAllTasks();
     });
