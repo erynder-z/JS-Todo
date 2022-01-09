@@ -43,7 +43,7 @@ const createTask = () => {
                 this.status = "done";  
             },
 
-            deleteTask: function (objectID) {
+            spliceTask: function (objectID) {
                 tasks.splice(objectID, 1);
             }
 
@@ -53,7 +53,6 @@ const createTask = () => {
                 this.dueDate = currentDueDate;
                 this.priority = currentPriority;
                 this.notes = currentNotes;
-                
             } */
         }
     }
@@ -70,7 +69,7 @@ const createTask = () => {
 }
 
 const deleteTask = (objectID) => {
-    tasks[objectID].deleteTask(objectID);
+    tasks[objectID].spliceTask(objectID);
     clearContentArea();
     renderTasks();
     return tasks;

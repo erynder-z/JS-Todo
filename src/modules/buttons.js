@@ -2,7 +2,7 @@ import renderTasks from "./renderTasks";
 import {
     deleteTask,
     markTaskComplete,
-    retrieveTaskDetails
+    retrieveTaskDetails,
 } from "./tasks";
 
 const activateButtons = () => {
