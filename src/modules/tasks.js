@@ -1,4 +1,6 @@
 import activateButtons from "./buttons";
+import clearMainContent from "./clearContent";
+import renderTasks from "./renderTasks";
 
 /* const tasks = []; */
 
@@ -31,16 +33,13 @@ const createTask = () => {
             notes,
             status,
 
-            toogleStatus: function () {
-                if (status === "open") {
-                    status = "done";
-                    return status;
-                }
-                return status = "open";
-            },
+/*             toggleStatus: function () {
+                tasks[this].status = "done";
+                console.log("test"); //something
+            }, */
 
-            deleteTask: function () {
-                tasks.splice(this);
+            deleteTask: function (objectID) {
+                tasks.splice(objectID, 1);
             }
         }
     }
@@ -57,14 +56,20 @@ const createTask = () => {
 }
 
 const deleteTask = (parentNodeID) => {
-    document.getElementById(parentNodeID).remove();
-    /* tasks.splice(parentNodeID, 1); */
-    tasks[parentNodeID].deleteTask;
+    tasks[parentNodeID].deleteTask(parentNodeID);
+    clearMainContent();
+    renderTasks();
     return tasks;
 }
+
+/* const markTaskComplete = (parentNodeID) => {
+    tasks[parentNodeID].toggleStatus;
+    return tasks;
+} */
 
 export {
     tasks,
     createTask,
-    deleteTask
+    deleteTask,
+    markTaskComplete
 }
