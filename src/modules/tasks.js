@@ -4,6 +4,7 @@ import {
     clearContentArea,
     clearMainContent
 } from "./clearContent";
+import { createEditTaskModal } from "./modal";
 
 import renderTasks from "./renderTasks";
 
@@ -45,6 +46,15 @@ const createTask = () => {
             deleteTask: function (objectID) {
                 tasks.splice(objectID, 1);
             }
+
+            /* modifyTask: function (currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes) {
+                this.title = currentTitle;
+                this.description = currentDescription;
+                this.dueDate = currentDueDate;
+                this.priority = currentPriority;
+                this.notes = currentNotes;
+                
+            } */
         }
     }
 
@@ -72,9 +82,29 @@ const markTaskComplete = (objectID) => {
     return tasks;
 }
 
+const retrieveTaskDetails = (objectID) => {
+    let obj = tasks[objectID];
+    let currentTitle = obj.title;
+    let currentDescription = obj.description;
+    let currentDueDate = obj.dueDate;
+    let currentPriority = obj.priority;
+    let currentNotes = obj.notes;
+    createEditTaskModal(objectID, currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes);
+}
+
+const modifyTask = (objectID, currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes) => {
+    tasks[objectID].title = currentTitle;
+    tasks[objectID].description = currentDescription;
+    tasks[objectID].dueDate = currentDueDate;
+    tasks[objectID].priority = currentPriority;
+    tasks[objectID].notes = currentNotes;
+}
+
 export {
     tasks,
     createTask,
     deleteTask,
-    markTaskComplete
+    markTaskComplete,
+    retrieveTaskDetails,
+    modifyTask
 }

@@ -1,7 +1,8 @@
 import renderTasks from "./renderTasks";
 import {
     deleteTask,
-    markTaskComplete
+    markTaskComplete,
+    retrieveTaskDetails
 } from "./tasks";
 
 const activateButtons = () => {
@@ -21,7 +22,16 @@ const activateButtons = () => {
             });
         });
     }
+
+    const activateEditButtons = () => {
+        document.querySelectorAll(".edit-button").forEach(button => {
+            button.addEventListener("click", function () {
+                retrieveTaskDetails(button.parentNode.id);
+            });
+        });
+    }
     activateDeleteButtons();
     activateMarkCompleteButtons();
+    activateEditButtons();
 }
 export default activateButtons
