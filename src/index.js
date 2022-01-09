@@ -8,7 +8,7 @@ import {
 } from "./modules/tasks";
 import {
     createNewTaskModal,
-    toggleModal
+    toggleNewTaskModal
 } from "./modules/modal";
 import showAllTasks from "./modules/showAllTasks";
 

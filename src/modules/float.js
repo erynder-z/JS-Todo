@@ -3,7 +3,7 @@ import {
     deleteTask
 } from "./tasks";
 import {
-    toggleModal
+    toggleNewTaskModal
 } from "./modal";
 
 const floatMenu = () => {
@@ -22,7 +22,7 @@ const floatMenu = () => {
 
     toggleFloatNewTask.addEventListener("click", () => {
         handleToogle();
-        toggleModal();
+        toggleNewTaskModal();
     });
 
     function showToggle() {

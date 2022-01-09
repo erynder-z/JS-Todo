@@ -14,7 +14,7 @@ const createNewTaskModal = () => {
 
     const closeBtn = document.createElement("div");
     closeBtn.classList.add("close-button");
-    closeBtn.onclick = toggleModal;
+    closeBtn.onclick = toggleNewTaskModal;
     closeBtn.innerText = "X";
 
     const wrapper = document.createElement("div");
@@ -55,7 +55,7 @@ const createNewTaskModal = () => {
     addBtn.innerText = "save task";
     addBtn.addEventListener("click", () => {
         createTask();
-        toggleModal();
+        toggleNewTaskModal();
         showAllTasks();
     });
 
@@ -72,7 +72,7 @@ const createNewTaskModal = () => {
     modalDiv.appendChild(modal);
 }
 
-const toggleModal = () => {
+const toggleNewTaskModal = () => {
     const getModal = document.getElementById("inputModal");
     getModal.classList.toggle("hidden");
 }
@@ -80,5 +80,5 @@ const toggleModal = () => {
 
 export {
     createNewTaskModal,
-    toggleModal
+    toggleNewTaskModal
 }
