@@ -1,5 +1,7 @@
+import renderTasks from "./renderTasks";
 import {
-    deleteTask
+    deleteTask,
+    markTaskComplete
 } from "./tasks";
 
 const activateButtons = () => {
@@ -13,11 +15,11 @@ const activateButtons = () => {
     }
 
     const activateMarkCompleteButtons = () => {
-        document.querySelectorAll("mark-complete-button").forEach(button => {
-            button-addEventListener("click", function () {
+        document.querySelectorAll(".mark-complete-button").forEach(button => {
+            button.addEventListener("click", function () {
                 markTaskComplete(button.parentNode.id);
-            }) 
-        })
+            }); 
+        });
     }
     activateDeleteButtons();
     activateMarkCompleteButtons();
