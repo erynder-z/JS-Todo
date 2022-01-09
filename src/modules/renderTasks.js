@@ -6,89 +6,89 @@ import {
 const renderTasks = () => {
 
 
-const contentDiv = document.getElementById("mainContent");
+    const contentDiv = document.getElementById("mainContent");
 
-const taskListContainer = document.createElement("div");
+    const taskListContainer = document.createElement("div");
 
-taskListContainer.classList.add("taskList-container");
-contentDiv.appendChild(taskListContainer);
-
-
-
-tasks.forEach(task => {
-    const taskContainer = document.createElement("div");
-    taskContainer.setAttribute("id", tasks.indexOf(task)); 
-    taskContainer.classList.add("task-container");
-    taskListContainer.appendChild(taskContainer);
-
-    const deleteBtn = document.createElement("div");
-    deleteBtn.classList.add("delete-button");
-    deleteBtn.textContent = "X";
-    taskContainer.appendChild(deleteBtn);
+    taskListContainer.classList.add("taskList-container");
+    contentDiv.appendChild(taskListContainer);
 
 
-    const taskTitleHeading = document.createElement("div");
-    taskTitleHeading.classList.add("task-title-heading");
-    taskTitleHeading.textContent = "Title:";
-    taskContainer.appendChild(taskTitleHeading);
 
-    const taskTitle = document.createElement("div");
-    taskTitle.classList.add("task-title");
-    taskTitle.textContent = task.title;
-    taskContainer.appendChild(taskTitle);
+    tasks.forEach(task => {
+        const taskContainer = document.createElement("div");
+        taskContainer.setAttribute("id", tasks.indexOf(task));
+        taskContainer.classList.add("task-container");
+        taskListContainer.appendChild(taskContainer);
 
-    const taskDescriptionHeading = document.createElement("div");
-    taskDescriptionHeading.classList.add("task-description-heading");
-    taskDescriptionHeading.textContent = "Description:";
-    taskContainer.appendChild(taskDescriptionHeading);
+        const deleteBtn = document.createElement("div");
+        deleteBtn.classList.add("delete-button");
+        deleteBtn.textContent = "X";
+        taskContainer.appendChild(deleteBtn);
 
-    const taskDescription = document.createElement("div");
-    taskDescription.classList.add("task-description");
-    taskDescription.textContent = task.description;
-    taskContainer.appendChild(taskDescription);
 
-    const dueDateHeading = document.createElement("div");
-    dueDateHeading.classList.add("dueDateHeading");
-    dueDateHeading.textContent = "Due:";
-    taskContainer.appendChild(dueDateHeading);
+        const taskTitleHeading = document.createElement("div");
+        taskTitleHeading.classList.add("task-title-heading");
+        taskTitleHeading.textContent = "Title:";
+        taskContainer.appendChild(taskTitleHeading);
 
-    const dueDate = document.createElement("div");
-    dueDate.classList.add("dueDate");
-    dueDate.textContent = task.dueDate;
-    taskContainer.appendChild(dueDate);
+        const taskTitle = document.createElement("div");
+        taskTitle.classList.add("task-title");
+        taskTitle.textContent = task.title;
+        taskContainer.appendChild(taskTitle);
 
-    const priorityHeading = document.createElement("div");
-    priorityHeading.classList.add("priority-heading");
-    priorityHeading.textContent = "Priority:";
-    taskContainer.appendChild(priorityHeading);
+        const taskDescriptionHeading = document.createElement("div");
+        taskDescriptionHeading.classList.add("task-description-heading");
+        taskDescriptionHeading.textContent = "Description:";
+        taskContainer.appendChild(taskDescriptionHeading);
 
-    const priority = document.createElement("div");
-    priority.classList.add("priority");
-    priority.textContent = task.priority;
-    taskContainer.appendChild(priority);
+        const taskDescription = document.createElement("div");
+        taskDescription.classList.add("task-description");
+        taskDescription.textContent = task.description;
+        taskContainer.appendChild(taskDescription);
 
-    const notesHeading = document.createElement("div");
-    notesHeading.classList.add("notes-heading");
-    notesHeading.textContent = "Notes:";
-    taskContainer.appendChild(notesHeading);
+        const dueDateHeading = document.createElement("div");
+        dueDateHeading.classList.add("dueDateHeading");
+        dueDateHeading.textContent = "Due:";
+        taskContainer.appendChild(dueDateHeading);
 
-    const notes = document.createElement("div");
-    notes.classList.add("notes");
-    notes.textContent = task.notes;
-    taskContainer.appendChild(notes);
+        const dueDate = document.createElement("div");
+        dueDate.classList.add("dueDate");
+        dueDate.textContent = task.dueDate;
+        taskContainer.appendChild(dueDate);
 
-    const marktCompleteBtn = document.createElement("button");
-    marktCompleteBtn.classList.add("mark-complete-button");
-    marktCompleteBtn.textContent = "mark momplete";
-    taskContainer.appendChild(marktCompleteBtn);
+        const priorityHeading = document.createElement("div");
+        priorityHeading.classList.add("priority-heading");
+        priorityHeading.textContent = "Priority:";
+        taskContainer.appendChild(priorityHeading);
 
-    const editBtn = document.createElement("button");
-    editBtn.classList.add("edit-button");
-    editBtn.textContent = "edit task";
-    taskContainer.appendChild(editBtn);
-});
+        const priority = document.createElement("div");
+        priority.classList.add("priority");
+        priority.textContent = task.priority;
+        taskContainer.appendChild(priority);
 
-activateButtons();
+        const notesHeading = document.createElement("div");
+        notesHeading.classList.add("notes-heading");
+        notesHeading.textContent = "Notes:";
+        taskContainer.appendChild(notesHeading);
+
+        const notes = document.createElement("div");
+        notes.classList.add("notes");
+        notes.textContent = task.notes;
+        taskContainer.appendChild(notes);
+
+        const marktCompleteBtn = document.createElement("button");
+        marktCompleteBtn.classList.add("mark-complete-button");
+        marktCompleteBtn.textContent = "mark momplete";
+        taskContainer.appendChild(marktCompleteBtn);
+
+        const editBtn = document.createElement("button");
+        editBtn.classList.add("edit-button");
+        editBtn.textContent = "edit task";
+        taskContainer.appendChild(editBtn);
+    });
+
+    activateButtons();
 }
 
 export default renderTasks

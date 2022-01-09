@@ -1,5 +1,8 @@
 import activateButtons from "./buttons";
-import { clearContentArea, clearMainContent } from "./clearContent";
+import {
+    clearContentArea,
+    clearMainContent
+} from "./clearContent";
 
 import renderTasks from "./renderTasks";
 
@@ -40,7 +43,6 @@ const createTask = () => {
 
             deleteTask: function (objectID) {
                 tasks.splice(objectID, 1);
-                console.log(this);
             }
         }
     }

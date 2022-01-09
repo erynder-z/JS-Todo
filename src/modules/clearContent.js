@@ -8,7 +8,7 @@ const clearContentArea = () => {
     contentArea.innerHTML = "";
 }
 
-export{
+export {
     clearMainContent,
     clearContentArea
 }

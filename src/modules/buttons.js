@@ -18,7 +18,7 @@ const activateButtons = () => {
         document.querySelectorAll(".mark-complete-button").forEach(button => {
             button.addEventListener("click", function () {
                 markTaskComplete(button.parentNode.id);
-            }); 
+            });
         });
     }
     activateDeleteButtons();

@@ -1,5 +1,10 @@
-import { createTask, deleteTask } from "./tasks";
-import { toggleModal } from "./modal";
+import {
+    createTask,
+    deleteTask
+} from "./tasks";
+import {
+    toggleModal
+} from "./modal";
 
 const floatMenu = () => {
     let toggleIsHidden = true;

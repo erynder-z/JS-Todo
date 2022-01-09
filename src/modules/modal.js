@@ -1,5 +1,7 @@
 import showAllTasks from "./showAllTasks";
-import { createTask } from "./tasks";
+import {
+    createTask
+} from "./tasks";
 
 const createModal = () => {
 
