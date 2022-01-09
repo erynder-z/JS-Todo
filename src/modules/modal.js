@@ -3,7 +3,7 @@ import {
     createTask
 } from "./tasks";
 
-const createModal = () => {
+const createNewTaskModal = () => {
 
     const modalDiv = document.getElementById("modalContent");
 
@@ -79,6 +79,6 @@ const toggleModal = () => {
 
 
 export {
-    createModal,
+    createNewTaskModal,
     toggleModal
 }

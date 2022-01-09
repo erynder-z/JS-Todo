@@ -7,7 +7,7 @@ import {
     createTask
 } from "./modules/tasks";
 import {
-    createModal,
+    createNewTaskModal,
     toggleModal
 } from "./modules/modal";
 import showAllTasks from "./modules/showAllTasks";
@@ -16,7 +16,7 @@ import showAllTasks from "./modules/showAllTasks";
 
 toggleSidebar();
 floatMenu();
-createModal();
+createNewTaskModal();
 
 showAllTasks();
 
