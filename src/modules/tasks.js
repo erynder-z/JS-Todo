@@ -1,3 +1,4 @@
+import { addClassComplete } from "./addClasses";
 import activateButtons from "./buttons";
 import {
     clearContentArea,
@@ -38,7 +39,7 @@ const createTask = () => {
             status,
 
             toggleStatus: function () {
-                this.status = "done";
+                this.status = "done";  
             },
 
             deleteTask: function (objectID) {
@@ -66,7 +67,8 @@ const deleteTask = (objectID) => {
 }
 
 const markTaskComplete = (objectID) => {
-    tasks[objectID].toggleStatus();
+    tasks[objectID].toggleStatus(objectID);
+    addClassComplete(objectID);
     return tasks;
 }
 

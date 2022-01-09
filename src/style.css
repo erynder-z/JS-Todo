@@ -70,6 +70,15 @@ body {
     font-size: 20px;
 }
 
+.complete>div {
+    text-decoration: line-through;
+}
+
+.complete>.delete-button {
+    text-decoration: none;
+}
+
+
 .footer {
     height: 3vh;
     background: salmon;
