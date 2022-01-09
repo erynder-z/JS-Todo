@@ -1,8 +1,4 @@
 import {
-    createTask,
-    deleteTask
-} from "./tasks";
-import {
     toggleNewTaskModal
 } from "./modal";
 

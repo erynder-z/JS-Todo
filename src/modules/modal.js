@@ -1,6 +1,5 @@
 import showAllTasks from "./showAllTasks";
 import {
-    tasks,
     createTask,
     modifyTask
 } from "./tasks";

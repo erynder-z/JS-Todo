@@ -1,4 +1,3 @@
-import renderTasks from "./renderTasks";
 import {
     deleteTask,
     markTaskComplete,

@@ -1,8 +1,6 @@
 import { addClassComplete } from "./addClasses";
-import activateButtons from "./buttons";
 import {
     clearContentArea,
-    clearMainContent
 } from "./clearContent";
 import { createEditTaskModal } from "./modal";
 
@@ -47,7 +45,8 @@ const createTask = () => {
                 tasks.splice(objectID, 1);
             }
 
-            /* modifyTask: function (currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes) {
+           /*  editProperties: function (currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes) {
+                console.log(this);
                 this.title = currentTitle;
                 this.description = currentDescription;
                 this.dueDate = currentDueDate;
@@ -92,6 +91,7 @@ const retrieveTaskDetails = (objectID) => {
 }
 
 const modifyTask = (objectID, currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes) => {
+    console.log(tasks[objectID]);
     tasks[objectID].title = currentTitle;
     tasks[objectID].description = currentDescription;
     tasks[objectID].dueDate = currentDueDate;
