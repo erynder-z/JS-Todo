@@ -55,15 +55,15 @@ const createTask = () => {
     console.log(tasks);
 }
 
-const deleteTask = (parentNodeID) => {
-    tasks[parentNodeID].deleteTask(parentNodeID);
+const deleteTask = (objectID) => {
+    tasks[objectID].deleteTask(objectID);
     clearMainContent();
     renderTasks();
     return tasks;
 }
 
-/* const markTaskComplete = (parentNodeID) => {
-    tasks[parentNodeID].toggleStatus;
+/* const markTaskComplete = (objectID) => {
+    tasks[objectID].toggleStatus;
     return tasks;
 } */
 
@@ -71,5 +71,5 @@ export {
     tasks,
     createTask,
     deleteTask,
-    markTaskComplete
+   /*  markTaskComplete */
 }
