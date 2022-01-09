@@ -103,32 +103,33 @@ const createEditTaskModal = (objectID, currentTitle, currentDescription, current
     const titleInput = document.createElement("input");
     titleInput.type = "text";
     titleInput.id = "titleInput";
-    titleInput.placeholder = currentTitle;
+    titleInput.value = currentTitle;
 
     const descriptionInput = document.createElement("input");
     descriptionInput.type = "text";
     descriptionInput.id = "descriptionInput";
-    descriptionInput.placeholder = currentDescription;
+    descriptionInput.value = currentDescription;
 
     const dueDateInput = document.createElement("input");
     dueDateInput.type = "datetime-local";
     dueDateInput.id = "dueDateInput";
-    dueDateInput.placeholder = currentDueDate;
+    dueDateInput.value = currentDueDate;
 
     const priorityInput = document.createElement("input");
     priorityInput.type = "text";
     priorityInput.id = "priorityInput";
-    priorityInput.placeholder = currentPriority;
+    priorityInput.value = currentPriority;
 
     const notesInput = document.createElement("input");
     notesInput.type = "text";
     notesInput.id = "notesInput";
-    notesInput.placeholder = currentNotes;
+    notesInput.value = currentNotes;
 
     const addBtn = document.createElement("button");
     addBtn.id = "addBtn";
     addBtn.classList.add("add-button");
     addBtn.innerText = "save task";
+
     addBtn.addEventListener("click", () => {
         tasks[objectID].editProperties(titleInput.value, descriptionInput.value, dueDateInput.value, priorityInput.value, notesInput.value);
         toggleEditTaskModal();

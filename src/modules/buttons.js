@@ -29,6 +29,7 @@ const activateButtons = () => {
             });
         });
     }
+
     activateDeleteButtons();
     activateMarkCompleteButtons();
     activateEditButtons();
