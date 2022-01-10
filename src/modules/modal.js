@@ -74,7 +74,7 @@ const createNewTaskModal = () => {
     addBtn.innerText = "save task";
     addBtn.addEventListener("click", () => {
         createTask();
-        toggleNewTaskModal();
+        toggleNewTaskModal(titleInput, descriptionInput, dueDateInput, priorityInput, notesInput);
         showAllTasks();
     });
 
@@ -96,9 +96,14 @@ const createNewTaskModal = () => {
     modalDiv.appendChild(modal);
 }
 
-const toggleNewTaskModal = () => {
+const toggleNewTaskModal = (titleInput, descriptionInput, dueDateInput, priorityInput, notesInput) => {
     const getModal = document.getElementById("inputModal");
     getModal.classList.toggle("hidden");
+    titleInput.value = "";
+    descriptionInput.value = "";
+    dueDateInput.value = "";
+    priorityInput.value = "";
+    notesInput.value = "";
 }
 
 
