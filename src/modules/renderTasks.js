@@ -26,6 +26,10 @@ const renderTasks = () => {
         deleteBtn.textContent = "X";
         taskContainer.appendChild(deleteBtn);
 
+        const taskCategory = document.createElement("div");
+        taskCategory.classList.add("task-category");
+        taskCategory.textContent = task.category;
+        taskContainer.appendChild(taskCategory);
 
         const taskTitleHeading = document.createElement("div");
         taskTitleHeading.classList.add("task-title-heading");

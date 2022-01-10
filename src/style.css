@@ -71,6 +71,10 @@ body {
     align-self: flex-end;
 }
 
+.task-category {
+    text-align: center;
+}
+
 .task-title, .task-description, .dueDate, .priority, .notes {
     font-size: 20px;
 }

@@ -22,6 +22,28 @@ const createNewTaskModal = () => {
     const wrapper = document.createElement("div");
     wrapper.classList.add("modal-wrapper");
 
+    const categoryLabel = document.createElement("label");
+    categoryLabel.for = "category";
+    categoryLabel.textContent = "Select a category:";
+    const categoryInput = document.createElement("select");
+    categoryInput.name = "category";
+    categoryInput.id = "categoryInput";
+    const uncategorized = document.createElement("option");
+    uncategorized.value = "uncategorized";
+    uncategorized.textContent = "uncategorized";
+    const work = document.createElement("option");
+    work.value = "work";
+    work.textContent = "work";
+    const hobby = document.createElement("option");
+    hobby.value = "hobby";
+    hobby.textContent = "hobby";
+    const health = document.createElement("option");
+    health.value = "health";
+    health.textContent = "health";
+    const chore = document.createElement("option");
+    chore.value = "chore";
+    chore.textContent = "chore";
+
     const heading = document.createElement("h1");
     heading.classList.add("modal-heading");
     heading.innerText = "Enter task details:";
@@ -74,13 +96,20 @@ const createNewTaskModal = () => {
     addBtn.innerText = "save task";
     addBtn.addEventListener("click", () => {
         createTask();
-        toggleNewTaskModal(titleInput, descriptionInput, dueDateInput, priorityInput, notesInput);
+        toggleNewTaskModal(categoryInput, titleInput, descriptionInput, dueDateInput, priorityInput, notesInput);
         showAllTasks();
     });
 
     modal.appendChild(closeBtn);
     modal.appendChild(wrapper);
     wrapper.appendChild(heading);
+    wrapper.appendChild(categoryLabel);
+    wrapper.appendChild(categoryInput);
+    categoryInput.appendChild(uncategorized);
+    categoryInput.appendChild(work);
+    categoryInput.appendChild(hobby);
+    categoryInput.appendChild(health);
+    categoryInput.appendChild(chore);
     wrapper.appendChild(titleInput);
     wrapper.appendChild(descriptionInput);
     wrapper.appendChild(dueDateInput);
@@ -96,9 +125,10 @@ const createNewTaskModal = () => {
     modalDiv.appendChild(modal);
 }
 
-const toggleNewTaskModal = (titleInput, descriptionInput, dueDateInput, priorityInput, notesInput) => {
+const toggleNewTaskModal = (categoryInput, titleInput, descriptionInput, dueDateInput, priorityInput, notesInput) => {
     const getModal = document.getElementById("inputModal");
     getModal.classList.toggle("hidden");
+    if (categoryInput) {categoryInput.value = ""};
     if (titleInput) {titleInput.value = ""};
     if (descriptionInput) {descriptionInput.value = ""};
     if (dueDateInput) {dueDateInput.value = ""};
@@ -107,7 +137,7 @@ const toggleNewTaskModal = (titleInput, descriptionInput, dueDateInput, priority
 }
 
 
-const createEditTaskModal = (objectID, currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes) => {
+const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes) => {
     const modalDiv = document.getElementById("modalContent");
 
     const modal = document.createElement("div");
@@ -126,6 +156,41 @@ const createEditTaskModal = (objectID, currentTitle, currentDescription, current
     const heading = document.createElement("h1");
     heading.classList.add("modal-heading");
     heading.innerText = "Edit details:";
+
+    const categoryLabel = document.createElement("label");
+    categoryLabel.for = "category";
+    categoryLabel.textContent = "Select a category:";
+    const categoryInput = document.createElement("select");
+    categoryInput.name = "category";
+    categoryInput.id = "categoryInput";
+    const uncategorized = document.createElement("option");
+    uncategorized.value = "uncategorized";
+    uncategorized.textContent = "uncategorized";
+    const work = document.createElement("option");
+    work.value = "work";
+    work.textContent = "work";
+    const hobby = document.createElement("option");
+    hobby.value = "hobby";
+    hobby.textContent = "hobby";
+    const health = document.createElement("option");
+    health.value = "health";
+    health.textContent = "health";
+    const chore = document.createElement("option");
+    chore.value = "chore";
+    chore.textContent = "chore";
+
+    if(currentCategory === "work") {
+        work.selected = true;
+    } else if (currentCategory === "hobby") {
+        hobby.selected = true;
+    } else if (currentCategory === "health") {
+        health.selected = true;
+    } else if (currentCategory === "chore") {
+        chore.selected = true;
+    } else {
+        uncategorized.selected = true;
+    }
+
 
     const titleInput = document.createElement("input");
     titleInput.type = "text";

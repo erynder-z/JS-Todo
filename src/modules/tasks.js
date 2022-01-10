@@ -28,8 +28,9 @@ const tasks = [{
 
 const createTask = () => {
 
-    const taskFactory = (title, description, dueDate, priority, notes, status) => {
+    const taskFactory = (category, title, description, dueDate, priority, notes, status) => {
         return {
+            category,
             title,
             description,
             dueDate,
@@ -45,7 +46,8 @@ const createTask = () => {
                 tasks.splice(objectID, 1);
             },
 
-            editProperties: function (currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes) {
+            editProperties: function (currentCategory, currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes) {
+                this.category = currentCategory;
                 this.title = currentTitle;
                 this.description = currentDescription;
                 this.dueDate = currentDueDate;
@@ -55,13 +57,14 @@ const createTask = () => {
         }
     }
 
+    const category = document.getElementById("categoryInput");
     const title = document.getElementById("titleInput");
     const description = document.getElementById("descriptionInput");
     const dueDate = document.getElementById("dueDateInput");
     const priority = document.getElementById("priorityInput");
     const notes = document.getElementById("notesInput");
 
-    let newTask = taskFactory(title.value, description.value, dueDate.value, priority.value, notes.value, "offen");
+    let newTask = taskFactory(category.value, title.value, description.value, dueDate.value, priority.value, notes.value, "offen");
     tasks.push(newTask);
     console.log(tasks);
 }
@@ -81,12 +84,13 @@ const markTaskComplete = (objectID) => {
 
 const retrieveTaskDetails = (objectID) => {
     let obj = tasks[objectID];
+    let currentCategory = obj.category;
     let currentTitle = obj.title;
     let currentDescription = obj.description;
     let currentDueDate = obj.dueDate;
     let currentPriority = obj.priority;
     let currentNotes = obj.notes;
-    createEditTaskModal(objectID, currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes);
+    createEditTaskModal(objectID, currentCategory, currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes);
 }
 
 export {
