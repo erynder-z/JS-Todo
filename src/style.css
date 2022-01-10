@@ -61,8 +61,10 @@ body {
     display: flex;
     flex-direction: column;
     width: 35vw;
+    min-height: 30vh;
     background: antiquewhite;
     border: solid 1px black;
+    justify-content: space-around;
 }
 
 .delete-button {
