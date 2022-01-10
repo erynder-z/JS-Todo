@@ -37,7 +37,7 @@ const createNewTaskModal = () => {
     descriptionInput.placeholder = "description";
 
     const dueDateInput = document.createElement("input");
-    dueDateInput.type = "datetime-local";
+    dueDateInput.type = "date";
     dueDateInput.id = "dueDateInput";
     dueDateInput.placeholder = "dueDate";
 
@@ -133,7 +133,7 @@ const createEditTaskModal = (objectID, currentTitle, currentDescription, current
     descriptionInput.value = currentDescription;
 
     const dueDateInput = document.createElement("input");
-    dueDateInput.type = "datetime-local";
+    dueDateInput.type = "date";
     dueDateInput.id = "dueDateInput";
     dueDateInput.value = currentDueDate;
 
