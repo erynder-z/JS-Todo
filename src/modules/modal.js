@@ -99,11 +99,11 @@ const createNewTaskModal = () => {
 const toggleNewTaskModal = (titleInput, descriptionInput, dueDateInput, priorityInput, notesInput) => {
     const getModal = document.getElementById("inputModal");
     getModal.classList.toggle("hidden");
-    titleInput.value = "";
-    descriptionInput.value = "";
-    dueDateInput.value = "";
-    priorityInput.value = "";
-    notesInput.value = "";
+    if (titleInput) {titleInput.value = ""};
+    if (descriptionInput) {descriptionInput.value = ""};
+    if (dueDateInput) {dueDateInput.value = ""};
+    if (priorityInput) {priorityInput.value = ""};
+    if (notesInput) {notesInput.value = ""};
 }
 
 
