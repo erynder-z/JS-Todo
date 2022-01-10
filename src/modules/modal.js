@@ -41,10 +41,26 @@ const createNewTaskModal = () => {
     dueDateInput.id = "dueDateInput";
     dueDateInput.placeholder = "dueDate";
 
-    const priorityInput = document.createElement("input");
+/*     const priorityInput = document.createElement("input");
     priorityInput.type = "text";
     priorityInput.id = "priorityInput";
-    priorityInput.placeholder = "priority";
+    priorityInput.placeholder = "priority"; */
+
+    const priorityLabel = document.createElement("label");
+    priorityLabel.for = "priority";
+    priorityLabel.textContent = "Choose priority:";
+    const priorityInput = document.createElement("select");
+    priorityInput.name = "priority";
+    priorityInput.id = "priorityInput";
+    const highPriority = document.createElement("option");
+    highPriority.value = "high";
+    highPriority.textContent = "high"; 
+    const mediumPriority = document.createElement("option");
+    mediumPriority.value = "medium";
+    mediumPriority.textContent = "medium"; 
+    const lowPriority = document.createElement("option");
+    lowPriority.value = "low";
+    lowPriority.textContent = "low"; 
 
     const notesInput = document.createElement("input");
     notesInput.type = "text";
@@ -67,7 +83,12 @@ const createNewTaskModal = () => {
     wrapper.appendChild(titleInput);
     wrapper.appendChild(descriptionInput);
     wrapper.appendChild(dueDateInput);
+    /* wrapper.appendChild(priorityInput); */
+    wrapper.appendChild(priorityLabel);
     wrapper.appendChild(priorityInput);
+    priorityInput.appendChild(highPriority);
+    priorityInput.appendChild(mediumPriority);
+    priorityInput.appendChild(lowPriority);
     wrapper.appendChild(notesInput);
     wrapper.appendChild(addBtn);
 
