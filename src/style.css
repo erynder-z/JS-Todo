@@ -129,13 +129,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 40vh;
+    min-height: 50vh;
     width: 40vh;
     position: fixed;
     left: 45%;
     top: 33.3%;
     background: seashell;
     z-index: 1;
+    border: solid 2px black;
 }
 
 .modal-wrapper {
