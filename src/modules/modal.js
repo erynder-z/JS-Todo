@@ -250,7 +250,7 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
     addBtn.innerText = "save task";
 
     addBtn.addEventListener("click", () => {
-        tasks[objectID].editProperties(titleInput.value, descriptionInput.value, dueDateInput.value, priorityInput.value, notesInput.value);
+        tasks[objectID].editProperties(categoryInput.value, titleInput.value, descriptionInput.value, dueDateInput.value, priorityInput.value, notesInput.value);
         toggleEditTaskModal();
         showAllTasks();
     });
@@ -258,6 +258,13 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
     modal.appendChild(closeBtn);
     modal.appendChild(wrapper);
     wrapper.appendChild(heading);
+    wrapper.appendChild(categoryLabel);
+    wrapper.appendChild(categoryInput);
+    categoryInput.appendChild(uncategorized);
+    categoryInput.appendChild(work);
+    categoryInput.appendChild(hobby);
+    categoryInput.appendChild(health);
+    categoryInput.appendChild(chore);
     wrapper.appendChild(titleInput);
     wrapper.appendChild(descriptionInput);
     wrapper.appendChild(dueDateInput);
