@@ -136,10 +136,37 @@ const createEditTaskModal = (objectID, currentTitle, currentDescription, current
     dueDateInput.id = "dueDateInput";
     dueDateInput.value = currentDueDate;
 
-    const priorityInput = document.createElement("input");
+/*     const priorityInput = document.createElement("input");
     priorityInput.type = "text";
     priorityInput.id = "priorityInput";
-    priorityInput.value = currentPriority;
+    priorityInput.value = currentPriority; */
+
+    const priorityLabel = document.createElement("label");
+    priorityLabel.for = "priority";
+    priorityLabel.textContent = "Choose priority:";
+    const priorityInput = document.createElement("select");
+    priorityInput.name = "priority";
+    priorityInput.id = "priorityInput";
+    /* priorityInput.value = currentPriority; */
+    const highPriority = document.createElement("option");
+    highPriority.value = "high";
+    highPriority.textContent = "high"; 
+    const mediumPriority = document.createElement("option");
+    mediumPriority.value = "medium";
+    mediumPriority.textContent = "medium"; 
+    const lowPriority = document.createElement("option");
+    lowPriority.value = "low";
+    lowPriority.textContent = "low"; 
+    
+    if(currentPriority === "high") {
+        highPriority.selected = true;
+    } else if (currentPriority === "medium") {
+        mediumPriority.selected = true;
+    } else {
+        lowPriority.selected = true;
+    } 
+
+   
 
     const notesInput = document.createElement("input");
     notesInput.type = "text";
@@ -163,7 +190,12 @@ const createEditTaskModal = (objectID, currentTitle, currentDescription, current
     wrapper.appendChild(titleInput);
     wrapper.appendChild(descriptionInput);
     wrapper.appendChild(dueDateInput);
+    /* wrapper.appendChild(priorityInput); */
+    wrapper.appendChild(priorityLabel);
     wrapper.appendChild(priorityInput);
+    priorityInput.appendChild(highPriority);
+    priorityInput.appendChild(mediumPriority);
+    priorityInput.appendChild(lowPriority);
     wrapper.appendChild(notesInput);
     wrapper.appendChild(addBtn);
 
