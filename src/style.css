@@ -131,7 +131,7 @@ body {
     justify-content: space-evenly;
     height: 40vh;
     width: 40vh;
-    position: absolute;
+    position: fixed;
     left: 45%;
     top: 33.3%;
     background: seashell;
