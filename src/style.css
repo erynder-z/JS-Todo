@@ -27,17 +27,20 @@ body {
     display: none;
 }
 
+.main-wrapper {
+    display: flex;
+    min-height: 100%;
+    align-items: stretch;
+}
+
 .sidebar {
     display: flex;
     flex-direction: column;
     width: 20vw;
-    height: 90vh;
+    min-height: 90vh;
     background: gray;
 }
 
-.main-wrapper {
-    display: flex;
-}
 
 .content-area {
     display: flex;
@@ -80,7 +83,10 @@ body {
 
 
 .footer {
+    position: absolute;
+    width: 100vw;
     height: 3vh;
+    z-index: 1;
     background: salmon;
 }
 
@@ -155,11 +161,16 @@ body {
 
 
 @media all and (max-width:500px) {
+    .nav {
+        position: sticky;
+        top: 0;
+    }
+
     .sidebar {
-        position: absolute;
+        position: fixed;
         left: -45%;
         width: 50vw;    
-        min-height: 90vh;
+        height: 100vh;
     }
 
     .logo {
