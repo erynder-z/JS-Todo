@@ -62,10 +62,11 @@ const createNewTaskModal = () => {
     lowPriority.value = "low";
     lowPriority.textContent = "low"; 
 
-    const notesInput = document.createElement("input");
-    notesInput.type = "text";
+    const notesInput = document.createElement("textarea");
     notesInput.id = "notesInput";
     notesInput.placeholder = "notes";
+    notesInput.rows = "4";
+    
 
     const addBtn = document.createElement("button");
     addBtn.id = "addBtn";
@@ -168,10 +169,10 @@ const createEditTaskModal = (objectID, currentTitle, currentDescription, current
 
    
 
-    const notesInput = document.createElement("input");
-    notesInput.type = "text";
+    const notesInput = document.createElement("textarea");
     notesInput.id = "notesInput";
     notesInput.value = currentNotes;
+    notesInput.rows = "4";
 
     const addBtn = document.createElement("button");
     addBtn.id = "addBtn";
