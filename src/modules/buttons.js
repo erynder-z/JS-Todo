@@ -1,3 +1,4 @@
+import { toggleDetails } from "./addClasses";
 import {
     deleteTask,
     markTaskComplete,
@@ -10,6 +11,14 @@ const activateButtons = () => {
         document.querySelectorAll(".delete-button").forEach(button => {
             button.addEventListener("click", function () {
                 deleteTask(button.parentNode.id);
+            });
+        });
+    }
+
+    const activateExpandTaskButton = () => {
+        document.querySelectorAll(".expand-button").forEach(button => {
+            button.addEventListener("click", function () {
+                toggleDetails(button.parentNode.id);
             });
         });
     }
@@ -31,6 +40,7 @@ const activateButtons = () => {
     }
 
     activateDeleteButtons();
+    activateExpandTaskButton();
     activateMarkCompleteButtons();
     activateEditButtons();
 }
