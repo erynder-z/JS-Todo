@@ -130,11 +130,11 @@ const toggleNewTaskModal = (categoryInput, titleInput, descriptionInput, dueDate
     const getModal = document.getElementById("inputModal");
     getModal.classList.toggle("hidden");
     if (categoryInput) {categoryInput.value = "uncategorized"};
-    if (titleInput) {titleInput.value = ""};
-    if (descriptionInput) {descriptionInput.value = ""};
+    if (titleInput) {titleInput.value = null};
+    if (descriptionInput) {descriptionInput.value = null};
     if (dueDateInput) {dueDateInput.value = today};
     if (priorityInput) {priorityInput.value = "high"};
-    if (notesInput) {notesInput.value = ""};
+    if (notesInput) {notesInput.value = null};
 }
 
 
@@ -244,9 +244,13 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
     addBtn.innerText = "save task";
 
     addBtn.addEventListener("click", () => {
-        tasks[objectID].editProperties(categoryInput.value, titleInput.value, descriptionInput.value, dueDateInput.value, priorityInput.value, notesInput.value);
-        toggleEditTaskModal();
-        showAllTasks();
+        if (titleInput.value === "") {
+            alert("enter a title!");
+        } else {
+            tasks[objectID].editProperties(categoryInput.value, titleInput.value, descriptionInput.value, dueDateInput.value, priorityInput.value, notesInput.value);
+            toggleEditTaskModal();
+            showAllTasks();
+        }
     });
 
     modal.appendChild(closeBtn);
