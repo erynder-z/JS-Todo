@@ -2,8 +2,7 @@ const {format} = require('date-fns');
 import showAllTasks from "./showAllTasks";
 import {
     tasks,
-    createTask,
-    modifyTask
+    createTask
 } from "./tasks";
 
 const today = format(new Date(),"yyyy-MM-dd");
@@ -65,11 +64,6 @@ const createNewTaskModal = () => {
     dueDateInput.type = "date";
     dueDateInput.id = "dueDateInput";
     dueDateInput.value = today;
-
-/*     const priorityInput = document.createElement("input");
-    priorityInput.type = "text";
-    priorityInput.id = "priorityInput";
-    priorityInput.placeholder = "priority"; */
 
     const priorityLabel = document.createElement("label");
     priorityLabel.for = "priority";
@@ -150,7 +144,6 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
     const modal = document.createElement("div");
     modal.id = "editModal";
     modal.classList.add("modal");
-    /* modal.classList.add("hidden"); */
 
     const closeBtn = document.createElement("div");
     closeBtn.classList.add("close-button");
@@ -214,11 +207,6 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
     dueDateInput.id = "dueDateInput";
     dueDateInput.value = currentDueDate;
 
-/*     const priorityInput = document.createElement("input");
-    priorityInput.type = "text";
-    priorityInput.id = "priorityInput";
-    priorityInput.value = currentPriority; */
-
     const priorityLabel = document.createElement("label");
     priorityLabel.for = "priority";
     priorityLabel.textContent = "Choose priority:";
@@ -244,7 +232,6 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
         lowPriority.selected = true;
     } 
 
-   
 
     const notesInput = document.createElement("textarea");
     notesInput.id = "notesInput";
@@ -275,7 +262,6 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
     wrapper.appendChild(titleInput);
     wrapper.appendChild(descriptionInput);
     wrapper.appendChild(dueDateInput);
-    /* wrapper.appendChild(priorityInput); */
     wrapper.appendChild(priorityLabel);
     wrapper.appendChild(priorityInput);
     priorityInput.appendChild(highPriority);
