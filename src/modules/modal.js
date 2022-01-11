@@ -1,3 +1,4 @@
+const {format} = require('date-fns');
 import showAllTasks from "./showAllTasks";
 import {
     tasks,
@@ -6,6 +7,8 @@ import {
 } from "./tasks";
 
 const createNewTaskModal = () => {
+
+    const today = format(new Date(),"yyyy-MM-dd");
 
     const modalDiv = document.getElementById("modalContent");
 
@@ -51,7 +54,7 @@ const createNewTaskModal = () => {
     const titleInput = document.createElement("input");
     titleInput.type = "text";
     titleInput.id = "titleInput";
-    titleInput.placeholder = "title";
+    titleInput.placeholder = "title (required)";
 
     const descriptionInput = document.createElement("input");
     descriptionInput.type = "text";
@@ -61,7 +64,7 @@ const createNewTaskModal = () => {
     const dueDateInput = document.createElement("input");
     dueDateInput.type = "date";
     dueDateInput.id = "dueDateInput";
-    dueDateInput.placeholder = "dueDate";
+    dueDateInput.value = today;
 
 /*     const priorityInput = document.createElement("input");
     priorityInput.type = "text";
@@ -131,7 +134,7 @@ const toggleNewTaskModal = (categoryInput, titleInput, descriptionInput, dueDate
     if (categoryInput) {categoryInput.value = ""};
     if (titleInput) {titleInput.value = ""};
     if (descriptionInput) {descriptionInput.value = ""};
-    if (dueDateInput) {dueDateInput.value = ""};
+    if (dueDateInput) {dueDateInput.value = today};
     if (priorityInput) {priorityInput.value = ""};
     if (notesInput) {notesInput.value = ""};
 }
