@@ -9,6 +9,7 @@ import renderTasks from "./renderTasks";
 /* const tasks = []; */
 
 const tasks = [{
+        category: "uncategorized",
         title: "Code",
         description: "Code a Todo-App",
         dueDate: "22/01/10",
@@ -17,6 +18,7 @@ const tasks = [{
         status: "open"
     },
     {
+        category: "hobby",
         title: "Work out",
         description: "Back training",
         dueDate: "22/01/31",
