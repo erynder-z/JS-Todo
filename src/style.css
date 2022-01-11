@@ -53,22 +53,31 @@ body {
 
 .taskList-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 15px;
 }
 
 .task-container {
     display: flex;
-    flex-direction: column;
-    width: 20vw;
-    min-height: 30vh;
+    width: 75vw;
+    height: 5vh;
+    justify-content: space-around;
+    align-items: center;
     background: antiquewhite;
     border: solid 1px black;
-    justify-content: space-around;
+}
+
+.task-container> * {
+    display: flex;
+    justify-content: center;
+    flex: 1;
 }
 
 .delete-button {
-    align-self: flex-end;
+    display: flex;
+    color: crimson;
+    align-items: center;
 }
 
 .task-category {
@@ -77,6 +86,12 @@ body {
 
 .task-title, .task-description, .dueDate, .priority, .notes {
     font-size: 20px;
+}
+
+.task-options-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 10%;
 }
 
 .expand-button {
@@ -210,7 +225,17 @@ body {
     }
 
     .task-container {
+        flex-direction: column;
         width: 80vw;
+        height: 20vh;
+        padding-top: 15px;
+    }
+
+    .task-options-wrapper {
+        display: flex;
+        width: 100%;
+        min-height: 15%;
+        justify-content: space-evenly;
     }
 
     .slide {

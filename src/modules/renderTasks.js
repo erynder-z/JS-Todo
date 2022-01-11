@@ -21,11 +21,6 @@ const renderTasks = () => {
         taskContainer.classList.add("task-container");
         taskListContainer.appendChild(taskContainer);
 
-        const deleteBtn = document.createElement("div");
-        deleteBtn.classList.add("delete-button");
-        deleteBtn.textContent = "X";
-        taskContainer.appendChild(deleteBtn);
-
         const taskCategory = document.createElement("div");
         taskCategory.classList.add("task-category");
         taskCategory.classList.add("hidden");
@@ -99,15 +94,24 @@ const renderTasks = () => {
         expandTask.textContent = "v";
         taskContainer.appendChild(expandTask);
 
+        const wrapper = document.createElement("div");
+        wrapper.classList.add("task-options-wrapper");
+        taskContainer.appendChild(wrapper);
+
         const marktCompleteBtn = document.createElement("button");
         marktCompleteBtn.classList.add("mark-complete-button");
-        marktCompleteBtn.textContent = "mark momplete";
-        taskContainer.appendChild(marktCompleteBtn);
+        marktCompleteBtn.textContent = "done";
+        wrapper.appendChild(marktCompleteBtn);
 
         const editBtn = document.createElement("button");
         editBtn.classList.add("edit-button");
-        editBtn.textContent = "edit task";
-        taskContainer.appendChild(editBtn);
+        editBtn.textContent = "edit";
+        wrapper.appendChild(editBtn);
+
+        const deleteBtn = document.createElement("div");
+        deleteBtn.classList.add("delete-button");
+        deleteBtn.textContent = "X";
+        wrapper.appendChild(deleteBtn);
     });
 
     activateButtons();

@@ -8,6 +8,8 @@ const addClassComplete = (objectID) => {
 const toggleDetails = (objectID) => {
     const parentNode = document.getElementById(objectID);
 
+    parentNode.classList.toggle("expand");
+
     const childCategory = parentNode.getElementsByClassName("task-category");
     childCategory[0].classList.toggle("hidden");
 
