@@ -27,65 +27,84 @@ const renderTasks = () => {
         taskCategory.textContent = task.category;
         taskContainer.appendChild(taskCategory);
 
+        const titleWrapper = document.createElement("div");
+        titleWrapper.classList.add("title-wrapper");
+        taskContainer.appendChild(titleWrapper);
+
         const taskTitleHeading = document.createElement("div");
         taskTitleHeading.classList.add("task-title-heading");
         taskTitleHeading.textContent = "Title:";
-        taskContainer.appendChild(taskTitleHeading);
+        titleWrapper.appendChild(taskTitleHeading);
 
         const taskTitle = document.createElement("div");
         taskTitle.classList.add("task-title");
         taskTitle.textContent = task.title;
-        taskContainer.appendChild(taskTitle);
+        titleWrapper.appendChild(taskTitle);
 
         if (task.description) {
+            const descriptionWrapper = document.createElement("div");
+            descriptionWrapper.classList.add("description-wrapper");
+            taskContainer.appendChild(descriptionWrapper);
+
             const taskDescriptionHeading = document.createElement("div");
             taskDescriptionHeading.classList.add("task-description-heading");
             taskDescriptionHeading.classList.add("hidden");
             taskDescriptionHeading.textContent = "Description:";
-            taskContainer.appendChild(taskDescriptionHeading);
+            descriptionWrapper.appendChild(taskDescriptionHeading);
 
             const taskDescription = document.createElement("div");
             taskDescription.classList.add("task-description");
             taskDescription.classList.add("hidden");
             taskDescription.textContent = task.description;
-            taskContainer.appendChild(taskDescription);
+            descriptionWrapper.appendChild(taskDescription);
         }
 
+        const dueDateWrapper = document.createElement("div");
+        dueDateWrapper.classList.add("dueDate-wrapper");
+        taskContainer.appendChild(dueDateWrapper);
 
         const dueDateHeading = document.createElement("div");
         dueDateHeading.classList.add("dueDateHeading");
         dueDateHeading.textContent = "Due:";
-        taskContainer.appendChild(dueDateHeading);
+        dueDateWrapper.appendChild(dueDateHeading);
 
         const dueDate = document.createElement("div");
         dueDate.classList.add("dueDate");
         dueDate.textContent = task.dueDate;
-        taskContainer.appendChild(dueDate);
+        dueDateWrapper.appendChild(dueDate);
+
+        const priorityWrapper = document.createElement("div");
+        priorityWrapper.classList.add("priority-wrapper");
+        taskContainer.appendChild(priorityWrapper);
 
         const priorityHeading = document.createElement("div");
         priorityHeading.classList.add("priority-heading");
         priorityHeading.classList.add("hidden");
         priorityHeading.textContent = "Priority:";
-        taskContainer.appendChild(priorityHeading);
+        priorityWrapper.appendChild(priorityHeading);
 
         const priority = document.createElement("div");
         priority.classList.add("priority");
         priority.classList.add("hidden");
         priority.textContent = task.priority;
-        taskContainer.appendChild(priority);
+        priorityWrapper.appendChild(priority);
+
+        const notesWrapper = document.createElement("div");
+        notesWrapper.classList.add("notes-wrapper");
+        taskContainer.appendChild(notesWrapper);
 
         if (task.notes) {
             const notesHeading = document.createElement("div");
             notesHeading.classList.add("notes-heading");
             notesHeading.classList.add("hidden");
             notesHeading.textContent = "Notes:";
-            taskContainer.appendChild(notesHeading);
+            notesWrapper.appendChild(notesHeading);
 
             const notes = document.createElement("div");
             notes.classList.add("notes");
             notes.classList.add("hidden");
             notes.textContent = task.notes;
-            taskContainer.appendChild(notes);
+            notesWrapper.appendChild(notes);
         }
 
 

@@ -36,7 +36,7 @@ body {
 .sidebar {
     display: flex;
     flex-direction: column;
-    width: 20vw;
+    width: 15vw;
     min-height: 90vh;
     background: gray;
 }
@@ -48,7 +48,7 @@ body {
     justify-content: flex-start;
     background: lightgreen;
     min-height: 90vh;
-    width: 80vw;
+    width: 85vw;
 }
 
 .taskList-container {
@@ -60,7 +60,7 @@ body {
 
 .task-container {
     display: flex;
-    width: 75vw;
+    width: 95%;
     height: 5vh;
     justify-content: space-around;
     align-items: center;
@@ -72,6 +72,10 @@ body {
     display: flex;
     justify-content: center;
     flex: 1;
+}
+
+.task-container.expand {
+    min-height: 10vh;
 }
 
 .delete-button {
@@ -92,6 +96,12 @@ body {
     display: flex;
     justify-content: space-evenly;
     min-width: 10%;
+}
+
+.task-container.expand > .task-options-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .expand-button {
