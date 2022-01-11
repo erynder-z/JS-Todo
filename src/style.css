@@ -79,6 +79,10 @@ body {
     font-size: 20px;
 }
 
+.expand-button {
+    text-align: center;
+}
+
 .complete>div {
     text-decoration: line-through;
 }

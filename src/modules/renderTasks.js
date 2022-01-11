@@ -41,15 +41,18 @@ const renderTasks = () => {
         taskTitle.textContent = task.title;
         taskContainer.appendChild(taskTitle);
 
-        const taskDescriptionHeading = document.createElement("div");
-        taskDescriptionHeading.classList.add("task-description-heading");
-        taskDescriptionHeading.textContent = "Description:";
-        taskContainer.appendChild(taskDescriptionHeading);
+        if (task.description) {
+            const taskDescriptionHeading = document.createElement("div");
+            taskDescriptionHeading.classList.add("task-description-heading");
+            taskDescriptionHeading.textContent = "Description:";
+            taskContainer.appendChild(taskDescriptionHeading);
 
-        const taskDescription = document.createElement("div");
-        taskDescription.classList.add("task-description");
-        taskDescription.textContent = task.description;
-        taskContainer.appendChild(taskDescription);
+            const taskDescription = document.createElement("div");
+            taskDescription.classList.add("task-description");
+            taskDescription.textContent = task.description;
+            taskContainer.appendChild(taskDescription);
+        }
+
 
         const dueDateHeading = document.createElement("div");
         dueDateHeading.classList.add("dueDateHeading");
@@ -71,15 +74,23 @@ const renderTasks = () => {
         priority.textContent = task.priority;
         taskContainer.appendChild(priority);
 
-        const notesHeading = document.createElement("div");
-        notesHeading.classList.add("notes-heading");
-        notesHeading.textContent = "Notes:";
-        taskContainer.appendChild(notesHeading);
+        if (task.notes) {
+            const notesHeading = document.createElement("div");
+            notesHeading.classList.add("notes-heading");
+            notesHeading.textContent = "Notes:";
+            taskContainer.appendChild(notesHeading);
 
-        const notes = document.createElement("div");
-        notes.classList.add("notes");
-        notes.textContent = task.notes;
-        taskContainer.appendChild(notes);
+            const notes = document.createElement("div");
+            notes.classList.add("notes");
+            notes.textContent = task.notes;
+            taskContainer.appendChild(notes);
+        }
+
+
+        const expandTask = document.createElement("div");
+        expandTask.classList.add("expand-button");
+        expandTask.textContent = "v";
+        taskContainer.appendChild(expandTask);
 
         const marktCompleteBtn = document.createElement("button");
         marktCompleteBtn.classList.add("mark-complete-button");
