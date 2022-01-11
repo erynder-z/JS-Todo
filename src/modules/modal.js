@@ -6,9 +6,9 @@ import {
     modifyTask
 } from "./tasks";
 
-const createNewTaskModal = () => {
+const today = format(new Date(),"yyyy-MM-dd");
 
-    const today = format(new Date(),"yyyy-MM-dd");
+const createNewTaskModal = () => {
 
     const modalDiv = document.getElementById("modalContent");
 
@@ -98,9 +98,13 @@ const createNewTaskModal = () => {
     addBtn.classList.add("add-button");
     addBtn.innerText = "save task";
     addBtn.addEventListener("click", () => {
-        createTask();
-        toggleNewTaskModal(categoryInput, titleInput, descriptionInput, dueDateInput, priorityInput, notesInput);
-        showAllTasks();
+        if ((!titleInput.value)) {
+            alert("enter a title!");
+        } else {
+            createTask();
+            toggleNewTaskModal(categoryInput, titleInput, descriptionInput, dueDateInput, priorityInput, notesInput);
+            showAllTasks();
+        }
     });
 
     modal.appendChild(closeBtn);
@@ -131,11 +135,11 @@ const createNewTaskModal = () => {
 const toggleNewTaskModal = (categoryInput, titleInput, descriptionInput, dueDateInput, priorityInput, notesInput) => {
     const getModal = document.getElementById("inputModal");
     getModal.classList.toggle("hidden");
-    if (categoryInput) {categoryInput.value = ""};
+    if (categoryInput) {categoryInput.value = "uncategorized"};
     if (titleInput) {titleInput.value = ""};
     if (descriptionInput) {descriptionInput.value = ""};
     if (dueDateInput) {dueDateInput.value = today};
-    if (priorityInput) {priorityInput.value = ""};
+    if (priorityInput) {priorityInput.value = "high"};
     if (notesInput) {notesInput.value = ""};
 }
 
