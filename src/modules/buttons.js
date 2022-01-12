@@ -34,7 +34,7 @@ const activateButtons = () => {
     const activateEditButtons = () => {
         document.querySelectorAll(".edit-button").forEach(button => {
             button.addEventListener("click", function () {
-                retrieveTaskDetails(button.parentNode.id);
+                retrieveTaskDetails(button.parentNode.parentNode.id);
             });
         });
     }

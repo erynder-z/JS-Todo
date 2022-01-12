@@ -89,11 +89,12 @@ const renderTasks = () => {
         priority.textContent = task.priority;
         priorityWrapper.appendChild(priority);
 
-        const notesWrapper = document.createElement("div");
-        notesWrapper.classList.add("notes-wrapper");
-        taskContainer.appendChild(notesWrapper);
-
         if (task.notes) {
+
+            const notesWrapper = document.createElement("div");
+            notesWrapper.classList.add("notes-wrapper");
+            taskContainer.appendChild(notesWrapper);
+
             const notesHeading = document.createElement("div");
             notesHeading.classList.add("notes-heading");
             notesHeading.classList.add("hidden");
