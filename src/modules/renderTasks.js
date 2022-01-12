@@ -49,13 +49,11 @@ const renderTasks = () => {
 
             const taskDescriptionHeading = document.createElement("div");
             taskDescriptionHeading.classList.add("task-description-heading");
-            taskDescriptionHeading.classList.add("hidden");
             taskDescriptionHeading.textContent = "Description:";
             descriptionWrapper.appendChild(taskDescriptionHeading);
 
             const taskDescription = document.createElement("div");
             taskDescription.classList.add("task-description");
-            taskDescription.classList.add("hidden");
             taskDescription.textContent = task.description;
             descriptionWrapper.appendChild(taskDescription);
         }
@@ -81,13 +79,11 @@ const renderTasks = () => {
 
         const priorityHeading = document.createElement("div");
         priorityHeading.classList.add("priority-heading");
-        priorityHeading.classList.add("hidden");
         priorityHeading.textContent = "Priority:";
         priorityWrapper.appendChild(priorityHeading);
 
         const priority = document.createElement("div");
         priority.classList.add("priority");
-        priority.classList.add("hidden");
         priority.textContent = task.priority;
         priorityWrapper.appendChild(priority);
 
@@ -100,13 +96,11 @@ const renderTasks = () => {
 
             const notesHeading = document.createElement("div");
             notesHeading.classList.add("notes-heading");
-            notesHeading.classList.add("hidden");
             notesHeading.textContent = "Notes:";
             notesWrapper.appendChild(notesHeading);
 
             const notes = document.createElement("div");
             notes.classList.add("notes");
-            notes.classList.add("hidden");
             notes.textContent = task.notes;
             notesWrapper.appendChild(notes);
         }

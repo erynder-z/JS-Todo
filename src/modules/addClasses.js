@@ -4,7 +4,6 @@ const addClassComplete = (objectID) => {
     document.getElementById(objectID).classList.toggle("complete");
 }
 
-
 const toggleDetails = (objectID) => {
     const parentNode = document.getElementById(objectID);
 
@@ -13,32 +12,18 @@ const toggleDetails = (objectID) => {
     const childCategory = parentNode.getElementsByClassName("task-category");
     childCategory[0].classList.toggle("hidden");
 
-    const childDescriptionHeading = parentNode.getElementsByClassName("task-description-heading");
-    if (childDescriptionHeading[0]) {
-        childDescriptionHeading[0].classList.toggle("hidden");
-    }
-
-    const childDescription = parentNode.getElementsByClassName("task-description");
+    const childDescription = parentNode.getElementsByClassName("description-wrapper");
     if (childDescription[0]) {
         childDescription[0].classList.toggle("hidden");
     }
 
-    const childPriorityHeading = parentNode.getElementsByClassName("priority-heading");
-    childPriorityHeading[0].classList.toggle("hidden");
-
-    const childPriority = parentNode.getElementsByClassName("priority");
+    const childPriority = parentNode.getElementsByClassName("priority-wrapper");
     childPriority[0].classList.toggle("hidden");
 
-    const childNotesHeading = parentNode.getElementsByClassName("notes-heading");
-    if (childNotesHeading[0]) {
-        childNotesHeading[0].classList.toggle("hidden");
-    }
-    
-    const childNotes = parentNode.getElementsByClassName("notes");
+    const childNotes = parentNode.getElementsByClassName("notes-wrapper");
     if (childNotes[0]) {
         childNotes[0].classList.toggle("hidden");
     }
-    
 }
 
 
