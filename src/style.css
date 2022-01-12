@@ -379,7 +379,8 @@ body {
 
       .modal {
         width: 75vw;
-        left: 12.5%;
+        top: 12.5%;
+        left: 12.5%;  
     }
  
 }
