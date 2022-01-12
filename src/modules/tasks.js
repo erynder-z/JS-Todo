@@ -67,7 +67,7 @@ const createTask = () => {
     const priority = document.getElementById("priorityInput");
     const notes = document.getElementById("notesInput");
 
-    let newTask = taskFactory(category.value, title.value, description.value, dueDate.value, priority.value, notes.value, "offen");
+    let newTask = taskFactory(category.value, title.value, description.value, dueDate.value, priority.value, notes.value, "open");
     tasks.push(newTask);
     console.log(tasks);
 }
