@@ -10,7 +10,7 @@ const activateButtons = () => {
     const activateDeleteButtons = () => {
         document.querySelectorAll(".delete-button").forEach(button => {
             button.addEventListener("click", function () {
-                deleteTask(button.parentNode.id);
+                deleteTask(button.parentNode.parentNode.id);
             });
         });
     }
@@ -26,7 +26,7 @@ const activateButtons = () => {
     const activateMarkCompleteButtons = () => {
         document.querySelectorAll(".mark-complete-button").forEach(button => {
             button.addEventListener("click", function () {
-                markTaskComplete(button.parentNode.id);
+                markTaskComplete(button.parentNode.parentNode.id);
             });
         });
     }
