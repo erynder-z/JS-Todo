@@ -107,6 +107,26 @@ body {
     font-size: 20px;
 }
 
+.priority {
+    min-width: 100%;
+    text-align: center;
+}
+
+.high-priority {
+    background: rgb(179, 17, 17);
+    color: whitesmoke;
+}
+
+.medium-priority {
+    background: rgb(39, 118, 207);
+    color: whitesmoke;
+}
+
+.low-priority {
+    background: rgb(23, 161, 23);
+    color: whitesmoke;
+}
+
 .task-options-wrapper {
     display: flex;
     justify-content: right;

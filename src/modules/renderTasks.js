@@ -85,6 +85,13 @@ const renderTasks = () => {
         const priority = document.createElement("div");
         priority.classList.add("priority");
         priority.textContent = task.priority;
+        if (task.priority === "high") {
+            priority.classList.add("high-priority");
+        } else if (task.priority === "medium") {
+            priority.classList.add("medium-priority")
+        } else {
+            priority.classList.add("low-priority");
+        }
         priorityWrapper.appendChild(priority);
 
         if (task.notes) {
