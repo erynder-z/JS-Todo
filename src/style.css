@@ -14,7 +14,8 @@ body {
     justify-content: space-around;
     align-items: center;
     height: 7vh;
-    background: rgb(154, 154, 226);
+    background: #1A374D;
+    color: whitesmoke;
 }
 
 .logo {
@@ -38,20 +39,19 @@ body {
     flex-direction: column;
     width: 15vw;
     min-height: 90vh;
-    background: gray;
+    background: #406882;
+    color: whitesmoke;
 }
 
 .heading-container {
     height: fit-content;
-
 }
-
 
 .content-area {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background: lightgreen;
+    background: #6998AB;
     min-height: 90vh;
     width: 85vw;
 }
@@ -70,7 +70,7 @@ body {
     min-height: 5vh;
     justify-content: space-around;
     align-items: center;
-    background: antiquewhite;
+    background: #B1D0E0;
     border: solid 1px black;
     gap: 15px;
     padding: 0 0 0 20px;
@@ -198,7 +198,7 @@ body {
     width: 100vw;
     height: 3vh;
     z-index: 1;
-    background: salmon;
+    background: #8c98ad;
 }
 
 .float {
@@ -245,7 +245,7 @@ body {
     position: fixed;
     left: 45%;
     top: 25%;
-    background: seashell;
+    background: #d0e4ee;
     z-index: 1;
     border: solid 2px black;
     padding: 20px 0;
