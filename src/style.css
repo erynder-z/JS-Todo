@@ -73,7 +73,7 @@ body {
     background: antiquewhite;
     border: solid 1px black;
     gap: 15px;
-    padding: 0 20px;
+    padding: 0 0 0 20px;
 }
 
 .task-container> * {
@@ -92,12 +92,15 @@ body {
 
 .delete-button {
     display: flex;
-    color: crimson;
     align-items: center;
 }
 
 .task-category {
     text-align: center;
+}
+
+.task-title-heading, .task-description-heading, .dueDateHeading, .priority-heading, .notes-heading {
+    text-decoration: underline;
 }
 
 .task-title, .task-description, .dueDate, .priority, .notes {
@@ -106,19 +109,21 @@ body {
 
 .task-options-wrapper {
     display: flex;
-    justify-content: flex-end;
-    min-width: 10%;
+    justify-content: right;
+    padding: 0 20px 0 20px;
+    max-width: fit-content;
+    height: 100%;
+    background: rgb(212, 141, 141);
 }
-
 
 .task-container.expand > * {
     height: 100%;
-    align-items:baseline;
 }
 
 .task-container.expand > .task-category {
     align-items: center;
 }
+
 .task-container.expand > .title-wrapper,
 .task-container.expand > .description-wrapper,
 .task-container.expand > .dueDate-wrapper,
@@ -126,22 +131,40 @@ body {
 .task-container.expand > .notes-wrapper {
     flex-direction: column;
     align-items: center;
+    padding: 10px;
+}
+
+.notes-wrapper {
+    min-width: 20vw;
+}
+
+.notes {
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .task-container.expand > .task-options-wrapper {
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .expand-button {
-    justify-content: flex-end;
+    justify-content: center;    
+    height: 100%;
+    max-width: 50px;
 }
 
 .task-container.expand > .expand-button {
     align-items: center;
 }
 
-.complete>div {
+.task-options-wrapper > * {
+    /* height: 100%; */
+    max-width: 50px;
+}
+
+.complete>div:not(.task-options-wrapper, .expand-button) {
     text-decoration: line-through;
 }
 
@@ -284,25 +307,29 @@ body {
     
 
     .task-container.expand {
-        padding: 1rem 0;
        justify-content: center;
   
     }
 
     .task-container.expand > * {
         height: fit-content;
-  
     }
 
     .task-container.expand > .task-options-wrapper {
         flex-direction: row;
     }
 
+    .expand-button {
+        height: auto;
+    }
+
     .task-options-wrapper {
         display: flex;
         width: 100%;
-        min-height: 15%;
+        max-width: unset;
+        height: initial;
         justify-content: space-evenly;
+        padding: 0;
     }
 
     .slide {

@@ -15,7 +15,8 @@ const tasks = [{
         dueDate: "22/01/10",
         priority: "high",
         notes: "fun stuff!!",
-        status: "open"
+        status: "open",
+        notes: "longlong long long longlonglong longlong long long long"
     },
     {
         category: "hobby",

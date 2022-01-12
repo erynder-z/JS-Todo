@@ -108,26 +108,26 @@ const renderTasks = () => {
 
         const expandTask = document.createElement("div");
         expandTask.classList.add("expand-button");
-        expandTask.textContent = "v";
+        expandTask.textContent = "▼";
         taskContainer.appendChild(expandTask);
 
         const wrapper = document.createElement("div");
         wrapper.classList.add("task-options-wrapper");
         taskContainer.appendChild(wrapper);
 
-        const marktCompleteBtn = document.createElement("button");
+        const marktCompleteBtn = document.createElement("div");
         marktCompleteBtn.classList.add("mark-complete-button");
         marktCompleteBtn.textContent = "done";
         wrapper.appendChild(marktCompleteBtn);
 
-        const editBtn = document.createElement("button");
+        const editBtn = document.createElement("div");
         editBtn.classList.add("edit-button");
         editBtn.textContent = "edit";
         wrapper.appendChild(editBtn);
 
         const deleteBtn = document.createElement("div");
         deleteBtn.classList.add("delete-button");
-        deleteBtn.textContent = "X";
+        deleteBtn.textContent = "remove";
         wrapper.appendChild(deleteBtn);
     });
 
