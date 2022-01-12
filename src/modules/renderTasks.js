@@ -44,6 +44,7 @@ const renderTasks = () => {
         if (task.description) {
             const descriptionWrapper = document.createElement("div");
             descriptionWrapper.classList.add("description-wrapper");
+            descriptionWrapper.classList.add("hidden");
             taskContainer.appendChild(descriptionWrapper);
 
             const taskDescriptionHeading = document.createElement("div");
@@ -75,6 +76,7 @@ const renderTasks = () => {
 
         const priorityWrapper = document.createElement("div");
         priorityWrapper.classList.add("priority-wrapper");
+        priorityWrapper.classList.add("hidden");
         taskContainer.appendChild(priorityWrapper);
 
         const priorityHeading = document.createElement("div");
@@ -93,6 +95,7 @@ const renderTasks = () => {
 
             const notesWrapper = document.createElement("div");
             notesWrapper.classList.add("notes-wrapper");
+            notesWrapper.classList.add("hidden");
             taskContainer.appendChild(notesWrapper);
 
             const notesHeading = document.createElement("div");

@@ -61,7 +61,7 @@ body {
 .task-container {
     display: flex;
     width: 95%;
-    height: 5vh;
+    min-height: 5vh;
     justify-content: space-around;
     align-items: center;
     background: antiquewhite;
@@ -71,7 +71,7 @@ body {
 .task-container> * {
     display: flex;
     justify-content: center;
-    flex: 1;
+    flex: 1 1 0;
 }
 
 .task-container.expand {
@@ -98,6 +98,11 @@ body {
     min-width: 10%;
 }
 
+.task-container.expand > .title-wrapper,
+.task-container.expand > .description-wrapper,
+.task-container.expand > .dueDate-wrapper,
+.task-container.expand > .priority-wrapper,
+.task-container.expand > .notes-wrapper,
 .task-container.expand > .task-options-wrapper {
     flex-direction: column;
     justify-content: center;
@@ -241,6 +246,15 @@ body {
         min-height: 15vh;
         padding-top: 15px;
         padding: 0;
+    }
+
+    .task-container> * {
+        flex: 0 0 auto;
+    }
+    
+
+    .task-container.expand {
+        min-height: fit-content;
     }
 
     .task-options-wrapper {
