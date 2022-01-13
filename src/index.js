@@ -1,6 +1,6 @@
 import "./normalize.css";
 import "./style.css";
-import toggleSidebar from "./modules/sidebar";
+
 import floatMenu from "./modules/float";
 import {
     tasks,
@@ -9,13 +9,15 @@ import {
     createNewTaskModal,
 } from "./modules/modal";
 import showAllTasks from "./modules/showAllTasks";
+import { activateSidebar } from "./modules/buttons";
+import { toggleSidebarNav } from "./modules/sidebar";
 
+toggleSidebarNav();
+activateSidebar();
 
-
-toggleSidebar();
 floatMenu();
 createNewTaskModal();
 
-showAllTasks();
+/* showAllTasks(); */
 
 export default tasks

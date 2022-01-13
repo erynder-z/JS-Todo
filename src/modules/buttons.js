@@ -1,9 +1,25 @@
 import { toggleDetails } from "./addClasses";
+import showAllTasks from "./showAllTasks";
+import { toggleSidebar } from "./sidebar";
+
 import {
     deleteTask,
     markTaskComplete,
     retrieveTaskDetails,
 } from "./tasks";
+
+const activateSidebar = () => {
+
+    const allTasks = (() => {
+       const button = document.getElementById("all");
+        button.addEventListener("click", function () {
+            showAllTasks();
+            toggleSidebar();
+        });
+    })();
+
+ 
+}
 
 const activateButtons = () => {
 
@@ -44,4 +60,7 @@ const activateButtons = () => {
     activateMarkCompleteButtons();
     activateEditButtons();
 }
-export default activateButtons
+export {
+    activateSidebar,
+    activateButtons
+}
