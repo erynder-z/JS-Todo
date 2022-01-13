@@ -1,6 +1,6 @@
 import { toggleDetails } from "./addClasses";
 import showAllTasks from "./showAllTasks";
-import { showCategoryWork, showCategoryHobby, showCategoryHealth, showCategoryChore } from "./showCategory";
+import { showCategoryWork, showCategoryHobby, showCategoryHealth, showCategoryChore } from "./filteredTasks";
 import { toggleSidebar } from "./sidebar";
 
 import {
