@@ -9,7 +9,7 @@ import renderTasks from "./renderTasks";
 /* const tasks = []; */
 
 const tasks = [{
-        category: "uncategorized",
+        category: "work",
         title: "Code",
         description: "Code a Todo-App",
         dueDate: "22/01/10",

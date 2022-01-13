@@ -1,5 +1,6 @@
 import { toggleDetails } from "./addClasses";
 import showAllTasks from "./showAllTasks";
+import { showCategoryWork } from "./showCategory";
 import { toggleSidebar } from "./sidebar";
 
 import {
@@ -18,7 +19,14 @@ const activateSidebar = () => {
         });
     })();
 
- 
+    const work = (() => {
+        const button = document.getElementById("work");
+        button.addEventListener("click", function () {
+            showCategoryWork();
+            toggleSidebar();
+        })
+    })();
+
 }
 
 const activateButtons = () => {

@@ -4,7 +4,7 @@ import {
     tasks
 } from "./tasks";
 
-const renderTasks = () => {
+const renderTasks = (tasks) => {
 
 
     const contentDiv = document.getElementById("mainContent");
