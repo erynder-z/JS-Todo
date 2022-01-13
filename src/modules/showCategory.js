@@ -26,6 +26,25 @@ const showCategoryWork = () => {
     renderTasks(sortedTasks);
 }
 
+const showCategoryHobby = () => {
+    clearMainContent();
+
+    const headingContainer = document.createElement("div");
+    headingContainer.id = "headingContainer"
+    headingContainer.classList.add("heading-container");
+    contentDiv.appendChild(headingContainer);
+
+    const heading = document.createElement("h1");
+    heading.classList.add("heading");
+    heading.textContent = "Category: Hobby";
+    headingContainer.appendChild(heading);
+
+    const sortedTasks = tasks.filter(task => task.category === "hobby");
+
+    renderTasks(sortedTasks);
+}
+
 export {
-    showCategoryWork
+    showCategoryWork,
+    showCategoryHobby
 }
