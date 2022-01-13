@@ -12,7 +12,7 @@ const tasks = [{
         category: "work",
         title: "Code",
         description: "Code a Todo-App",
-        dueDate: "22/01/10",
+        dueDate: "2022-01-13",
         priority: "high",
         notes: "fun stuff!!",
         status: "open",
@@ -22,7 +22,7 @@ const tasks = [{
         category: "hobby",
         title: "Work out",
         description: "Back training",
-        dueDate: "22/01/31",
+        dueDate: "2022-02-01",
         priority: "high",
         notes: "make it happen!",
         status: "open"

@@ -1,6 +1,6 @@
 import { toggleDetails } from "./addClasses";
 import showAllTasks from "./showAllTasks";
-import { showCategoryWork, showCategoryHobby, showCategoryHealth, showCategoryChore } from "./filteredTasks";
+import { showCategoryWork, showCategoryHobby, showCategoryHealth, showCategoryChore, showDueToday } from "./filteredTasks";
 import { toggleSidebar } from "./sidebar";
 
 import {
@@ -10,6 +10,14 @@ import {
 } from "./tasks";
 
 const activateSidebar = () => {
+
+    const dueToday = (() => {
+        const button = document.getElementById("today");
+         button.addEventListener("click", function () {
+             showDueToday();
+             toggleSidebar();
+         });
+     })();
 
     const allTasks = (() => {
        const button = document.getElementById("all");
