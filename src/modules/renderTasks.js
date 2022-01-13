@@ -1,5 +1,6 @@
-
-import { activateButtons } from "./buttons";
+import {
+    activateButtons
+} from "./buttons";
 import {
     tasks
 } from "./tasks";

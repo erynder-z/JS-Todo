@@ -1,8 +1,12 @@
-import { addClassComplete } from "./addClasses";
+import {
+    addClassComplete
+} from "./addClasses";
 import {
     clearContentArea,
 } from "./clearContent";
-import { createEditTaskModal } from "./modal";
+import {
+    createEditTaskModal
+} from "./modal";
 
 import renderTasks from "./renderTasks";
 
@@ -42,7 +46,7 @@ const createTask = () => {
             status,
 
             toggleStatus: function () {
-                this.status = "done";  
+                this.status = "done";
             },
 
             spliceTask: function (objectID) {

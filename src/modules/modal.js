@@ -1,11 +1,13 @@
-import { format } from 'date-fns';
+import {
+    format
+} from 'date-fns';
 import showAllTasks from "./showAllTasks";
 import {
     tasks,
     createTask
 } from "./tasks";
 
-const today = format(new Date(),"yyyy-MM-dd");
+const today = format(new Date(), "yyyy-MM-dd");
 
 const createNewTaskModal = () => {
 
@@ -73,19 +75,19 @@ const createNewTaskModal = () => {
     priorityInput.id = "priorityInput";
     const highPriority = document.createElement("option");
     highPriority.value = "high";
-    highPriority.textContent = "high"; 
+    highPriority.textContent = "high";
     const mediumPriority = document.createElement("option");
     mediumPriority.value = "medium";
-    mediumPriority.textContent = "medium"; 
+    mediumPriority.textContent = "medium";
     const lowPriority = document.createElement("option");
     lowPriority.value = "low";
-    lowPriority.textContent = "low"; 
+    lowPriority.textContent = "low";
 
     const notesInput = document.createElement("textarea");
     notesInput.id = "notesInput";
     notesInput.placeholder = "notes";
     notesInput.rows = "4";
-    
+
 
     const addBtn = document.createElement("button");
     addBtn.id = "addBtn";
@@ -129,12 +131,24 @@ const createNewTaskModal = () => {
 const toggleNewTaskModal = (categoryInput, titleInput, descriptionInput, dueDateInput, priorityInput, notesInput) => {
     const getModal = document.getElementById("inputModal");
     getModal.classList.toggle("hidden");
-    if (categoryInput) {categoryInput.value = "uncategorized"};
-    if (titleInput) {titleInput.value = null};
-    if (descriptionInput) {descriptionInput.value = null};
-    if (dueDateInput) {dueDateInput.value = today};
-    if (priorityInput) {priorityInput.value = "high"};
-    if (notesInput) {notesInput.value = null};
+    if (categoryInput) {
+        categoryInput.value = "uncategorized"
+    };
+    if (titleInput) {
+        titleInput.value = null
+    };
+    if (descriptionInput) {
+        descriptionInput.value = null
+    };
+    if (dueDateInput) {
+        dueDateInput.value = today
+    };
+    if (priorityInput) {
+        priorityInput.value = "high"
+    };
+    if (notesInput) {
+        notesInput.value = null
+    };
 }
 
 
@@ -179,7 +193,7 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
     chore.value = "chore";
     chore.textContent = "chore";
 
-    if(currentCategory === "work") {
+    if (currentCategory === "work") {
         work.selected = true;
     } else if (currentCategory === "hobby") {
         hobby.selected = true;
@@ -216,21 +230,21 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
     /* priorityInput.value = currentPriority; */
     const highPriority = document.createElement("option");
     highPriority.value = "high";
-    highPriority.textContent = "high"; 
+    highPriority.textContent = "high";
     const mediumPriority = document.createElement("option");
     mediumPriority.value = "medium";
-    mediumPriority.textContent = "medium"; 
+    mediumPriority.textContent = "medium";
     const lowPriority = document.createElement("option");
     lowPriority.value = "low";
-    lowPriority.textContent = "low"; 
-    
-    if(currentPriority === "high") {
+    lowPriority.textContent = "low";
+
+    if (currentPriority === "high") {
         highPriority.selected = true;
     } else if (currentPriority === "medium") {
         mediumPriority.selected = true;
     } else {
         lowPriority.selected = true;
-    } 
+    }
 
 
     const notesInput = document.createElement("textarea");

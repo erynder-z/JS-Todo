@@ -1,7 +1,18 @@
-import { toggleDetails } from "./addClasses";
+import {
+    toggleDetails
+} from "./addClasses";
 import showAllTasks from "./showAllTasks";
-import { showCategoryWork, showCategoryHobby, showCategoryHealth, showCategoryChore, showDueToday, showDueWeek } from "./filteredTasks";
-import { toggleSidebar } from "./sidebar";
+import {
+    showCategoryWork,
+    showCategoryHobby,
+    showCategoryHealth,
+    showCategoryChore,
+    showDueToday,
+    showDueWeek
+} from "./filteredTasks";
+import {
+    toggleSidebar
+} from "./sidebar";
 
 import {
     deleteTask,
@@ -13,22 +24,22 @@ const activateSidebar = () => {
 
     const dueToday = (() => {
         const button = document.getElementById("today");
-         button.addEventListener("click", function () {
-             showDueToday();
-             toggleSidebar();
-         });
-     })();
+        button.addEventListener("click", function () {
+            showDueToday();
+            toggleSidebar();
+        });
+    })();
 
-     const dueOneWeek = (() => {
+    const dueOneWeek = (() => {
         const button = document.getElementById("week");
-         button.addEventListener("click", function () {
-             showDueWeek();
-             toggleSidebar();
-         });
-     })();
+        button.addEventListener("click", function () {
+            showDueWeek();
+            toggleSidebar();
+        });
+    })();
 
     const allTasks = (() => {
-       const button = document.getElementById("all");
+        const button = document.getElementById("all");
         button.addEventListener("click", function () {
             showAllTasks();
             toggleSidebar();

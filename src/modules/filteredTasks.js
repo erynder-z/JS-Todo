@@ -1,5 +1,8 @@
-
-import { format, add, isWithinInterval } from 'date-fns';
+import {
+    format,
+    add,
+    isWithinInterval
+} from 'date-fns';
 import {
     clearMainContent
 } from "./clearContent";
@@ -84,7 +87,7 @@ const showCategoryChore = () => {
 
 const showDueToday = () => {
 
-    const today = format(new Date(),"yyyy-MM-dd");
+    const today = format(new Date(), "yyyy-MM-dd");
     clearMainContent();
 
     const headingContainer = document.createElement("div");
@@ -116,19 +119,23 @@ const showDueWeek = () => {
     heading.textContent = "Due within one week:";
     headingContainer.appendChild(heading);
 
-    const today = format(new Date(),"yyyy-MM-dd");
-    const nextWeek = add(new Date(today), { days: 7});
+    const today = format(new Date(), "yyyy-MM-dd");
+    const nextWeek = add(new Date(today), {
+        days: 7
+    });
 
     const sortedTasks = tasks.filter(task => {
         let check = isWithinInterval(
-            new Date(task.dueDate),
-            { start: new Date(today), end: new Date(nextWeek) }
-          ); 
-          if (check) {
-              return task;
-          }
+            new Date(task.dueDate), {
+                start: new Date(today),
+                end: new Date(nextWeek)
+            }
+        );
+        if (check) {
+            return task;
+        }
     });
-    
+
     renderTasks(sortedTasks);
 }
 
