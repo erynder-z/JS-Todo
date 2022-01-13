@@ -36,7 +36,7 @@ const activateSidebar = () => {
     })();
 
     const health = (() => {
-        const button = document.getElementById("hobby");
+        const button = document.getElementById("health");
         button.addEventListener("click", function () {
             showCategoryHealth();
             toggleSidebar();
@@ -44,7 +44,7 @@ const activateSidebar = () => {
     })();
 
     const chore = (() => {
-        const button = document.getElementById("hobby");
+        const button = document.getElementById("chore");
         button.addEventListener("click", function () {
             showCategoryChore();
             toggleSidebar();
