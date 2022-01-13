@@ -62,7 +62,27 @@ const showCategoryHealth = () => {
     renderTasks(sortedTasks);
 }
 
+const showCategoryChore = () => {
+    clearMainContent();
+
+    const headingContainer = document.createElement("div");
+    headingContainer.id = "headingContainer"
+    headingContainer.classList.add("heading-container");
+    contentDiv.appendChild(headingContainer);
+
+    const heading = document.createElement("h1");
+    heading.classList.add("heading");
+    heading.textContent = "Category: Chore";
+    headingContainer.appendChild(heading);
+
+    const sortedTasks = tasks.filter(task => task.category === "chore");
+
+    renderTasks(sortedTasks);
+}
+
 export {
     showCategoryWork,
-    showCategoryHobby
+    showCategoryHobby,
+    showCategoryHealth,
+    showCategoryChore
 }

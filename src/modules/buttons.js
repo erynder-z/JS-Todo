@@ -1,6 +1,6 @@
 import { toggleDetails } from "./addClasses";
 import showAllTasks from "./showAllTasks";
-import { showCategoryWork, showCategoryHobby, showCategoryHealth } from "./showCategory";
+import { showCategoryWork, showCategoryHobby, showCategoryHealth, showCategoryChore } from "./showCategory";
 import { toggleSidebar } from "./sidebar";
 
 import {
@@ -39,6 +39,14 @@ const activateSidebar = () => {
         const button = document.getElementById("hobby");
         button.addEventListener("click", function () {
             showCategoryHealth();
+            toggleSidebar();
+        })
+    })();
+
+    const chore = (() => {
+        const button = document.getElementById("hobby");
+        button.addEventListener("click", function () {
+            showCategoryChore();
             toggleSidebar();
         })
     })();
