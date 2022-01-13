@@ -1,4 +1,4 @@
-const {format} = require('date-fns');
+import { format } from 'date-fns';
 import showAllTasks from "./showAllTasks";
 import {
     tasks,

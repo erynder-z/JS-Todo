@@ -1,6 +1,6 @@
 import { toggleDetails } from "./addClasses";
 import showAllTasks from "./showAllTasks";
-import { showCategoryWork, showCategoryHobby, showCategoryHealth, showCategoryChore, showDueToday } from "./filteredTasks";
+import { showCategoryWork, showCategoryHobby, showCategoryHealth, showCategoryChore, showDueToday, showDueWeek } from "./filteredTasks";
 import { toggleSidebar } from "./sidebar";
 
 import {
@@ -15,6 +15,14 @@ const activateSidebar = () => {
         const button = document.getElementById("today");
          button.addEventListener("click", function () {
              showDueToday();
+             toggleSidebar();
+         });
+     })();
+
+     const dueOneWeek = (() => {
+        const button = document.getElementById("week");
+         button.addEventListener("click", function () {
+             showDueWeek();
              toggleSidebar();
          });
      })();
