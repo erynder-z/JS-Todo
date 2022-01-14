@@ -73,13 +73,21 @@ const createTask = () => {
 
     let newTask = taskFactory(category.value, title.value, description.value, dueDate.value, priority.value, notes.value, "open");
     tasks.push(newTask);
+    
+
+    let newTaskID = tasks.indexOf(newTask);
+    newTask.id = newTaskID;
+
+
     console.log(tasks);
 }
 
 const deleteTask = (objectID) => {
     tasks[objectID].spliceTask(objectID);
+    //update object ID to match current index
+    updateObjectID();
     clearContentArea();
-    renderTasks();
+    renderTasks(tasks);
     return tasks;
 }
 
@@ -98,6 +106,12 @@ const retrieveTaskDetails = (objectID) => {
     let currentPriority = obj.priority;
     let currentNotes = obj.notes;
     createEditTaskModal(objectID, currentCategory, currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes);
+}
+
+const updateObjectID = () => {
+tasks.forEach(task => {
+    task.id = tasks.indexOf(task);
+});
 }
 
 export {
