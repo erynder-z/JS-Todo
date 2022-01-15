@@ -19,7 +19,7 @@ import {
     markTaskComplete,
     retrieveTaskDetails,
 } from "./tasks";
-import { createNewCategoryModal, toggleNewCatModal } from "./addCategory";
+import { createNewCategoryModal, toggleNewCatModal } from "./categories";
 
 const activateSidebar = () => {
 
