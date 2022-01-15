@@ -1,6 +1,7 @@
 import {
     format
 } from 'date-fns';
+import { categories } from './categories';
 import showAllTasks from "./showAllTasks";
 import {
     tasks,
@@ -32,7 +33,16 @@ const createNewTaskModal = () => {
     const categoryInput = document.createElement("select");
     categoryInput.name = "category";
     categoryInput.id = "categoryInput";
-    const uncategorized = document.createElement("option");
+
+    for(var i = 0; i < categories.length; i++) {
+        var opt = categories[i];
+        var el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        categoryInput.appendChild(el);
+    }
+
+/*     const uncategorized = document.createElement("option");
     uncategorized.value = "uncategorized";
     uncategorized.textContent = "uncategorized";
     const work = document.createElement("option");
@@ -46,7 +56,7 @@ const createNewTaskModal = () => {
     health.textContent = "health";
     const chore = document.createElement("option");
     chore.value = "chore";
-    chore.textContent = "chore";
+    chore.textContent = "chore"; */
 
     const heading = document.createElement("h1");
     heading.classList.add("modal-heading");
@@ -108,11 +118,11 @@ const createNewTaskModal = () => {
     wrapper.appendChild(heading);
     wrapper.appendChild(categoryLabel);
     wrapper.appendChild(categoryInput);
-    categoryInput.appendChild(uncategorized);
+  /*   categoryInput.appendChild(uncategorized);
     categoryInput.appendChild(work);
     categoryInput.appendChild(hobby);
     categoryInput.appendChild(health);
-    categoryInput.appendChild(chore);
+    categoryInput.appendChild(chore); */
     wrapper.appendChild(titleInput);
     wrapper.appendChild(descriptionInput);
     wrapper.appendChild(dueDateInput);
@@ -132,7 +142,7 @@ const toggleNewTaskModal = (categoryInput, titleInput, descriptionInput, dueDate
     const getModal = document.getElementById("inputModal");
     getModal.classList.toggle("hidden");
     if (categoryInput) {
-        categoryInput.value = "uncategorized"
+        categoryInput.value = categories[0]
     };
     if (titleInput) {
         titleInput.value = null
@@ -177,7 +187,16 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
     const categoryInput = document.createElement("select");
     categoryInput.name = "category";
     categoryInput.id = "categoryInput";
-    const uncategorized = document.createElement("option");
+
+    for(let i = 0; i < categories.length; i++) {
+        let opt = categories[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        categoryInput.appendChild(el);
+    }
+
+/*     const uncategorized = document.createElement("option");
     uncategorized.value = "uncategorized";
     uncategorized.textContent = "uncategorized";
     const work = document.createElement("option");
@@ -191,9 +210,20 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
     health.textContent = "health";
     const chore = document.createElement("option");
     chore.value = "chore";
-    chore.textContent = "chore";
+    chore.textContent = "chore"; */
 
-    if (currentCategory === "work") {
+    //set default selection to currentCategory
+    const setSelectedIndex = (selection, value) => {
+        for ( let i = 0; i < selection.options.length; i++ ) {
+            if ( selection.options[i].text == value ) {
+                selection.options[i].selected = true;
+                return;
+            }
+        }
+    }
+    setSelectedIndex(categoryInput, currentCategory);
+
+ /*    if (currentCategory === "work") {
         work.selected = true;
     } else if (currentCategory === "hobby") {
         hobby.selected = true;
@@ -203,7 +233,7 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
         chore.selected = true;
     } else {
         uncategorized.selected = true;
-    }
+    } */
 
 
     const titleInput = document.createElement("input");
@@ -272,11 +302,11 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
     wrapper.appendChild(heading);
     wrapper.appendChild(categoryLabel);
     wrapper.appendChild(categoryInput);
-    categoryInput.appendChild(uncategorized);
+/*     categoryInput.appendChild(uncategorized);
     categoryInput.appendChild(work);
     categoryInput.appendChild(hobby);
     categoryInput.appendChild(health);
-    categoryInput.appendChild(chore);
+    categoryInput.appendChild(chore); */
     wrapper.appendChild(titleInput);
     wrapper.appendChild(descriptionInput);
     wrapper.appendChild(dueDateInput);

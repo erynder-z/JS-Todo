@@ -1,4 +1,7 @@
 
+const categories = ["Uncategorized", "Work", "Hobby", "Health", "Chore", "Test"];
+
+
 
 const createNewCategoryModal = () => {
     const modalDiv = document.getElementById("modalContent");
@@ -52,4 +55,4 @@ const toggleNewCatModal = () => {
     getModal.remove();
 }
 
-export {createNewCategoryModal, toggleNewCatModal}
+export {categories, createNewCategoryModal, toggleNewCatModal}
