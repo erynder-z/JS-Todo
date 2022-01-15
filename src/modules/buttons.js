@@ -19,6 +19,7 @@ import {
     markTaskComplete,
     retrieveTaskDetails,
 } from "./tasks";
+import { createNewCategoryModal, toggleNewCatModal } from "./addCategory";
 
 const activateSidebar = () => {
 
@@ -74,6 +75,14 @@ const activateSidebar = () => {
         const button = document.getElementById("chore");
         button.addEventListener("click", function () {
             showCategoryChore();
+            toggleSidebar();
+        })
+    })();
+
+    const newCategory = (() => {
+        const button = document.getElementById("newCategory");
+        button.addEventListener("click", function () {
+            createNewCategoryModal();
             toggleSidebar();
         })
     })();
