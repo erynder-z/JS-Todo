@@ -23,4 +23,3 @@ createNewTaskModal();
 
 /* showAllTasks(); */
 
-export default tasks

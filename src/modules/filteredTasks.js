@@ -3,6 +3,8 @@ import {
     add,
     isWithinInterval
 } from 'date-fns';
+import { setActiveView } from './activeView';
+
 import {
     clearMainContent
 } from "./clearContent";
@@ -29,6 +31,7 @@ const showCategoryWork = () => {
     const sortedTasks = tasks.filter(task => task.category === "work");
 
     renderTasks(sortedTasks);
+    setActiveView("work");
 }
 
 const showCategoryHobby = () => {
@@ -47,6 +50,7 @@ const showCategoryHobby = () => {
     const sortedTasks = tasks.filter(task => task.category === "hobby");
 
     renderTasks(sortedTasks);
+    setActiveView("hobby");
 }
 
 const showCategoryHealth = () => {
@@ -65,6 +69,7 @@ const showCategoryHealth = () => {
     const sortedTasks = tasks.filter(task => task.category === "health");
 
     renderTasks(sortedTasks);
+    setActiveView("health");
 }
 
 const showCategoryChore = () => {
@@ -83,6 +88,7 @@ const showCategoryChore = () => {
     const sortedTasks = tasks.filter(task => task.category === "chore");
 
     renderTasks(sortedTasks);
+    setActiveView("chore");
 }
 
 const showDueToday = () => {
@@ -103,6 +109,7 @@ const showDueToday = () => {
     const sortedTasks = tasks.filter(task => task.dueDate === today);
 
     renderTasks(sortedTasks);
+    setActiveView("dueToday");
 }
 
 const showDueWeek = () => {
@@ -137,6 +144,7 @@ const showDueWeek = () => {
     });
 
     renderTasks(sortedTasks);
+    setActiveView("dueWeek");
 }
 
 

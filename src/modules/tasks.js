@@ -1,37 +1,22 @@
+
+import { ta } from "date-fns/locale";
+import { activeView } from "./activeView";
 import {
     addClassComplete
 } from "./addClasses";
 import {
     clearContentArea,
 } from "./clearContent";
+import { showCategoryWork, showCategoryChore, showCategoryHealth, showCategoryHobby, showDueToday, showDueWeek } from "./filteredTasks";
 import {
     createEditTaskModal
 } from "./modal";
 
 import renderTasks from "./renderTasks";
+import showAllTasks from "./showAllTasks";
 
-/* const tasks = []; */
+const tasks = [];
 
-const tasks = [{
-        category: "work",
-        title: "Code",
-        description: "Code a Todo-App",
-        dueDate: "2022-01-14",
-        priority: "high",
-        notes: "fun stuff!!",
-        status: "open",
-        notes: "longlong long long longlonglong longlong long long long"
-    },
-    {
-        category: "hobby",
-        title: "Work out",
-        description: "Back training",
-        dueDate: "2022-01-16",
-        priority: "high",
-        notes: "make it happen!",
-        status: "open"
-    },
-]
 
 const createTask = () => {
 
@@ -73,11 +58,8 @@ const createTask = () => {
 
     let newTask = taskFactory(category.value, title.value, description.value, dueDate.value, priority.value, notes.value, "open");
     tasks.push(newTask);
-    
-
     let newTaskID = tasks.indexOf(newTask);
     newTask.id = newTaskID;
-
 
     console.log(tasks);
 }
@@ -87,14 +69,18 @@ const deleteTask = (objectID) => {
     //update object ID to match current index
     updateObjectID();
     clearContentArea();
-    renderTasks(tasks);
-    return tasks;
+    return activeView === "work" ? showCategoryWork(tasks)
+        : activeView === "hobby" ? showCategoryHobby(tasks)
+        : activeView === "health" ? showCategoryHealth(tasks)
+        : activeView === "chore" ? showCategoryChore(tasks)
+        : activeView === "dueToday" ? showDueToday(tasks)
+        : activeView === "dueWeek" ? showDueWeek(tasks)
+        : showAllTasks(tasks);
 }
 
 const markTaskComplete = (objectID) => {
     tasks[objectID].toggleStatus(objectID);
     addClassComplete(objectID);
-    return tasks;
 }
 
 const retrieveTaskDetails = (objectID) => {
