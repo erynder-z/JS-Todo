@@ -14,6 +14,8 @@ const createNewTaskModal = () => {
 
     const modalDiv = document.getElementById("modalContent");
 
+    modalDiv.innerHTML = "";
+
     const modal = document.createElement("div");
     modal.id = "inputModal";
     modal.classList.add("modal");

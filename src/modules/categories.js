@@ -1,5 +1,6 @@
+import { createNewTaskModal } from "./modal";
 
-const categories = ["Uncategorized", "Work", "Hobby", "Health", "Chore", "Test"];
+const categories = ["Uncategorized", "Work", "Hobby", "Health", "Chore"];
 
 
 
@@ -36,7 +37,8 @@ const createNewCategoryModal = () => {
         if ((!catInput.value)) {
             alert("enter a title!");
         } else {
-            console.log("something");
+            categories.push(catInput.value);
+            console.log(categories);
             toggleNewCatModal();
         }
     });
@@ -53,6 +55,7 @@ const createNewCategoryModal = () => {
 const toggleNewCatModal = () => {
     const getModal = document.getElementById("newCategoryModal");
     getModal.remove();
+    createNewTaskModal();
 }
 
 export {categories, createNewCategoryModal, toggleNewCatModal}
