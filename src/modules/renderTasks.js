@@ -19,6 +19,7 @@ const renderTasks = (tasks) => {
             taskContainer.setAttribute("id", task.id);
             taskContainer.classList.add("task-container");
             taskListContainer.appendChild(taskContainer);
+            task.status === "done" ? taskContainer.classList.add("complete"): null;
 
             const taskCategory = document.createElement("div");
             taskCategory.classList.add("task-category");
