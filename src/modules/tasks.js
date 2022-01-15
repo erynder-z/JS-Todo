@@ -1,18 +1,23 @@
-
-import { ta } from "date-fns/locale";
-import { activeView } from "./activeView";
+import {
+    activeView
+} from "./activeView";
 import {
     addClassComplete
 } from "./addClasses";
 import {
     clearContentArea,
 } from "./clearContent";
-import { showCategoryWork, showCategoryChore, showCategoryHealth, showCategoryHobby, showDueToday, showDueWeek } from "./filteredTasks";
+import {
+    showCategoryWork,
+    showCategoryChore,
+    showCategoryHealth,
+    showCategoryHobby,
+    showDueToday,
+    showDueWeek
+} from "./filteredTasks";
 import {
     createEditTaskModal
 } from "./modal";
-
-import renderTasks from "./renderTasks";
 import showAllTasks from "./showAllTasks";
 
 const tasks = [];
@@ -69,13 +74,13 @@ const deleteTask = (objectID) => {
     //update object ID to match current index
     updateObjectID();
     clearContentArea();
-    return activeView === "work" ? showCategoryWork(tasks)
-        : activeView === "hobby" ? showCategoryHobby(tasks)
-        : activeView === "health" ? showCategoryHealth(tasks)
-        : activeView === "chore" ? showCategoryChore(tasks)
-        : activeView === "dueToday" ? showDueToday(tasks)
-        : activeView === "dueWeek" ? showDueWeek(tasks)
-        : showAllTasks(tasks);
+    return activeView === "work" ? showCategoryWork(tasks) :
+        activeView === "hobby" ? showCategoryHobby(tasks) :
+        activeView === "health" ? showCategoryHealth(tasks) :
+        activeView === "chore" ? showCategoryChore(tasks) :
+        activeView === "dueToday" ? showDueToday(tasks) :
+        activeView === "dueWeek" ? showDueWeek(tasks) :
+        showAllTasks(tasks);
 }
 
 const markTaskComplete = (objectID) => {
@@ -95,9 +100,9 @@ const retrieveTaskDetails = (objectID) => {
 }
 
 const updateObjectID = () => {
-tasks.forEach(task => {
-    task.id = tasks.indexOf(task);
-});
+    tasks.forEach(task => {
+        task.id = tasks.indexOf(task);
+    });
 }
 
 export {

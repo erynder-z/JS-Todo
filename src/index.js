@@ -1,10 +1,6 @@
 import "./normalize.css";
 import "./style.css";
-
 import floatMenu from "./modules/float";
-import {
-    tasks,
-} from "./modules/tasks";
 import {
     createNewTaskModal,
 } from "./modules/modal";
@@ -22,4 +18,3 @@ floatMenu();
 createNewTaskModal();
 
 /* showAllTasks(); */
-

@@ -1,9 +1,6 @@
 import {
     activateButtons
 } from "./buttons";
-import {
-    tasks
-} from "./tasks";
 
 const renderTasks = (tasks) => {
 

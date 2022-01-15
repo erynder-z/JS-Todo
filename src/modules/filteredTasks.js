@@ -3,7 +3,9 @@ import {
     add,
     isWithinInterval
 } from 'date-fns';
-import { setActiveView } from './activeView';
+import {
+    setActiveView
+} from './activeView';
 
 import {
     clearMainContent
