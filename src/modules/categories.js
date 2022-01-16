@@ -38,8 +38,8 @@ const createNewCategoryModal = () => {
             alert("enter a title!");
         } else {
             categories.push(catInput.value);
-            console.log(categories);
             toggleNewCatModal();
+            appendCategoryToSidebar(catInput.value);
         }
     });
 
@@ -57,5 +57,17 @@ const toggleNewCatModal = () => {
     getModal.remove();
     createNewTaskModal();
 }
+
+const appendCategoryToSidebar = (newCategory) => {
+    const getSidebar = document.getElementById("sidebar");
+    
+    const newCatDiv = document.createElement("div");
+    newCatDiv.id = newCategory.toLowerCase();
+    newCatDiv.classList.add("side-category");
+    newCatDiv.textContent = newCategory;
+    getSidebar.appendChild(newCatDiv);
+
+
+} 
 
 export {categories, createNewCategoryModal, toggleNewCatModal}
