@@ -17,7 +17,8 @@ import {
 
 const contentDiv = document.getElementById("mainContent");
 
-const showCategoryWork = () => {
+
+const showCategory = (element) => {
     clearMainContent();
 
     const headingContainer = document.createElement("div");
@@ -27,70 +28,14 @@ const showCategoryWork = () => {
 
     const heading = document.createElement("h1");
     heading.classList.add("heading");
-    heading.textContent = "Category: Work";
+    heading.textContent = `Category: ${element.textContent}`;
     headingContainer.appendChild(heading);
 
-    const sortedTasks = tasks.filter(task => task.category === "work");
+    const searchItem = element.id;
+    const sortedTasks = tasks.filter(task => task.category === searchItem);
 
     renderTasks(sortedTasks);
-    setActiveView("work");
-}
-
-const showCategoryHobby = () => {
-    clearMainContent();
-
-    const headingContainer = document.createElement("div");
-    headingContainer.id = "headingContainer"
-    headingContainer.classList.add("heading-container");
-    contentDiv.appendChild(headingContainer);
-
-    const heading = document.createElement("h1");
-    heading.classList.add("heading");
-    heading.textContent = "Category: Hobby";
-    headingContainer.appendChild(heading);
-
-    const sortedTasks = tasks.filter(task => task.category === "hobby");
-
-    renderTasks(sortedTasks);
-    setActiveView("hobby");
-}
-
-const showCategoryHealth = () => {
-    clearMainContent();
-
-    const headingContainer = document.createElement("div");
-    headingContainer.id = "headingContainer"
-    headingContainer.classList.add("heading-container");
-    contentDiv.appendChild(headingContainer);
-
-    const heading = document.createElement("h1");
-    heading.classList.add("heading");
-    heading.textContent = "Category: Health";
-    headingContainer.appendChild(heading);
-
-    const sortedTasks = tasks.filter(task => task.category === "health");
-
-    renderTasks(sortedTasks);
-    setActiveView("health");
-}
-
-const showCategoryChore = () => {
-    clearMainContent();
-
-    const headingContainer = document.createElement("div");
-    headingContainer.id = "headingContainer"
-    headingContainer.classList.add("heading-container");
-    contentDiv.appendChild(headingContainer);
-
-    const heading = document.createElement("h1");
-    heading.classList.add("heading");
-    heading.textContent = "Category: Chore";
-    headingContainer.appendChild(heading);
-
-    const sortedTasks = tasks.filter(task => task.category === "chore");
-
-    renderTasks(sortedTasks);
-    setActiveView("chore");
+    setActiveView("element.id");
 }
 
 const showDueToday = () => {
@@ -152,10 +97,7 @@ const showDueWeek = () => {
 
 
 export {
-    showCategoryWork,
-    showCategoryHobby,
-    showCategoryHealth,
-    showCategoryChore,
     showDueToday,
-    showDueWeek
+    showDueWeek,
+    showCategory
 }

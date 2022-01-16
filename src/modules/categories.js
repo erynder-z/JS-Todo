@@ -1,3 +1,4 @@
+import { activateSidebar } from "./buttons";
 import { createNewTaskModal } from "./modal";
 
 const categories = ["Uncategorized", "Work", "Hobby", "Health", "Chore"];
@@ -64,8 +65,10 @@ const appendCategoryToSidebar = (newCategory) => {
     const newCatDiv = document.createElement("div");
     newCatDiv.id = newCategory.toLowerCase();
     newCatDiv.classList.add("side-category");
+    newCatDiv.setAttribute("data-category", "");
     newCatDiv.textContent = newCategory;
     getSidebar.appendChild(newCatDiv);
+    activateSidebar();
 
 
 } 
