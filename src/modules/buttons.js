@@ -80,7 +80,7 @@ const activateSidebar = () => {
     })();
 
     const newCategory = (() => {
-        const button = document.getElementById("newCategory");
+        const button = document.getElementById("myfloat-new-category");
         button.addEventListener("click", function () {
             createNewCategoryModal();
             toggleSidebar();

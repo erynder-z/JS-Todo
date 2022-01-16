@@ -4,7 +4,7 @@ import {
 
 const floatMenu = () => {
     let toggleIsHidden = true;
-    const toggleFloatNewProject = document.getElementById("myfloat-new-project");
+    const toggleFloatNewCategory = document.getElementById("myfloat-new-category");
     const toggleFloatNewTask = document.getElementById("myfloat-new-task");
     const toggleFloat = document.getElementById("myfloat");
 
@@ -12,7 +12,7 @@ const floatMenu = () => {
         handleToogle();
     });
 
-    toggleFloatNewProject.addEventListener("click", () => {
+    toggleFloatNewCategory.addEventListener("click", () => {
         handleToogle();
     });
 
@@ -22,12 +22,12 @@ const floatMenu = () => {
     });
 
     function showToggle() {
-        toggleFloatNewProject.classList.remove("hidden");
+        toggleFloatNewCategory.classList.remove("hidden");
         toggleFloatNewTask.classList.remove("hidden");
     }
 
     function hideToggle() {
-        toggleFloatNewProject.classList.add("hidden");
+        toggleFloatNewCategory.classList.add("hidden");
         toggleFloatNewTask.classList.add("hidden");
     }
 
