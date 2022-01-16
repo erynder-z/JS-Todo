@@ -3,12 +3,9 @@ import {
 } from "./addClasses";
 import showAllTasks from "./showAllTasks";
 import {
-    showCategoryWork,
-    showCategoryHobby,
-    showCategoryHealth,
-    showCategoryChore,
     showDueToday,
-    showDueWeek
+    showDueWeek,
+    showCategory
 } from "./filteredTasks";
 import {
     toggleSidebar
@@ -47,36 +44,14 @@ const activateSidebar = () => {
         });
     })();
 
-    const work = (() => {
-        const button = document.getElementById("work");
-        button.addEventListener("click", function () {
-            showCategoryWork();
-            toggleSidebar();
-        })
-    })();
+    const allCategories = (() => {
+        document.querySelectorAll("[data-category]").forEach(field => { //check!! this attaches an additinal eventlistener everytime a new category is added
 
-    const hobby = (() => {
-        const button = document.getElementById("hobby");
-        button.addEventListener("click", function () {
-            showCategoryHobby();
-            toggleSidebar();
-        })
-    })();
-
-    const health = (() => {
-        const button = document.getElementById("health");
-        button.addEventListener("click", function () {
-            showCategoryHealth();
-            toggleSidebar();
-        })
-    })();
-
-    const chore = (() => {
-        const button = document.getElementById("chore");
-        button.addEventListener("click", function () {
-            showCategoryChore();
-            toggleSidebar();
-        })
+            field.addEventListener("click", function() {
+                showCategory(this);
+                toggleSidebar();
+            });
+        });
     })();
 
     const newCategory = (() => {
@@ -86,6 +61,7 @@ const activateSidebar = () => {
             toggleSidebar();
         })
     })();
+
 }
 
 const activateButtons = () => {
