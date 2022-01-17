@@ -186,9 +186,9 @@ body {
     max-width: 50px;
 }
 
-.complete>div:not(.task-options-wrapper, .expand-button) {
+ .complete> .title-wrapper> .task-title, .complete> .description-wrapper> .task-description, .complete> .dueDate-wrapper> .dueDate, .complete> .notes-wrapper> .notes {
     text-decoration: line-through;
-}
+ }
 
 .complete>.delete-button {
     text-decoration: none;
