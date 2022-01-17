@@ -16,7 +16,9 @@ import {
     markTaskComplete,
     retrieveTaskDetails,
 } from "./tasks";
-import { createNewCategoryModal, toggleNewCatModal } from "./categories";
+import {
+    createNewCategoryModal
+} from "./categories";
 
 const activateSidebar = () => {
 
@@ -44,22 +46,22 @@ const activateSidebar = () => {
         });
     })();
 
-    const allCategories = (() => {
-        document.querySelectorAll("[data-category]").forEach(field => { //check!! this attaches an additinal eventlistener everytime a new category is added
+        const defaultCategories = (() => {
+            document.querySelectorAll("[data-category]").forEach(field => {
 
-            field.addEventListener("click", function() {
-                showCategory(this);
-                toggleSidebar();
+                field.addEventListener("click", function() {
+                    showCategory(this);
+                    toggleSidebar();
+                });
             });
-        });
-    })();
+        })();
 
     const newCategory = (() => {
         const button = document.getElementById("myfloat-new-category");
         button.addEventListener("click", function () {
             createNewCategoryModal();
             toggleSidebar();
-        })
+        });
     })();
 
 }
@@ -98,7 +100,20 @@ const activateButtons = () => {
         });
     })();
 }
+
+const activateNewCategories = (elementID) => {
+    const catElement = document.getElementById(elementID);
+    if (catElement !== null){
+        catElement.addEventListener("click", function () {
+            showCategory(this);
+            toggleSidebar();
+        });
+    } return
+}
+
+
 export {
     activateSidebar,
-    activateButtons
+    activateButtons,
+    activateNewCategories
 }

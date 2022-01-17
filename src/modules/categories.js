@@ -1,4 +1,4 @@
-import { activateSidebar } from "./buttons";
+import { activateNewCategories, activateSidebar } from "./buttons";
 import { createNewTaskModal } from "./modal";
 
 const categories = ["Uncategorized", "Work", "Hobby", "Health", "Chore"];
@@ -68,9 +68,9 @@ const appendCategoryToSidebar = (newCategory) => {
     newCatDiv.setAttribute("data-category", "");
     newCatDiv.textContent = newCategory;
     getSidebar.appendChild(newCatDiv);
-    activateSidebar();
-
-
+    
+    activateNewCategories(newCatDiv.id);
+    
 } 
 
 export {categories, createNewCategoryModal, toggleNewCatModal}
