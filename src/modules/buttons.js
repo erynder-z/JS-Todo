@@ -19,6 +19,7 @@ import {
 import {
     createNewCategoryModal
 } from "./categories";
+import { createSearchModal } from "./modal";
 
 const activateSidebar = () => {
 
@@ -101,6 +102,13 @@ const activateButtons = () => {
     })();
 }
 
+const activateNav = () => {
+    const searchBtn = document.getElementById("searchBtn");
+    searchBtn.addEventListener("click", function() {
+        createSearchModal()
+    });
+}
+
 const activateNewCategories = (elementID) => {
     const catElement = document.getElementById(elementID);
     if (catElement !== null){
@@ -115,5 +123,6 @@ const activateNewCategories = (elementID) => {
 export {
     activateSidebar,
     activateButtons,
-    activateNewCategories
+    activateNewCategories,
+    activateNav
 }

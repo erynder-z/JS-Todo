@@ -2,6 +2,7 @@ import {
     format
 } from 'date-fns';
 import { categories } from './categories';
+import searchTasks from './search';
 import showAllTasks from "./showAllTasks";
 import {
     tasks,
@@ -328,9 +329,61 @@ const toggleEditTaskModal = () => {
     getModal.remove();
 }
 
+const createSearchModal = () => {
+    const modalDiv = document.getElementById("modalContent");
+
+    const modal = document.createElement("div");
+    modal.id = "searchModal";
+    modal.classList.add("modal");
+
+    const closeBtn = document.createElement("div");
+    closeBtn.classList.add("close-button");
+    closeBtn.onclick = toggleSearchModal;
+    closeBtn.innerText = "X";
+
+    const wrapper = document.createElement("div");
+    wrapper.classList.add("modal-wrapper");
+
+    const heading = document.createElement("h1");
+    heading.classList.add("modal-heading");
+    heading.innerText = "Search for task:";
+
+    const searchInput = document.createElement("input");
+    searchInput.type = "text";
+    searchInput.id = "searchInput";
+    searchInput.placeholder = "term (required)";
+
+    const addBtn = document.createElement("button");
+    addBtn.id = "addCatBtn";
+    addBtn.classList.add("add-button");
+    addBtn.innerText = "Search";
+    addBtn.addEventListener("click", () => {
+        if ((!searchInput.value)) {
+            alert("enter a search term!");
+        } else {
+            searchTasks();
+            toggleSearchModal();
+        }
+    });
+
+    modal.appendChild(closeBtn);
+    modal.appendChild(wrapper);
+    wrapper.appendChild(heading);
+    wrapper.appendChild(searchInput);
+    wrapper.appendChild(addBtn);
+
+    modalDiv.appendChild(modal);
+}
+
+const toggleSearchModal = () => {
+    const getModal = document.getElementById("searchModal");
+    getModal.remove(); 
+}
+
 
 export {
     createNewTaskModal,
     toggleNewTaskModal,
-    createEditTaskModal
+    createEditTaskModal,
+    createSearchModal
 }
