@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+:root {
+    --nav: #93B5C6;
+    --sidebar: #C9CCD5;
+    --background: #E4D8DC;
+    --task: #FFE3E3;
+    --blackish: #181818;
+    --redish: #B42B51;
+}
+
 *,
 *::before,
 *::after {
@@ -7,6 +19,7 @@
 body {
     padding: 0;
     margin: 0;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .nav {
@@ -14,8 +27,8 @@ body {
     justify-content: space-around;
     align-items: center;
     height: 7vh;
-    background: #1A374D;
-    color: whitesmoke;
+    background: var(--nav);
+    color: var(--blackish);
  
 }
 
@@ -55,7 +68,7 @@ body {
 .options-content {
     display: none;
     position: absolute;
-    background: #1A374D;
+    background: var(--nav);
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     top: 30px;
@@ -87,8 +100,8 @@ body {
     flex-direction: column;
     width: 15vw;
     min-height: 93vh;
-    background: #406882;
-    color: whitesmoke;
+    background: var(--sidebar);
+    color: var(--blackish);
     padding: 10px;
     gap: 20px;
 }
@@ -101,9 +114,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background: #6998AB;
+    background: var(--background);
     min-height: 93vh;
     width: 85vw;
+    padding-left: 25px;
 }
 
 .taskList-container {
@@ -120,7 +134,7 @@ body {
     min-height: 5vh;
     justify-content: space-around;
     align-items: center;
-    background: #B1D0E0;
+    background: var(--task);
     border: solid 1px black;
     gap: 15px;
     padding: 0 0 0 20px;
@@ -183,7 +197,8 @@ body {
     padding: 0 20px 0 20px;
     max-width: fit-content;
     height: 100%;
-    background: rgb(212, 141, 141);
+    background: var(--redish);
+    color: whitesmoke;
 }
 
 .task-container.expand > * {
@@ -217,6 +232,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .expand-button {
@@ -230,7 +247,6 @@ body {
 }
 
 .task-options-wrapper > * {
-    /* height: 100%; */
     max-width: 50px;
 }
 
@@ -243,6 +259,7 @@ body {
 }
 
 .float {
+    font-family: 'Roboto Slab', serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -251,8 +268,8 @@ body {
     height: 80px;
     bottom: 50px;
     right: 50px;
-    background: #7e40b9;
-    color: #FFF;
+    background: var(--redish);
+    color: whitesmoke;
     border-radius: 50px;
     box-shadow: 2px 2px 3px #999;
   }
@@ -289,7 +306,7 @@ body {
     position: fixed;
     left: 45%;
     top: 25%;
-    background: #d0e4ee;
+    background: var(--sidebar);
     z-index: 1;
     border: solid 2px black;
     padding: 20px 0;
@@ -365,7 +382,7 @@ body {
     }
 
     .task-container> * {
-        flex: 0 0 auto;
+        /* flex: 0 0 auto; */
         gap: 10px;
     }
     
@@ -405,6 +422,11 @@ body {
         right: 25px;
         width: 60px;
         height: 60px;
+        font-size: small;
+      }
+
+      #myfloat {
+          font-size: 40px;
       }
 
       #myfloat-new-category {
@@ -419,6 +441,7 @@ body {
         right: 25px;
         width: 60px;
         height: 60px;
+
       }
 
       .modal {
