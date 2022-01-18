@@ -19,6 +19,7 @@ import {
     createEditTaskModal
 } from "./modal";
 import showAllTasks from "./showAllTasks";
+import { populateStorage } from "./storage";
 
 const tasks = [];
 
@@ -66,7 +67,7 @@ const createTask = () => {
     let newTaskID = tasks.indexOf(newTask);
     newTask.id = newTaskID;
 
-    console.log(tasks);
+    populateStorage();
 }
 
 const deleteTask = (objectID) => {
@@ -74,6 +75,7 @@ const deleteTask = (objectID) => {
     //update object ID to match current index
     updateObjectID();
     clearContentArea();
+    populateStorage();
     return activeView === "work" ? showCategoryWork(tasks) :
         activeView === "hobby" ? showCategoryHobby(tasks) :
         activeView === "health" ? showCategoryHealth(tasks) :

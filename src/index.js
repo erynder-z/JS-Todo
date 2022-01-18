@@ -12,7 +12,9 @@ import {
 import {
     toggleSidebarNav
 } from "./modules/sidebar";
+import { retrieveStorage } from "./modules/storage";
 
+retrieveStorage();
 activateNav();
 toggleSidebarNav();
 activateSidebar();
