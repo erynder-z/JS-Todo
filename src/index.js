@@ -4,7 +4,6 @@ import floatMenu from "./modules/float";
 import {
     createNewTaskModal,
 } from "./modules/modal";
-import showAllTasks from "./modules/showAllTasks";
 import {
     activateNav,
     activateSidebar
@@ -12,13 +11,18 @@ import {
 import {
     toggleSidebarNav
 } from "./modules/sidebar";
-import { retrieveStorage } from "./modules/storage";
+import {
+    retrieveStorage
+} from "./modules/storage";
+import welcomeScreen from "./modules/welcome";
 
-retrieveStorage();
-activateNav();
-toggleSidebarNav();
-activateSidebar();
-floatMenu();
-createNewTaskModal();
 
-/* showAllTasks(); */
+const startApp = (() => {
+    retrieveStorage();
+    activateNav();
+    toggleSidebarNav();
+    activateSidebar();
+    floatMenu();
+    createNewTaskModal();
+    welcomeScreen();
+})();
