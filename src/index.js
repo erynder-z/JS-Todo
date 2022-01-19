@@ -12,7 +12,7 @@ import {
     toggleSidebarNav
 } from "./modules/sidebar";
 import {
-    retrieveStorage
+    retrieveStorage,
 } from "./modules/storage";
 import welcomeScreen from "./modules/welcome";
 import switchTheme from "./modules/darkmode";

@@ -60,7 +60,7 @@ const toggleNewCatModal = () => {
 }
 
 const appendCategoryToSidebar = (newCategory) => {
-    const getSidebar = document.getElementById("sidebar");
+    const getSidebar = document.getElementById("upperSidebar");
     
     const newCatDiv = document.createElement("div");
     newCatDiv.id = newCategory.toLowerCase();

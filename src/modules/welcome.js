@@ -1,6 +1,6 @@
 const contentDiv = document.getElementById("mainContent");
 
-const features = "<li>Enter new tasks</li><li>Set a category</li><li>Set a due date</li><li>Expand a tasks details</li><li>Mark a task as complete</li><li>Edit a tasks details</li><li>Remove a saved task</li><li>Show all saved tasks</li><li>Show tasks due today</li><li>Show tasks due within one week</li><li>Filter tasks by category</li><li>Add new categories</li><li>Filter tasks by custom categories</li><li>Search tasks by keyword</li><li>Different UI for portrait and landscape screens</li><li>Tasks are retained locally via Web Storage API</li>"
+const features = "<li>Enter new tasks</li><li>Set a category</li><li>Set a due date</li><li>Expand a tasks details</li><li>Mark a task as complete</li><li>Edit a tasks details</li><li>Remove a saved task</li><li>Show all saved tasks</li><li>Show tasks due today</li><li>Show tasks due within one week</li><li>Filter tasks by category</li><li>Add new categories</li><li>Filter tasks by custom categories</li><li>Search tasks by keyword</li><li>Different UI for portrait and landscape screens</li><li>Select bright or dark theme</li><li>Tasks are retained locally via Web Storage API</li>"
 
 const welcomeScreen = () => {
 

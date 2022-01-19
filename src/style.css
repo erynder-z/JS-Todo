@@ -112,6 +112,13 @@ body {
     gap: 20px;
 }
 
+.upper-sidebar {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 20px;
+}
+
 .toggle-darkmode {
     margin-top: auto;
     margin-bottom: 20px;
