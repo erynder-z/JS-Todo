@@ -55,7 +55,6 @@ body {
 .options-selector {
     position: relative;
     display: inline-block;
-    width: 100px;
     display: flex;
     justify-content: center;
 }
@@ -71,13 +70,13 @@ body {
     background: var(--nav);
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    top: 30px;
+    top: 1em;
     right: 0px;
     text-align: center;
     width: 200px;
     height: 100px;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -304,12 +303,13 @@ body {
     height: fit-content;
     width: 40vh;
     position: fixed;
-    left: 45%;
-    top: 25%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: var(--sidebar);
     z-index: 1;
     border: solid 2px black;
-    padding: 20px 0;
+    padding: 5px 0 20px 0;
 }
 
 .modal-wrapper {
@@ -330,7 +330,9 @@ body {
 }
 
   .hidden {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 0.1s linear;
   }
 
 
@@ -345,6 +347,7 @@ body {
         left: -45%;
         width: 50vw;    
         height: 100vh;
+        transition: all 0.5s;
     }
 
     .logo {
@@ -415,6 +418,7 @@ body {
 
     .slide {
         left: 0;
+        transition: all 0.5s;
     }
 
     .float {
@@ -446,9 +450,7 @@ body {
 
       .modal {
         width: 75vw;
-        top: 12.5%;
-        left: 12.5%;  
-    }
+    } 
  
 }
 
