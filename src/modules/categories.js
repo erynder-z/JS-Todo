@@ -1,5 +1,6 @@
 import { activateNewCategories, activateSidebar } from "./buttons";
 import { createNewTaskModal } from "./modal";
+import { populateStorageCategories } from "./storage";
 
 const categories = ["Uncategorized", "Work", "Hobby", "Health", "Chore"];
 
@@ -42,6 +43,7 @@ const createNewCategoryModal = () => {
             toggleNewCatModal();
             appendCategoryToSidebar(catInput.value);
         }
+        populateStorageCategories();
     });
 
     modal.appendChild(closeBtn);
@@ -73,4 +75,4 @@ const appendCategoryToSidebar = (newCategory) => {
     
 } 
 
-export {categories, createNewCategoryModal, toggleNewCatModal}
+export {categories, createNewCategoryModal, toggleNewCatModal, appendCategoryToSidebar}

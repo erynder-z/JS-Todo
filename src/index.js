@@ -12,7 +12,7 @@ import {
     toggleSidebarNav
 } from "./modules/sidebar";
 import {
-    retrieveStorage,
+    retrieveStorage, retrieveStorageCategories,
 } from "./modules/storage";
 import welcomeScreen from "./modules/welcome";
 import switchTheme from "./modules/darkmode";
@@ -20,6 +20,7 @@ import switchTheme from "./modules/darkmode";
 
 const startApp = (() => {
     retrieveStorage();
+    retrieveStorageCategories();
     activateNav();
     toggleSidebarNav();
     activateSidebar();

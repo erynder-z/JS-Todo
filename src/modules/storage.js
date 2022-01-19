@@ -1,3 +1,4 @@
+import { appendCategoryToSidebar, categories } from "./categories";
 import {
     tasks
 } from "./tasks";
@@ -58,7 +59,30 @@ const mapData = (storageData) => {
     });
 }
 
+const populateStorageCategories = () => {
+    let storageString = JSON.stringify(categories);
+    localStorage.setItem("localCategories", storageString);
+}
+
+const retrieveStorageCategories = () => {
+    let retrievedStorageString = localStorage.getItem("localCategories");
+    storageData = JSON.parse(retrievedStorageString) || [];
+    mapDataCategories(storageData);
+}
+
+const mapDataCategories = (storageData) => {
+    let data = storageData;
+    data.forEach(item => {
+        if (!(categories.includes(item))) {
+            categories.push(item);
+            appendCategoryToSidebar(item);
+        }
+    });
+}
+
 export {
     populateStorage,
-    retrieveStorage
+    retrieveStorage,
+    populateStorageCategories,
+    retrieveStorageCategories
 }
