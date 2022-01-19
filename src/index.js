@@ -15,6 +15,7 @@ import {
     retrieveStorage
 } from "./modules/storage";
 import welcomeScreen from "./modules/welcome";
+import switchTheme from "./modules/darkmode";
 
 
 const startApp = (() => {
@@ -24,5 +25,6 @@ const startApp = (() => {
     activateSidebar();
     floatMenu();
     createNewTaskModal();
+    switchTheme();
     welcomeScreen();
 })();

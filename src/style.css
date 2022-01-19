@@ -8,6 +8,13 @@
     --task: #FFE3E3;
     --blackish: #181818;
     --redish: #B42B51;
+
+    --darknav: #6c4a39;
+    --darksidebar: #36332a;
+    --darkbackground: #1b2723;
+    --darktask: #001c1c;
+    --darkblackish: #e7e7e7;
+    --darkredish: #4bd4ae;
 }
 
 *,
@@ -103,6 +110,11 @@ body {
     color: var(--blackish);
     padding: 10px;
     gap: 20px;
+}
+
+.toggle-darkmode {
+    margin-top: auto;
+    margin-bottom: 20px;
 }
 
 .heading-container {
@@ -330,9 +342,7 @@ body {
 }
 
   .hidden {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s 2s, opacity 0.1s linear;
+    display: none;
   }
 
 
@@ -450,7 +460,14 @@ body {
 
       .modal {
         width: 75vw;
-    } 
- 
+    }
+
+    .toggle-darkmode {
+        margin-bottom: 5rem;
+    }
+    
 }
 
+.darkmode {
+    filter: invert(100%) hue-rotate(240deg);
+}
