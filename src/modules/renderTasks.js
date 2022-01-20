@@ -15,7 +15,6 @@ const renderTasks = (tasks) => {
 
         tasks.forEach(task => {
             const taskContainer = document.createElement("div");
-            /* taskContainer.setAttribute("id", tasks.indexOf(task)); */
             taskContainer.setAttribute("id", task.id);
             taskContainer.classList.add("task-container");
             taskListContainer.appendChild(taskContainer);

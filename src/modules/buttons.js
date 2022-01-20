@@ -131,10 +131,6 @@ const activateNewCategories = (elementID) => {
     return
 }
 
-const deleteCatButton = () => {
-    
-}
-
 
 export {
     activateSidebar,

@@ -5,14 +5,12 @@ import { populateStorageCategories } from "./storage";
 const categories = ["Uncategorized", "Work", "Hobby", "Health", "Chore"];
 
 
-
 const createNewCategoryModal = () => {
     const modalDiv = document.getElementById("modalContent");
 
     const modal = document.createElement("div");
     modal.id = "newCategoryModal";
     modal.classList.add("modal");
-   /*  modal.classList.add("hidden"); */
 
     const closeBtn = document.createElement("div");
     closeBtn.classList.add("close-button");

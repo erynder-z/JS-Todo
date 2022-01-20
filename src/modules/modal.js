@@ -4,7 +4,7 @@ import {
 import { categories } from './categories';
 import searchTasks from './search';
 import showAllTasks from "./showAllTasks";
-import { populateStorage, populateStorageCategories } from './storage';
+import { populateStorage} from './storage';
 import {
     tasks,
     createTask
@@ -45,22 +45,6 @@ const createNewTaskModal = () => {
         el.value = opt;
         categoryInput.appendChild(el);
     }
-
-/*     const uncategorized = document.createElement("option");
-    uncategorized.value = "uncategorized";
-    uncategorized.textContent = "uncategorized";
-    const work = document.createElement("option");
-    work.value = "work";
-    work.textContent = "work";
-    const hobby = document.createElement("option");
-    hobby.value = "hobby";
-    hobby.textContent = "hobby";
-    const health = document.createElement("option");
-    health.value = "health";
-    health.textContent = "health";
-    const chore = document.createElement("option");
-    chore.value = "chore";
-    chore.textContent = "chore"; */
 
     const heading = document.createElement("h1");
     heading.classList.add("modal-heading");
@@ -122,15 +106,11 @@ const createNewTaskModal = () => {
     wrapper.appendChild(heading);
     wrapper.appendChild(categoryLabel);
     wrapper.appendChild(categoryInput);
-  /*   categoryInput.appendChild(uncategorized);
-    categoryInput.appendChild(work);
-    categoryInput.appendChild(hobby);
-    categoryInput.appendChild(health);
-    categoryInput.appendChild(chore); */
+
     wrapper.appendChild(titleInput);
     wrapper.appendChild(descriptionInput);
     wrapper.appendChild(dueDateInput);
-    /* wrapper.appendChild(priorityInput); */
+
     wrapper.appendChild(priorityLabel);
     wrapper.appendChild(priorityInput);
     priorityInput.appendChild(highPriority);
@@ -200,22 +180,6 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
         categoryInput.appendChild(el);
     }
 
-/*     const uncategorized = document.createElement("option");
-    uncategorized.value = "uncategorized";
-    uncategorized.textContent = "uncategorized";
-    const work = document.createElement("option");
-    work.value = "work";
-    work.textContent = "work";
-    const hobby = document.createElement("option");
-    hobby.value = "hobby";
-    hobby.textContent = "hobby";
-    const health = document.createElement("option");
-    health.value = "health";
-    health.textContent = "health";
-    const chore = document.createElement("option");
-    chore.value = "chore";
-    chore.textContent = "chore"; */
-
     //set default selection to currentCategory
     const setSelectedIndex = (selection, value) => {
         for ( let i = 0; i < selection.options.length; i++ ) {
@@ -226,18 +190,6 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
         }
     }
     setSelectedIndex(categoryInput, currentCategory);
-
- /*    if (currentCategory === "work") {
-        work.selected = true;
-    } else if (currentCategory === "hobby") {
-        hobby.selected = true;
-    } else if (currentCategory === "health") {
-        health.selected = true;
-    } else if (currentCategory === "chore") {
-        chore.selected = true;
-    } else {
-        uncategorized.selected = true;
-    } */
 
 
     const titleInput = document.createElement("input");
@@ -307,11 +259,6 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
     wrapper.appendChild(heading);
     wrapper.appendChild(categoryLabel);
     wrapper.appendChild(categoryInput);
-/*     categoryInput.appendChild(uncategorized);
-    categoryInput.appendChild(work);
-    categoryInput.appendChild(hobby);
-    categoryInput.appendChild(health);
-    categoryInput.appendChild(chore); */
     wrapper.appendChild(titleInput);
     wrapper.appendChild(descriptionInput);
     wrapper.appendChild(dueDateInput);
