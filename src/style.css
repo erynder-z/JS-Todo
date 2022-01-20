@@ -31,21 +31,27 @@ body {
 
 .nav {
     position: sticky;
-        top: 0;
+    top: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 7vh;
     background: var(--nav);
     color: var(--blackish);
- 
+    padding-right: 10vw;
 }
 
 .logo {
-    display: block;
-    background: blue;
-    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7vh;
+    width: 15vw;
+    background: var(--redish);
+    color: whitesmoke;
 }
+
+
 
 .search-wrapper {
     max-width: 25vw;
@@ -373,6 +379,10 @@ body {
 
 @media all and (max-width:500px) {
 
+    .nav {
+        justify-content: space-around;
+        padding-right: 0;
+    }
 
     .sidebar {
         position:fixed;
