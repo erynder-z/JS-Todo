@@ -8,7 +8,7 @@ const switchTheme = () => {
     })();
 
     const changeTheme = () => {
-        document.body.classList.toggle("darkmode");
+        document.body.classList.toggle("darkmode");     
     }
 };
 

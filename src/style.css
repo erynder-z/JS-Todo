@@ -12,7 +12,7 @@
     --darknav: #6c4a39;
     --darksidebar: #36332a;
     --darkbackground: #1b2723;
-    --darktask: #001c1c;
+    --darktask: #412a3b;
     --darkblackish: #e7e7e7;
     --darkredish: #4bd4ae;
 }
@@ -30,6 +30,8 @@ body {
 }
 
 .nav {
+    position: sticky;
+        top: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -115,12 +117,11 @@ body {
 .upper-sidebar {
     display: flex;
     flex-direction: column;
-   
     padding: 10px;
     gap: 20px;
 }
 
-.toggle-darkmode {
+.manage-category {
     margin-top: auto;
 }
 
@@ -343,6 +344,10 @@ body {
     width: 90%;
 }
 
+.modal-heading {
+    text-align: center;
+}
+
 .close-button {
     margin-right: 5%;
     align-self: flex-end;
@@ -367,13 +372,10 @@ body {
 
 
 @media all and (max-width:500px) {
-    .nav {
-        position: sticky;
-        top: 0;
-    }
+
 
     .sidebar {
-        position: fixed;
+        position:fixed;
         left: -45%;
         width: 50vw;    
         transition: all 0.5s;
@@ -385,8 +387,6 @@ body {
     
     .menu {
         display: block;
-        background: crimson;
-        color: white;
     }
 
     .main-wrapper {
@@ -414,7 +414,6 @@ body {
     }
 
     .task-container> * {
-        /* flex: 0 0 auto; */
         gap: 10px;
     }
     
@@ -484,9 +483,38 @@ body {
     .toggle-darkmode {
         margin-bottom: 1rem;
     }
-    
 }
 
-.darkmode {
+body.darkmode>.nav {
+    filter: invert(100%) hue-rotate(240deg);
+}
+
+body.darkmode>.options-content {
+    filter: invert(100%) hue-rotate(240deg);
+}
+
+body.darkmode>.main-wrapper>.sidebar {
+    filter: invert(100%) hue-rotate(240deg);
+}
+
+body.darkmode> .main-wrapper>.content-area {
+    background: var(--darkbackground);
+    color: whitesmoke;
+}
+
+body.darkmode> .main-wrapper> .content-area>.taskList-container>.task-container {
+    background: var(--darktask);
+    color: whitesmoke;
+}
+
+body.darkmode> .modalContent> .modal {
+    filter: invert(100%) hue-rotate(240deg);
+}
+
+body.darkmode>.task-options-wrapper {
+    filter: invert(100%) hue-rotate(240deg);
+}
+
+body.darkmode>.modal {
     filter: invert(100%) hue-rotate(240deg);
 }
