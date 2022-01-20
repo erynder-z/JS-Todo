@@ -38,6 +38,7 @@ const taskFactory = (category, title, description, dueDate, priority, notes, sta
 const populateStorage = () => {
     let storageString = JSON.stringify(tasks);
     localStorage.setItem("localTodos", storageString);
+    console.log(tasks);
 }
 
 const retrieveStorage = () => {
@@ -78,7 +79,6 @@ const mapDataCategories = (storageData) => {
             appendCategoryToSidebar(item);
         }
     });
-    console.log(categories);
 }
 
 export {

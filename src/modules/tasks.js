@@ -88,6 +88,7 @@ const deleteTask = (objectID) => {
 const markTaskComplete = (objectID) => {
     tasks[objectID].toggleStatus(objectID);
     addClassComplete(objectID);
+    populateStorage();
 }
 
 const retrieveTaskDetails = (objectID) => {
