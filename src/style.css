@@ -346,6 +346,19 @@ body {
 .close-button {
     margin-right: 5%;
     align-self: flex-end;
+    color: crimson;
+    font-weight: bolder;
+}
+
+.category-container {
+    display: flex;
+    justify-content: center;
+   gap: 10px;
+}
+
+.delete-cat {
+    color: crimson;
+    font-weight: bolder;
 }
 
   .hidden {

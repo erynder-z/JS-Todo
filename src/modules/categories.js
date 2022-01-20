@@ -112,13 +112,17 @@ const deleteCustomCategoriesModal = (categoryList) => {
 
            const deleteBtn = document.createElement("div");
            deleteBtn.classList.add("delete-cat");
-           deleteBtn.textContent = "X";
+           deleteBtn.textContent = "(delete)";
            deleteBtn.addEventListener("click", function() {
                deleteCat(categories.indexOf(element), element);
            });
            container.appendChild(deleteBtn);
            wrapper.appendChild(container);
         });
+    } else {
+        const placeholder = document.createElement("p");
+        placeholder.textContent = "no custom categories added";
+        wrapper.appendChild(placeholder);
     }
     modalDiv.appendChild(modal);   
 }
