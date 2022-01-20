@@ -169,6 +169,7 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
     categoryInput.name = "category";
     categoryInput.id = "categoryInput";
 
+    //create dropdown menu with selections from categories array
     for(let i = 0; i < categories.length; i++) {
         let opt = categories[i];
         let el = document.createElement("option");
