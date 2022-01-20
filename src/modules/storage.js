@@ -78,6 +78,7 @@ const mapDataCategories = (storageData) => {
             appendCategoryToSidebar(item);
         }
     });
+    console.log(categories);
 }
 
 export {

@@ -17,9 +17,13 @@ import {
     retrieveTaskDetails,
 } from "./tasks";
 import {
-    createNewCategoryModal
+    categories,
+    createNewCategoryModal,
+    deleteCustomCategories
 } from "./categories";
-import { createSearchModal } from "./modal";
+import {
+    createSearchModal
+} from "./modal";
 
 const activateSidebar = () => {
 
@@ -47,21 +51,28 @@ const activateSidebar = () => {
         });
     })();
 
-        const defaultCategories = (() => {
-            document.querySelectorAll("[data-category]").forEach(field => {
+    const defaultCategories = (() => {
+        document.querySelectorAll("[data-category]").forEach(field => {
 
-                field.addEventListener("click", function() {
-                    showCategory(this);
-                    toggleSidebar();
-                });
+            field.addEventListener("click", function () {
+                showCategory(this);
+                toggleSidebar();
             });
-        })();
+        });
+    })();
 
     const newCategory = (() => {
         const button = document.getElementById("myfloat-new-category");
         button.addEventListener("click", function () {
             createNewCategoryModal();
             toggleSidebar();
+        });
+    })();
+
+    const deleteCategoryBtn = (() => {
+        const button = document.getElementById("manageCustomCategories");
+        button.addEventListener("click", function () {
+            deleteCustomCategories(categories);
         });
     })();
 
@@ -104,19 +115,24 @@ const activateButtons = () => {
 
 const activateNav = () => {
     const searchBtn = document.getElementById("searchBtn");
-    searchBtn.addEventListener("click", function() {
+    searchBtn.addEventListener("click", function () {
         createSearchModal()
     });
 }
 
 const activateNewCategories = (elementID) => {
     const catElement = document.getElementById(elementID);
-    if (catElement !== null){
+    if (catElement !== null) {
         catElement.addEventListener("click", function () {
             showCategory(this);
             toggleSidebar();
         });
-    } return
+    }
+    return
+}
+
+const deleteCatButton = () => {
+    
 }
 
 

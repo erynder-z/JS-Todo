@@ -75,4 +75,75 @@ const appendCategoryToSidebar = (newCategory) => {
     
 } 
 
-export {categories, createNewCategoryModal, toggleNewCatModal, appendCategoryToSidebar}
+const deleteCustomCategories = (categoryList) => {
+
+    const modalDiv = document.getElementById("modalContent");
+   
+
+    const modal = document.createElement("div");
+    modal.id = "deleteCategoryModal";
+    modal.classList.add("modal");
+
+
+    const closeBtn = document.createElement("div");
+    closeBtn.classList.add("close-button");
+    closeBtn.onclick = toggleDeleteCatModal;
+    closeBtn.innerText = "X";
+
+    const wrapper = document.createElement("div");
+    wrapper.classList.add("modal-wrapper");
+
+    const heading = document.createElement("h1");
+    heading.classList.add("modal-heading");
+    heading.innerText = "Delete custom categories:";
+
+    modal.appendChild(closeBtn);
+    modal.appendChild(wrapper);
+    wrapper.appendChild(heading);
+
+    const customCategories = categoryList.slice(5);
+
+    if (customCategories.length > 0) {
+
+        customCategories.forEach(element => {
+           const container = document.createElement("div");
+           container.setAttribute("id", categories.indexOf(element));
+           container.classList.add("category-container");
+
+            const cat = document.createElement("div");
+            cat.classList.add("cat");
+            cat.textContent = element;
+            container.appendChild(cat);
+
+           const deleteBtn = document.createElement("div");
+           deleteBtn.classList.add("delete-cat");
+           deleteBtn.textContent = "X";
+           deleteBtn.addEventListener("click", function() {
+               deleteCat(categories.indexOf(element), element);
+           });
+           container.appendChild(deleteBtn);
+           wrapper.appendChild(container);
+        });
+    }
+    modalDiv.appendChild(modal);   
+}
+
+const deleteCat = (elementID, element) => {
+    categories.splice(elementID, 1);
+    populateStorageCategories();
+    deleteCategoryFromSidebar(element);
+}
+
+const deleteCategoryFromSidebar = (element) => {
+    const deleteElement = document.getElementById(element.toLowerCase());
+    deleteElement.remove();
+    toggleDeleteCatModal();
+}
+
+const toggleDeleteCatModal = () => {
+    const getModal = document.getElementById("deleteCategoryModal");
+    getModal.remove();
+}
+
+
+export {categories, createNewCategoryModal, toggleNewCatModal, appendCategoryToSidebar, deleteCustomCategories}
