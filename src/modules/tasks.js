@@ -8,10 +8,6 @@ import {
     clearContentArea,
 } from "./clearContent";
 import {
-    showCategoryWork,
-    showCategoryChore,
-    showCategoryHealth,
-    showCategoryHobby,
     showDueToday,
     showDueWeek,
     showCategory
@@ -90,7 +86,6 @@ const deleteTask = (objectID) => {
 const markTaskComplete = (objectID) => {
     tasks[objectID].toggleStatus();
     addClassComplete(objectID);
-    console.log(tasks);
     populateStorage();
 }
 

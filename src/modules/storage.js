@@ -56,7 +56,6 @@ const mapData = (storageData) => {
         tasks.push(item);
         let newTaskID = tasks.indexOf(item);
         item.id = newTaskID;
-        console.log(tasks);
     });
 }
 
