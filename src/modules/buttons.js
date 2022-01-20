@@ -48,6 +48,7 @@ const activateSidebar = () => {
         const button = document.getElementById("all");
         button.addEventListener("click", function () {
             showAllTasks();
+            setActiveView(this);
             toggleSidebar();
         });
     })();

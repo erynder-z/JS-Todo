@@ -20,7 +20,9 @@ import {
     createEditTaskModal
 } from "./modal";
 import showAllTasks from "./showAllTasks";
-import { populateStorage } from "./storage";
+import {
+    populateStorage
+} from "./storage";
 
 const tasks = [];
 
@@ -38,7 +40,7 @@ const createTask = () => {
             status,
 
             toggleStatus: function () {
-            this.status === "open" ? this.status = "done" : this.status = "open";
+                this.status === "open" ? this.status = "done" : this.status = "open";
             },
 
             spliceTask: function (objectID) {
@@ -74,12 +76,15 @@ const createTask = () => {
 
 const deleteTask = (objectID) => {
     tasks[objectID].spliceTask(objectID);
- 
+
     updateObjectID();
     clearContentArea();
     populateStorage();
 
-    showCategory(activeView);
+    return activeView === "dueToday" ? showDueToday(tasks) :
+        activeView === "dueWeek" ? showDueWeek(tasks) :
+        activeView.id === "all" ? showAllTasks() :
+        showCategory(activeView);
 }
 
 const markTaskComplete = (objectID) => {
