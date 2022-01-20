@@ -24,6 +24,7 @@ import {
 import {
     createSearchModal
 } from "./modal";
+import { setActiveView } from "./activeView";
 
 const activateSidebar = () => {
 
@@ -56,6 +57,7 @@ const activateSidebar = () => {
 
             field.addEventListener("click", function () {
                 showCategory(this);
+                setActiveView(this);
                 toggleSidebar();
             });
         });
@@ -126,6 +128,7 @@ const activateNewCategories = (elementID) => {
     if (catElement !== null) {
         catElement.addEventListener("click", function () {
             showCategory(this);
+            setActiveView(this);
             toggleSidebar();
         });
     }

@@ -13,7 +13,8 @@ import {
     showCategoryHealth,
     showCategoryHobby,
     showDueToday,
-    showDueWeek
+    showDueWeek,
+    showCategory
 } from "./filteredTasks";
 import {
     createEditTaskModal
@@ -78,13 +79,7 @@ const deleteTask = (objectID) => {
     clearContentArea();
     populateStorage();
 
-    return activeView === "work" ? showCategoryWork(tasks) :
-        activeView === "hobby" ? showCategoryHobby(tasks) :
-        activeView === "health" ? showCategoryHealth(tasks) :
-        activeView === "chore" ? showCategoryChore(tasks) :
-        activeView === "dueToday" ? showDueToday(tasks) :
-        activeView === "dueWeek" ? showDueWeek(tasks) :
-        showAllTasks(tasks);
+    showCategory(activeView);
 }
 
 const markTaskComplete = (objectID) => {

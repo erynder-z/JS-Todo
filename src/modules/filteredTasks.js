@@ -1,7 +1,8 @@
 import {
     format,
     add,
-    isWithinInterval
+    isWithinInterval,
+    set
 } from 'date-fns';
 import {
     setActiveView
@@ -35,7 +36,6 @@ const showCategory = (element) => {
     const sortedTasks = tasks.filter(task => task.category === searchItem);
 
     renderTasks(sortedTasks);
-    setActiveView("element.id");
 }
 
 const showDueToday = () => {
