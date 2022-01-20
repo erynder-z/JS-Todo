@@ -16,7 +16,7 @@ const taskFactory = (category, title, description, dueDate, priority, notes, sta
         status,
 
         toggleStatus: function () {
-            this.status = "done";
+            this.status === "open" ? this.status = "done" : this.status = "open";
         },
 
         spliceTask: function (objectID) {
@@ -38,7 +38,6 @@ const taskFactory = (category, title, description, dueDate, priority, notes, sta
 const populateStorage = () => {
     let storageString = JSON.stringify(tasks);
     localStorage.setItem("localTodos", storageString);
-    console.log(tasks);
 }
 
 const retrieveStorage = () => {

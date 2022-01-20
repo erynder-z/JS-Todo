@@ -37,7 +37,7 @@ const createTask = () => {
             status,
 
             toggleStatus: function () {
-                this.status = "done";
+            this.status === "open" ? this.status = "done" : this.status = "open";
             },
 
             spliceTask: function (objectID) {
@@ -86,8 +86,9 @@ const deleteTask = (objectID) => {
 }
 
 const markTaskComplete = (objectID) => {
-    tasks[objectID].toggleStatus(objectID);
+    tasks[objectID].toggleStatus();
     addClassComplete(objectID);
+    console.log(tasks);
     populateStorage();
 }
 

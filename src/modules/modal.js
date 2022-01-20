@@ -4,6 +4,7 @@ import {
 import { categories } from './categories';
 import searchTasks from './search';
 import showAllTasks from "./showAllTasks";
+import { populateStorage, populateStorageCategories } from './storage';
 import {
     tasks,
     createTask
@@ -294,7 +295,8 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
         if (titleInput.value === "") {
             alert("enter a title!");
         } else {
-            tasks[objectID].editProperties(categoryInput.value, titleInput.value, descriptionInput.value, dueDateInput.value, priorityInput.value, notesInput.value);
+            tasks[objectID].editProperties(categoryInput.value.toLowerCase(), titleInput.value, descriptionInput.value, dueDateInput.value, priorityInput.value, notesInput.value);
+            populateStorage();
             toggleEditTaskModal();
             showAllTasks();
         }
