@@ -1,4 +1,4 @@
-Welcome to JS_todo, an organizer-app powered by JavaScript
+Welcome to JS_Todo, an organizer-app powered by JavaScript
 
     This app allows you to do the following:
     - Enter new tasks
