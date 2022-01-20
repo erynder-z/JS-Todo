@@ -22,9 +22,8 @@ const searchTasks = () => {
     const searchTerm = document.getElementById("searchInput").value.toLowerCase();
 
     const filterItems = (task) => {
-        return (JSON.stringify(task).includes(searchTerm));
+        return (JSON.stringify(task).toLocaleLowerCase().includes(searchTerm));
       }
-
    const searchedTasks = tasks.filter(filterItems);
 
    renderTasks(searchedTasks);
