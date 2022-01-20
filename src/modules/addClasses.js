@@ -2,9 +2,9 @@ const addClassComplete = (objectID) => {
     document.getElementById(objectID).classList.toggle("complete");
 }
 
+//show/hide task details when expanded/collapsed
 const toggleDetails = (objectID) => {
     const parentNode = document.getElementById(objectID);
-
     parentNode.classList.toggle("expand");
 
     const childCategory = parentNode.getElementsByClassName("task-category");

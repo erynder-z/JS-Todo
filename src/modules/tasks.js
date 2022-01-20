@@ -64,6 +64,7 @@ const createTask = () => {
 
     let newTask = taskFactory(category.value.toLowerCase(), title.value, description.value, dueDate.value, priority.value, notes.value, "open");
     tasks.push(newTask);
+    //Assign ID to task DOM-Element corresponding to it's position in the tasks-array
     let newTaskID = tasks.indexOf(newTask);
     newTask.id = newTaskID;
 
@@ -72,10 +73,11 @@ const createTask = () => {
 
 const deleteTask = (objectID) => {
     tasks[objectID].spliceTask(objectID);
-    //update object ID to match current index
+ 
     updateObjectID();
     clearContentArea();
     populateStorage();
+
     return activeView === "work" ? showCategoryWork(tasks) :
         activeView === "hobby" ? showCategoryHobby(tasks) :
         activeView === "health" ? showCategoryHealth(tasks) :
@@ -103,6 +105,7 @@ const retrieveTaskDetails = (objectID) => {
     createEditTaskModal(objectID, currentCategory, currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes);
 }
 
+//Update task DOM Element ID, when the tasks-array is modified
 const updateObjectID = () => {
     tasks.forEach(task => {
         task.id = tasks.indexOf(task);

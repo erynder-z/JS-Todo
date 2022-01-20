@@ -7,7 +7,6 @@ const renderTasks = (tasks) => {
     const contentDiv = document.getElementById("mainContent");
 
     const taskListContainer = document.createElement("div");
-
     taskListContainer.classList.add("taskList-container");
     contentDiv.appendChild(taskListContainer);
 

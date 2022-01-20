@@ -1,3 +1,4 @@
+//Slide functionality for portrait-view screens
 const toggleSidebarNav = () => {
     const sidebar = document.getElementById("sidebar");
     const sidebarBtn = document.getElementById("showSide");

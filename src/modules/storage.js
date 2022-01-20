@@ -5,6 +5,7 @@ import {
 
 let storageData;
 
+// recreate tasks via factory function after JSON is retrieved from localstorage
 const taskFactory = (category, title, description, dueDate, priority, notes, status) => {
     return {
         category,

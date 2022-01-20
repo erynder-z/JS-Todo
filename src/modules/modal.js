@@ -15,7 +15,6 @@ const today = format(new Date(), "yyyy-MM-dd");
 const createNewTaskModal = () => {
 
     const modalDiv = document.getElementById("modalContent");
-
     modalDiv.innerHTML = "";
 
     const modal = document.createElement("div");
@@ -106,11 +105,9 @@ const createNewTaskModal = () => {
     wrapper.appendChild(heading);
     wrapper.appendChild(categoryLabel);
     wrapper.appendChild(categoryInput);
-
     wrapper.appendChild(titleInput);
     wrapper.appendChild(descriptionInput);
     wrapper.appendChild(dueDateInput);
-
     wrapper.appendChild(priorityLabel);
     wrapper.appendChild(priorityInput);
     priorityInput.appendChild(highPriority);
@@ -191,7 +188,6 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
     }
     setSelectedIndex(categoryInput, currentCategory);
 
-
     const titleInput = document.createElement("input");
     titleInput.type = "text";
     titleInput.id = "titleInput";
@@ -269,7 +265,7 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
     priorityInput.appendChild(lowPriority);
     wrapper.appendChild(notesInput);
     wrapper.appendChild(addBtn);
-
+    
     modalDiv.appendChild(modal);
 }
 

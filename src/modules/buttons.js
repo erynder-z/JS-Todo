@@ -19,7 +19,7 @@ import {
 import {
     categories,
     createNewCategoryModal,
-    deleteCustomCategories
+    deleteCustomCategoriesModal
 } from "./categories";
 import {
     createSearchModal
@@ -72,11 +72,12 @@ const activateSidebar = () => {
     const deleteCategoryBtn = (() => {
         const button = document.getElementById("manageCustomCategories");
         button.addEventListener("click", function () {
-            deleteCustomCategories(categories);
+            deleteCustomCategoriesModal(categories);
         });
     })();
 
 }
+
 
 const activateButtons = () => {
 

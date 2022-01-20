@@ -49,7 +49,6 @@ const createNewCategoryModal = () => {
     wrapper.appendChild(heading);
     wrapper.appendChild(catInput);
     wrapper.appendChild(addBtn);
-
     modalDiv.appendChild(modal);
 }
 
@@ -70,13 +69,11 @@ const appendCategoryToSidebar = (newCategory) => {
     getSidebar.appendChild(newCatDiv);
     
     activateNewCategories(newCatDiv.id);
-    
 } 
 
-const deleteCustomCategories = (categoryList) => {
+const deleteCustomCategoriesModal = (categoryList) => {
 
     const modalDiv = document.getElementById("modalContent");
-   
 
     const modal = document.createElement("div");
     modal.id = "deleteCategoryModal";
@@ -144,4 +141,4 @@ const toggleDeleteCatModal = () => {
 }
 
 
-export {categories, createNewCategoryModal, toggleNewCatModal, appendCategoryToSidebar, deleteCustomCategories}
+export {categories, createNewCategoryModal, toggleNewCatModal, appendCategoryToSidebar, deleteCustomCategoriesModal}
