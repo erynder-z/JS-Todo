@@ -179,8 +179,8 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
 
     //set default selection to currentCategory
     const setSelectedIndex = (selection, value) => {
-        for ( let i = 0; i < selection.options.length; i++ ) {
-            if ( selection.options[i].text == value ) {
+        for ( let i = 0; i < selection.options.length; i++ ) { 
+            if ( selection.options[i].text.toLowerCase() == value ) {
                 selection.options[i].selected = true;
                 return;
             }
@@ -209,7 +209,7 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
     const priorityInput = document.createElement("select");
     priorityInput.name = "priority";
     priorityInput.id = "priorityInput";
-    /* priorityInput.value = currentPriority; */
+
     const highPriority = document.createElement("option");
     highPriority.value = "high";
     highPriority.textContent = "high";
