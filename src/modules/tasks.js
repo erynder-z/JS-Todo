@@ -95,13 +95,13 @@ const markTaskComplete = (objectID) => {
 }
 
 const retrieveTaskDetails = (objectID) => {
-    let obj = tasks[objectID];
-    let currentCategory = obj.category;
-    let currentTitle = obj.title;
-    let currentDescription = obj.description;
-    let currentDueDate = obj.dueDate;
-    let currentPriority = obj.priority;
-    let currentNotes = obj.notes;
+    const obj = tasks[objectID];
+    const currentCategory = obj.category;
+    const currentTitle = obj.title;
+    const currentDescription = obj.description;
+    const currentDueDate = obj.dueDate;
+    const currentPriority = obj.priority;
+    const currentNotes = obj.notes;
     createEditTaskModal(objectID, currentCategory, currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes);
 }
 
