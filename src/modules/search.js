@@ -15,7 +15,7 @@ const searchTasks = () => {
 
     const heading = document.createElement("h1");
     heading.classList.add("heading");
-    heading.textContent = "Search results:";
+    heading.textContent = 'Search results:';
     headingContainer.appendChild(heading);
 
 
