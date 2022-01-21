@@ -79,6 +79,14 @@ const activateSidebar = () => {
         });
     })();
 
+    const toggleSidebarBtn = (() => {
+        const button = document.getElementById("toggleSide");
+        button.addEventListener("click", function () {
+            button.classList.toggle("expanded");
+            toggleSidebar();
+        })
+    })();
+
 }
 
 

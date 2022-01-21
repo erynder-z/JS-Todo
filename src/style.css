@@ -116,7 +116,7 @@ body {
     min-height: 93vh;
     background: var(--sidebar);
     color: var(--blackish);
-    padding: 10px;
+    padding: 10px 6px 10px 10px;
     gap: 20px;
 }
 
@@ -129,6 +129,16 @@ body {
 
 .manage-category {
     margin-top: auto;
+}
+
+.menu-toggle {
+    
+    align-self: flex-end;
+}
+
+.expanded {
+    transform: rotate(180deg);
+    transition: all 0.5s;
 }
 
 .heading-container {
