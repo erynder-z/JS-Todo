@@ -50,7 +50,7 @@ const showDueToday = () => {
 
     const heading = document.createElement("h1");
     heading.classList.add("heading");
-    heading.textContent = "Due today:";
+    heading.textContent = 'Due today:';
     headingContainer.appendChild(heading);
 
     const sortedTasks = tasks.filter(task => task.dueDate === today);
@@ -70,7 +70,7 @@ const showDueWeek = () => {
 
     const heading = document.createElement("h1");
     heading.classList.add("heading");
-    heading.textContent = "Due within one week:";
+    heading.textContent = 'Due within one week:';
     headingContainer.appendChild(heading);
 
     const today = format(new Date(), "yyyy-MM-dd");

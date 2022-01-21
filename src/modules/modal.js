@@ -25,7 +25,7 @@ const createNewTaskModal = () => {
     const closeBtn = document.createElement("div");
     closeBtn.classList.add("close-button");
     closeBtn.onclick = toggleNewTaskModal;
-    closeBtn.innerText = "X";
+    closeBtn.innerText = 'X';
 
     const wrapper = document.createElement("div");
     wrapper.classList.add("modal-wrapper");
@@ -47,17 +47,17 @@ const createNewTaskModal = () => {
 
     const heading = document.createElement("h1");
     heading.classList.add("modal-heading");
-    heading.innerText = "Enter task details:";
+    heading.innerText = 'Enter task details:';
 
     const titleInput = document.createElement("input");
     titleInput.type = "text";
     titleInput.id = "titleInput";
-    titleInput.placeholder = "title (required)";
+    titleInput.placeholder = 'title (required)';
 
     const descriptionInput = document.createElement("input");
     descriptionInput.type = "text";
     descriptionInput.id = "descriptionInput";
-    descriptionInput.placeholder = "description";
+    descriptionInput.placeholder = 'description';
 
     const dueDateInput = document.createElement("input");
     dueDateInput.type = "date";
@@ -66,33 +66,33 @@ const createNewTaskModal = () => {
 
     const priorityLabel = document.createElement("label");
     priorityLabel.for = "priority";
-    priorityLabel.textContent = "Choose priority:";
+    priorityLabel.textContent = 'Choose priority:';
     const priorityInput = document.createElement("select");
-    priorityInput.name = "priority";
+    priorityInput.name = 'priority';
     priorityInput.id = "priorityInput";
     const highPriority = document.createElement("option");
-    highPriority.value = "high";
-    highPriority.textContent = "high";
+    highPriority.value = 'high';
+    highPriority.textContent = 'high';
     const mediumPriority = document.createElement("option");
-    mediumPriority.value = "medium";
-    mediumPriority.textContent = "medium";
+    mediumPriority.value = 'medium';
+    mediumPriority.textContent = 'medium';
     const lowPriority = document.createElement("option");
-    lowPriority.value = "low";
-    lowPriority.textContent = "low";
+    lowPriority.value = 'low';
+    lowPriority.textContent = 'low';
 
     const notesInput = document.createElement("textarea");
     notesInput.id = "notesInput";
-    notesInput.placeholder = "notes";
-    notesInput.rows = "4";
+    notesInput.placeholder = 'notes';
+    notesInput.rows = '4';
 
 
     const addBtn = document.createElement("button");
     addBtn.id = "addBtn";
     addBtn.classList.add("add-button");
-    addBtn.innerText = "save task";
+    addBtn.innerText = 'save task';
     addBtn.addEventListener("click", () => {
         if ((!titleInput.value)) {
-            alert("enter a title!");
+            alert('enter a title!');
         } else {
             createTask();
             toggleNewTaskModal(categoryInput, titleInput, descriptionInput, dueDateInput, priorityInput, notesInput);
@@ -135,7 +135,7 @@ const toggleNewTaskModal = (categoryInput, titleInput, descriptionInput, dueDate
         dueDateInput.value = today
     };
     if (priorityInput) {
-        priorityInput.value = "high"
+        priorityInput.value = 'high'
     };
     if (notesInput) {
         notesInput.value = null
@@ -153,20 +153,20 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
     const closeBtn = document.createElement("div");
     closeBtn.classList.add("close-button");
     closeBtn.onclick = toggleEditTaskModal;
-    closeBtn.innerText = "X";
+    closeBtn.innerText = 'X';
 
     const wrapper = document.createElement("div");
     wrapper.classList.add("modal-wrapper");
 
     const heading = document.createElement("h1");
     heading.classList.add("modal-heading");
-    heading.innerText = "Edit details:";
+    heading.innerText = 'Edit details:';
 
     const categoryLabel = document.createElement("label");
     categoryLabel.for = "category";
-    categoryLabel.textContent = "Select a category:";
+    categoryLabel.textContent = 'Select a category:';
     const categoryInput = document.createElement("select");
-    categoryInput.name = "category";
+    categoryInput.name = 'category';
     categoryInput.id = "categoryInput";
 
     //create dropdown menu with selections from categories array
@@ -212,18 +212,18 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
     priorityInput.id = "priorityInput";
 
     const highPriority = document.createElement("option");
-    highPriority.value = "high";
-    highPriority.textContent = "high";
+    highPriority.value = 'high';
+    highPriority.textContent = 'high';
     const mediumPriority = document.createElement("option");
-    mediumPriority.value = "medium";
-    mediumPriority.textContent = "medium";
+    mediumPriority.value = 'medium';
+    mediumPriority.textContent = 'medium';
     const lowPriority = document.createElement("option");
-    lowPriority.value = "low";
-    lowPriority.textContent = "low";
+    lowPriority.value = 'low';
+    lowPriority.textContent = 'low';
 
-    if (currentPriority === "high") {
+    if (currentPriority === 'high') {
         highPriority.selected = true;
-    } else if (currentPriority === "medium") {
+    } else if (currentPriority === 'medium') {
         mediumPriority.selected = true;
     } else {
         lowPriority.selected = true;
@@ -233,16 +233,16 @@ const createEditTaskModal = (objectID, currentCategory, currentTitle, currentDes
     const notesInput = document.createElement("textarea");
     notesInput.id = "notesInput";
     notesInput.value = currentNotes;
-    notesInput.rows = "4";
+    notesInput.rows = '4';
 
     const addBtn = document.createElement("button");
     addBtn.id = "addBtn";
     addBtn.classList.add("add-button");
-    addBtn.innerText = "save task";
+    addBtn.innerText = 'save task';
 
     addBtn.addEventListener("click", () => {
-        if (titleInput.value === "") {
-            alert("enter a title!");
+        if (titleInput.value === '') {
+            alert('enter a title!');
         } else {
             tasks[objectID].editProperties(categoryInput.value.toLowerCase(), titleInput.value, descriptionInput.value, dueDateInput.value, priorityInput.value, notesInput.value);
             populateStorage();
@@ -285,27 +285,27 @@ const createSearchModal = () => {
     const closeBtn = document.createElement("div");
     closeBtn.classList.add("close-button");
     closeBtn.onclick = toggleSearchModal;
-    closeBtn.innerText = "X";
+    closeBtn.innerText = 'X';
 
     const wrapper = document.createElement("div");
     wrapper.classList.add("modal-wrapper");
 
     const heading = document.createElement("h1");
     heading.classList.add("modal-heading");
-    heading.innerText = "Search for task:";
+    heading.innerText = 'Search for task:';
 
     const searchInput = document.createElement("input");
     searchInput.type = "text";
     searchInput.id = "searchInput";
-    searchInput.placeholder = "term (required)";
+    searchInput.placeholder = 'term (required)';
 
     const addBtn = document.createElement("button");
     addBtn.id = "addCatBtn";
     addBtn.classList.add("add-button");
-    addBtn.innerText = "Search";
+    addBtn.innerText = 'Search';
     addBtn.addEventListener("click", () => {
         if ((!searchInput.value)) {
-            alert("enter a search term!");
+            alert('enter a search term!');
         } else {
             searchTasks();
             toggleSearchModal();

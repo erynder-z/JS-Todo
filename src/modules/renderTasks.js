@@ -17,7 +17,7 @@ const renderTasks = (tasks) => {
             taskContainer.setAttribute("id", task.id);
             taskContainer.classList.add("task-container");
             taskListContainer.appendChild(taskContainer);
-            task.status === "done" ? taskContainer.classList.add("complete"): null;
+            task.status === 'done' ? taskContainer.classList.add("complete"): null;
 
             const taskCategory = document.createElement("div");
             taskCategory.classList.add("task-category");
@@ -31,7 +31,7 @@ const renderTasks = (tasks) => {
 
             const taskTitleHeading = document.createElement("div");
             taskTitleHeading.classList.add("task-title-heading");
-            taskTitleHeading.textContent = "Title:";
+            taskTitleHeading.textContent = 'Title:';
             titleWrapper.appendChild(taskTitleHeading);
 
             const taskTitle = document.createElement("div");
@@ -47,7 +47,7 @@ const renderTasks = (tasks) => {
 
                 const taskDescriptionHeading = document.createElement("div");
                 taskDescriptionHeading.classList.add("task-description-heading");
-                taskDescriptionHeading.textContent = "Description:";
+                taskDescriptionHeading.textContent = 'Description:';
                 descriptionWrapper.appendChild(taskDescriptionHeading);
 
                 const taskDescription = document.createElement("div");
@@ -62,7 +62,7 @@ const renderTasks = (tasks) => {
 
             const dueDateHeading = document.createElement("div");
             dueDateHeading.classList.add("dueDateHeading");
-            dueDateHeading.textContent = "Due:";
+            dueDateHeading.textContent = 'Due:';
             dueDateWrapper.appendChild(dueDateHeading);
 
             const dueDate = document.createElement("div");
@@ -77,15 +77,15 @@ const renderTasks = (tasks) => {
 
             const priorityHeading = document.createElement("div");
             priorityHeading.classList.add("priority-heading");
-            priorityHeading.textContent = "Priority:";
+            priorityHeading.textContent = 'Priority:';
             priorityWrapper.appendChild(priorityHeading);
 
             const priority = document.createElement("div");
             priority.classList.add("priority");
             priority.textContent = task.priority;
-            if (task.priority === "high") {
+            if (task.priority === 'high') {
                 priority.classList.add("high-priority");
-            } else if (task.priority === "medium") {
+            } else if (task.priority === 'medium') {
                 priority.classList.add("medium-priority")
             } else {
                 priority.classList.add("low-priority");
@@ -101,7 +101,7 @@ const renderTasks = (tasks) => {
 
                 const notesHeading = document.createElement("div");
                 notesHeading.classList.add("notes-heading");
-                notesHeading.textContent = "Notes:";
+                notesHeading.textContent = 'Notes:';
                 notesWrapper.appendChild(notesHeading);
 
                 const notes = document.createElement("div");
@@ -113,7 +113,7 @@ const renderTasks = (tasks) => {
 
             const expandTask = document.createElement("div");
             expandTask.classList.add("expand-button");
-            expandTask.textContent = "▼";
+            expandTask.textContent = '▼';
             taskContainer.appendChild(expandTask);
 
             const wrapper = document.createElement("div");
@@ -122,23 +122,23 @@ const renderTasks = (tasks) => {
 
             const marktCompleteBtn = document.createElement("div");
             marktCompleteBtn.classList.add("mark-complete-button");
-            marktCompleteBtn.textContent = "done";
+            marktCompleteBtn.textContent = 'done';
             wrapper.appendChild(marktCompleteBtn);
 
             const editBtn = document.createElement("div");
             editBtn.classList.add("edit-button");
-            editBtn.textContent = "edit";
+            editBtn.textContent = 'edit';
             wrapper.appendChild(editBtn);
 
             const deleteBtn = document.createElement("div");
             deleteBtn.classList.add("delete-button");
-            deleteBtn.textContent = "remove";
+            deleteBtn.textContent = 'remove';
             wrapper.appendChild(deleteBtn);
         });
 
     } else if (tasks.length <= 0) {
         const showPlaceholder = document.createElement("div");
-        showPlaceholder.textContent = "nothing in this category..."
+        showPlaceholder.textContent = 'nothing in this category...';
         taskListContainer.appendChild(showPlaceholder);
     }
     activateButtons();

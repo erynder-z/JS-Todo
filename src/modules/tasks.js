@@ -36,7 +36,7 @@ const createTask = () => {
             status,
 
             toggleStatus: function () {
-                this.status === "open" ? this.status = "done" : this.status = "open";
+                this.status === 'open' ? this.status = 'done' : this.status = 'open';
             },
 
             spliceTask: function (objectID) {

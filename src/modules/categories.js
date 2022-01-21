@@ -22,20 +22,20 @@ const createNewCategoryModal = () => {
 
     const heading = document.createElement("h1");
     heading.classList.add("modal-heading");
-    heading.innerText = "Enter category name:";
+    heading.innerText = 'Enter category name:';
 
     const catInput = document.createElement("input");
     catInput.type = "text";
     catInput.id = "catInput";
-    catInput.placeholder = "name (required)";
+    catInput.placeholder = 'name (required)';
 
     const addBtn = document.createElement("button");
     addBtn.id = "addCatBtn";
     addBtn.classList.add("add-button");
-    addBtn.innerText = "add category";
+    addBtn.innerText = 'add category';
     addBtn.addEventListener("click", () => {
         if ((!catInput.value)) {
-            alert("enter a title!");
+            alert('enter a title!');
         } else {
             categories.push(catInput.value);
             toggleNewCatModal();
@@ -83,14 +83,14 @@ const deleteCustomCategoriesModal = (categoryList) => {
     const closeBtn = document.createElement("div");
     closeBtn.classList.add("close-button");
     closeBtn.onclick = toggleDeleteCatModal;
-    closeBtn.innerText = "X";
+    closeBtn.innerText = 'X';
 
     const wrapper = document.createElement("div");
     wrapper.classList.add("modal-wrapper");
 
     const heading = document.createElement("h1");
     heading.classList.add("modal-heading");
-    heading.innerText = "Delete custom categories:";
+    heading.innerText = 'Delete custom categories:';
 
     modal.appendChild(closeBtn);
     modal.appendChild(wrapper);
@@ -99,7 +99,7 @@ const deleteCustomCategoriesModal = (categoryList) => {
     const customCategories = categoryList.slice(5);
 
     if (customCategories.length > 0) {
-
+        //List all custom categories
         customCategories.forEach(element => {
            const container = document.createElement("div");
            container.setAttribute("id", categories.indexOf(element));

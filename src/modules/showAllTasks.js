@@ -18,7 +18,7 @@ const showAllTasks = () => {
 
     const heading = document.createElement("h1");
     heading.classList.add("heading");
-    heading.textContent = "All Tasks";
+    heading.textContent = 'All Tasks';
     headingContainer.appendChild(heading);
 
     renderTasks(tasks);

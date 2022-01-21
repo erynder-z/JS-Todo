@@ -1,11 +1,11 @@
 const clearMainContent = () => {
     const contentDiv = document.getElementById("mainContent");
-    contentDiv.innerHTML = "";
+    contentDiv.innerHTML = '';
 }
 
 const clearContentArea = () => {
     const contentArea = document.querySelector(".taskList-container");
-    contentArea.innerHTML = "";
+    contentArea.innerHTML = '';
 }
 
 export {

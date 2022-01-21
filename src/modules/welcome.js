@@ -11,27 +11,27 @@ const welcomeScreen = () => {
 
     const heading = document.createElement("h1");
     heading.classList.add("heading");
-    heading.textContent = "Welcome";
+    heading.textContent = 'Welcome';
     headingContainer.appendChild(heading);
 
     const paragraph = document.createElement("p");
     paragraph.classList.add("paragraph");
-    paragraph.textContent = "Welcome to JS_todo, an organizer-app powered by JavaScript"
+    paragraph.textContent = 'Welcome to JS_todo, an organizer-app powered by JavaScript';
 
     const list = document.createElement("ul");
     list.classList.add("ul");
-    list.textContent = "This app allows you to do the following:"
+    list.textContent = 'This app allows you to do the following:';
     const listItem = document.createElement("li");
     listItem.innerHTML = features;
     list.appendChild(listItem);
 
     const lastParagraph = document.createElement("p");
     lastParagraph.classList.add("paragraph");
-    lastParagraph.textContent = "Build using Webpack and the date-fns library.";
+    lastParagraph.textContent = 'Build using Webpack and the date-fns library.';
 
     const thanks = document.createElement("h4");
     thanks.classList.add("thanks");
-    thanks.textContent = "Thank you very much for trying this app!"
+    thanks.textContent = 'Thank you very much for trying this app!';
     
     contentDiv.appendChild(paragraph);
     paragraph.appendChild(list);

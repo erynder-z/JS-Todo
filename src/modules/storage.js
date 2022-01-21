@@ -17,7 +17,7 @@ const taskFactory = (category, title, description, dueDate, priority, notes, sta
         status,
 
         toggleStatus: function () {
-            this.status === "open" ? this.status = "done" : this.status = "open";
+            this.status === 'open' ? this.status = 'done' : this.status = 'open';
         },
 
         spliceTask: function (objectID) {
