@@ -6,6 +6,8 @@ import { tasks } from "./tasks";
 const searchTasks = () => {
     clearMainContent();
 
+    const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+
     const contentDiv = document.getElementById("mainContent");
 
     const headingContainer = document.createElement("div");
@@ -15,11 +17,9 @@ const searchTasks = () => {
 
     const heading = document.createElement("h1");
     heading.classList.add("heading");
-    heading.textContent = 'Search results:';
+    heading.textContent = `Search results for "${searchTerm}": `;
     headingContainer.appendChild(heading);
 
-
-    const searchTerm = document.getElementById("searchInput").value.toLowerCase();
 
     const filterItems = (task) => {
         return (JSON.stringify(task).toLocaleLowerCase().includes(searchTerm));
