@@ -1,147 +1,142 @@
 import {
-    activateButtons
-} from "./buttons";
+  activateButtons,
+} from './buttons';
 
 const renderTasks = (tasks) => {
+  const contentDiv = document.getElementById('mainContent');
 
-    const contentDiv = document.getElementById("mainContent");
+  const taskListContainer = document.createElement('div');
+  taskListContainer.classList.add('taskList-container');
+  contentDiv.appendChild(taskListContainer);
 
-    const taskListContainer = document.createElement("div");
-    taskListContainer.classList.add("taskList-container");
-    contentDiv.appendChild(taskListContainer);
+  if (tasks.length > 0) {
+    tasks.forEach((task) => {
+      const taskContainer = document.createElement('div');
+      taskContainer.setAttribute('id', task.id);
+      taskContainer.classList.add('task-container');
+      taskListContainer.appendChild(taskContainer);
+      task.status === 'done' ? taskContainer.classList.add('complete') : null;
 
-    if (tasks.length > 0) {
+      const taskCategory = document.createElement('div');
+      taskCategory.classList.add('task-category');
+      taskCategory.classList.add('hidden');
+      taskCategory.textContent = task.category;
+      taskContainer.appendChild(taskCategory);
 
-        tasks.forEach(task => {
-            const taskContainer = document.createElement("div");
-            taskContainer.setAttribute("id", task.id);
-            taskContainer.classList.add("task-container");
-            taskListContainer.appendChild(taskContainer);
-            task.status === 'done' ? taskContainer.classList.add("complete"): null;
+      const titleWrapper = document.createElement('div');
+      titleWrapper.classList.add('title-wrapper');
+      taskContainer.appendChild(titleWrapper);
 
-            const taskCategory = document.createElement("div");
-            taskCategory.classList.add("task-category");
-            taskCategory.classList.add("hidden");
-            taskCategory.textContent = task.category;
-            taskContainer.appendChild(taskCategory);
+      const taskTitleHeading = document.createElement('div');
+      taskTitleHeading.classList.add('task-title-heading');
+      taskTitleHeading.textContent = 'Title:';
+      titleWrapper.appendChild(taskTitleHeading);
 
-            const titleWrapper = document.createElement("div");
-            titleWrapper.classList.add("title-wrapper");
-            taskContainer.appendChild(titleWrapper);
+      const taskTitle = document.createElement('div');
+      taskTitle.classList.add('task-title');
+      taskTitle.textContent = task.title;
+      titleWrapper.appendChild(taskTitle);
 
-            const taskTitleHeading = document.createElement("div");
-            taskTitleHeading.classList.add("task-title-heading");
-            taskTitleHeading.textContent = 'Title:';
-            titleWrapper.appendChild(taskTitleHeading);
+      if (task.description) {
+        const descriptionWrapper = document.createElement('div');
+        descriptionWrapper.classList.add('description-wrapper');
+        descriptionWrapper.classList.add('hidden');
+        taskContainer.appendChild(descriptionWrapper);
 
-            const taskTitle = document.createElement("div");
-            taskTitle.classList.add("task-title");
-            taskTitle.textContent = task.title;
-            titleWrapper.appendChild(taskTitle);
+        const taskDescriptionHeading = document.createElement('div');
+        taskDescriptionHeading.classList.add('task-description-heading');
+        taskDescriptionHeading.textContent = 'Description:';
+        descriptionWrapper.appendChild(taskDescriptionHeading);
 
-            if (task.description) {
-                const descriptionWrapper = document.createElement("div");
-                descriptionWrapper.classList.add("description-wrapper");
-                descriptionWrapper.classList.add("hidden");
-                taskContainer.appendChild(descriptionWrapper);
+        const taskDescription = document.createElement('div');
+        taskDescription.classList.add('task-description');
+        taskDescription.textContent = task.description;
+        descriptionWrapper.appendChild(taskDescription);
+      }
 
-                const taskDescriptionHeading = document.createElement("div");
-                taskDescriptionHeading.classList.add("task-description-heading");
-                taskDescriptionHeading.textContent = 'Description:';
-                descriptionWrapper.appendChild(taskDescriptionHeading);
+      const dueDateWrapper = document.createElement('div');
+      dueDateWrapper.classList.add('dueDate-wrapper');
+      taskContainer.appendChild(dueDateWrapper);
 
-                const taskDescription = document.createElement("div");
-                taskDescription.classList.add("task-description");
-                taskDescription.textContent = task.description;
-                descriptionWrapper.appendChild(taskDescription);
-            }
+      const dueDateHeading = document.createElement('div');
+      dueDateHeading.classList.add('dueDateHeading');
+      dueDateHeading.textContent = 'Due:';
+      dueDateWrapper.appendChild(dueDateHeading);
 
-            const dueDateWrapper = document.createElement("div");
-            dueDateWrapper.classList.add("dueDate-wrapper");
-            taskContainer.appendChild(dueDateWrapper);
+      const dueDate = document.createElement('div');
+      dueDate.classList.add('dueDate');
+      dueDate.textContent = task.dueDate;
+      dueDateWrapper.appendChild(dueDate);
 
-            const dueDateHeading = document.createElement("div");
-            dueDateHeading.classList.add("dueDateHeading");
-            dueDateHeading.textContent = 'Due:';
-            dueDateWrapper.appendChild(dueDateHeading);
+      const priorityWrapper = document.createElement('div');
+      priorityWrapper.classList.add('priority-wrapper');
+      priorityWrapper.classList.add('hidden');
+      taskContainer.appendChild(priorityWrapper);
 
-            const dueDate = document.createElement("div");
-            dueDate.classList.add("dueDate");
-            dueDate.textContent = task.dueDate;
-            dueDateWrapper.appendChild(dueDate);
+      const priorityHeading = document.createElement('div');
+      priorityHeading.classList.add('priority-heading');
+      priorityHeading.textContent = 'Priority:';
+      priorityWrapper.appendChild(priorityHeading);
 
-            const priorityWrapper = document.createElement("div");
-            priorityWrapper.classList.add("priority-wrapper");
-            priorityWrapper.classList.add("hidden");
-            taskContainer.appendChild(priorityWrapper);
+      const priority = document.createElement('div');
+      priority.classList.add('priority');
+      priority.textContent = task.priority;
+      if (task.priority === 'high') {
+        priority.classList.add('high-priority');
+      } else if (task.priority === 'medium') {
+        priority.classList.add('medium-priority');
+      } else {
+        priority.classList.add('low-priority');
+      }
+      priorityWrapper.appendChild(priority);
 
-            const priorityHeading = document.createElement("div");
-            priorityHeading.classList.add("priority-heading");
-            priorityHeading.textContent = 'Priority:';
-            priorityWrapper.appendChild(priorityHeading);
+      if (task.notes) {
+        const notesWrapper = document.createElement('div');
+        notesWrapper.classList.add('notes-wrapper');
+        notesWrapper.classList.add('hidden');
+        taskContainer.appendChild(notesWrapper);
 
-            const priority = document.createElement("div");
-            priority.classList.add("priority");
-            priority.textContent = task.priority;
-            if (task.priority === 'high') {
-                priority.classList.add("high-priority");
-            } else if (task.priority === 'medium') {
-                priority.classList.add("medium-priority")
-            } else {
-                priority.classList.add("low-priority");
-            }
-            priorityWrapper.appendChild(priority);
+        const notesHeading = document.createElement('div');
+        notesHeading.classList.add('notes-heading');
+        notesHeading.textContent = 'Notes:';
+        notesWrapper.appendChild(notesHeading);
 
-            if (task.notes) {
+        const notes = document.createElement('div');
+        notes.classList.add('notes');
+        notes.textContent = task.notes;
+        notesWrapper.appendChild(notes);
+      }
 
-                const notesWrapper = document.createElement("div");
-                notesWrapper.classList.add("notes-wrapper");
-                notesWrapper.classList.add("hidden");
-                taskContainer.appendChild(notesWrapper);
+      const expandTask = document.createElement('div');
+      expandTask.classList.add('expand-button');
+      expandTask.textContent = '▼';
+      taskContainer.appendChild(expandTask);
 
-                const notesHeading = document.createElement("div");
-                notesHeading.classList.add("notes-heading");
-                notesHeading.textContent = 'Notes:';
-                notesWrapper.appendChild(notesHeading);
+      const wrapper = document.createElement('div');
+      wrapper.classList.add('task-options-wrapper');
+      taskContainer.appendChild(wrapper);
 
-                const notes = document.createElement("div");
-                notes.classList.add("notes");
-                notes.textContent = task.notes;
-                notesWrapper.appendChild(notes);
-            }
+      const marktCompleteBtn = document.createElement('div');
+      marktCompleteBtn.classList.add('mark-complete-button');
+      marktCompleteBtn.textContent = 'done';
+      wrapper.appendChild(marktCompleteBtn);
 
+      const editBtn = document.createElement('div');
+      editBtn.classList.add('edit-button');
+      editBtn.textContent = 'edit';
+      wrapper.appendChild(editBtn);
 
-            const expandTask = document.createElement("div");
-            expandTask.classList.add("expand-button");
-            expandTask.textContent = '▼';
-            taskContainer.appendChild(expandTask);
+      const deleteBtn = document.createElement('div');
+      deleteBtn.classList.add('delete-button');
+      deleteBtn.textContent = 'remove';
+      wrapper.appendChild(deleteBtn);
+    });
+  } else if (tasks.length <= 0) {
+    const showPlaceholder = document.createElement('div');
+    showPlaceholder.textContent = 'nothing in this category...';
+    taskListContainer.appendChild(showPlaceholder);
+  }
+  activateButtons();
+};
 
-            const wrapper = document.createElement("div");
-            wrapper.classList.add("task-options-wrapper");
-            taskContainer.appendChild(wrapper);
-
-            const marktCompleteBtn = document.createElement("div");
-            marktCompleteBtn.classList.add("mark-complete-button");
-            marktCompleteBtn.textContent = 'done';
-            wrapper.appendChild(marktCompleteBtn);
-
-            const editBtn = document.createElement("div");
-            editBtn.classList.add("edit-button");
-            editBtn.textContent = 'edit';
-            wrapper.appendChild(editBtn);
-
-            const deleteBtn = document.createElement("div");
-            deleteBtn.classList.add("delete-button");
-            deleteBtn.textContent = 'remove';
-            wrapper.appendChild(deleteBtn);
-        });
-
-    } else if (tasks.length <= 0) {
-        const showPlaceholder = document.createElement("div");
-        showPlaceholder.textContent = 'nothing in this category...';
-        taskListContainer.appendChild(showPlaceholder);
-    }
-    activateButtons();
-}
-
-export default renderTasks
+export default renderTasks;
