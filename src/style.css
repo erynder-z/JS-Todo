@@ -116,7 +116,7 @@ body {
     min-height: 93vh;
     background: var(--sidebar);
     color: var(--blackish);
-    padding: 10px 6px 10px 10px;
+    padding: 10px;
     gap: 20px;
 }
 
@@ -132,13 +132,7 @@ body {
 }
 
 .menu-toggle {
-    
-    align-self: flex-end;
-}
-
-.expanded {
-    transform: rotate(180deg);
-    transition: all 0.5s;
+    display: none;
 }
 
 .heading-container {
@@ -153,6 +147,10 @@ body {
     min-height: 93vh;
     width: 85vw;
     padding-left: 25px;
+}
+
+.heading-container> .heading {
+    text-align: center;
 }
 
 .taskList-container {
@@ -401,6 +399,7 @@ body {
         left: -45%;
         width: 50vw;    
         transition: all 0.5s;
+        padding: 10px 6px 10px 10px;
     }
 
     .logo {
@@ -409,6 +408,16 @@ body {
     
     .menu {
         display: block;
+    }
+
+    .menu-toggle {
+        display: block;
+        align-self: flex-end;
+    }
+    
+    .expanded {
+        transform: rotate(180deg);
+        transition: all 0.5s;
     }
 
     .main-wrapper {
