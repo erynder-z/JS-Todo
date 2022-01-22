@@ -184,12 +184,14 @@ body {
   align-items: center;
   gap: 20px;
   flex: 1 1 100%;
+  transition: all 0.5s;
 }
 
 .task-container.expand {
   display: flex;
   min-height: 10vh;
   justify-content: flex-end;
+  transition: all 0.5s;
 }
 
 .delete-button {
@@ -215,6 +217,7 @@ body {
 .priority,
 .notes {
   font-size: 20px;
+  transition: all 0.5s;
 }
 
 .priority {
@@ -249,6 +252,7 @@ body {
 
 .task-container.expand > * {
   height: 100%;
+  transition: all 0.5s;
 }
 
 .task-container.expand > .task-category {
@@ -286,6 +290,7 @@ body {
   justify-content: center;
   height: 100%;
   max-width: 50px;
+  transition: all 0.5s;
 }
 
 .task-container.expand > .expand-button {
@@ -427,6 +432,7 @@ body {
   .menu-toggle {
     display: block;
     align-self: flex-end;
+    transition: all 0.5s;
   }
 
   .expanded {
