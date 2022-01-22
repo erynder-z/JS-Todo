@@ -4,6 +4,7 @@ const toggleSidebarNav = () => {
   const sidebarBtn = document.getElementById('showSide');
   sidebarBtn.addEventListener('click', () => {
     sidebar.classList.toggle('slide');
+    document.getElementById('toggleSide').classList.toggle('expanded');
   });
 };
 
