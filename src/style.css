@@ -1,245 +1,258 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
 
 :root {
-    --nav: #93B5C6;
-    --sidebar: #C9CCD5;
-    --background: #E4D8DC;
-    --task: #FFE3E3;
-    --blackish: #181818;
-    --redish: #B42B51;
+  --nav: #93b5c6;
+  --sidebar: #c9ccd5;
+  --background: #e4d8dc;
+  --task: #ffe3e3;
+  --blackish: #181818;
+  --redish: #b42b51;
 
-    --darknav: #6c4a39;
-    --darksidebar: #36332a;
-    --darkbackground: #1b2723;
-    --darktask: #412a3b;
-    --darkblackish: #e7e7e7;
-    --darkredish: #4bd4ae;
+  --darknav: #6c4a39;
+  --darksidebar: #36332a;
+  --darkbackground: #1b2723;
+  --darktask: #412a3b;
+  --darkblackish: #e7e7e7;
+  --darkredish: #4bd4ae;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    font-family: 'Noto Sans', sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .nav {
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 7vh;
-    background: var(--nav);
-    color: var(--blackish);
-    padding-right: 10vw;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 7vh;
+  background: var(--nav);
+  color: var(--blackish);
+  padding-right: 10vw;
 }
 
 .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 7vh;
-    width: 15vw;
-    background: var(--redish);
-    color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7vh;
+  width: 15vw;
+  background: var(--redish);
+  color: whitesmoke;
 }
 
-
-
 .search-wrapper {
-    max-width: 25vw;
-    display: flex;
-    justify-content: center;
+  max-width: 25vw;
+  display: flex;
+  justify-content: center;
 }
 
 .searchTerm {
-    width: 85%;
+  width: 85%;
 }
 
 .menu {
-    display: none;
+  display: none;
 }
 
 .options-selector {
-    position: relative;
-    display: inline-block;
-    display: flex;
-    justify-content: center;
+  position: relative;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
 }
 
 .options-selector:hover .options-content,
 .options-selector:focus .options-content {
-    display: flex;
+  display: flex;
 }
 
 .options-content {
-    display: none;
-    position: absolute;
-    background: var(--nav);
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    top: 1em;
-    right: 0px;
-    text-align: center;
-    width: 200px;
-    height: 100px;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+  display: none;
+  position: absolute;
+  background: var(--nav);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 1em;
+  right: 0px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.options-content>div:hover {
-    background: rgb(137, 84, 184);
+.options-content > div:hover {
+  background: rgb(137, 84, 184);
 }
 
-.options-content>a {
-    color: greenyellow;
+.options-content > a {
+  color: greenyellow;
 }
 
 .main-wrapper {
-    display: flex;
-    min-height: 100%;
-    align-items: stretch;
+  display: flex;
+  min-height: 100%;
+  align-items: stretch;
 }
 
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    width: 15vw;
-    min-height: 93vh;
-    background: var(--sidebar);
-    color: var(--blackish);
-    padding: 10px;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+  min-height: 93vh;
+  background: var(--sidebar);
+  color: var(--blackish);
+  padding: 10px;
+  gap: 20px;
+}
+
+.sidebar > div,
+.search,
+.options-selector,
+.float {
+  cursor: pointer;
 }
 
 .upper-sidebar {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 20px;
 }
 
 .manage-category {
-    margin-top: auto;
+  margin-top: auto;
 }
 
 .menu-toggle {
-    display: none;
+  display: none;
 }
 
 .heading-container {
-    height: fit-content;
+  height: fit-content;
 }
 
 .content-area {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    background: var(--background);
-    min-height: 93vh;
-    width: 85vw;
-    padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: var(--background);
+  min-height: 93vh;
+  width: 85vw;
+  padding-left: 25px;
 }
 
-.heading-container> .heading {
-    text-align: center;
+.heading-container > .heading {
+  text-align: center;
 }
 
 .taskList-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  min-height: fit-content;
 }
 
 .task-container {
-    display: flex;
-    width: 95%;
-    min-height: 5vh;
-    justify-content: space-around;
-    align-items: center;
-    background: var(--task);
-    border: solid 1px black;
-    gap: 15px;
-    padding: 0 0 0 20px;
+  display: flex;
+  width: 95%;
+  min-height: 5vh;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--task);
+  border: solid 1px black;
+  gap: 15px;
+  padding: 0 0 0 20px;
 }
 
-.task-container> * {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
-    flex: 1 1 100%;
+.task-container > * {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  flex: 1 1 100%;
 }
 
 .task-container.expand {
-    display: flex;
-    min-height: 10vh;
-    justify-content: flex-end;
+  display: flex;
+  min-height: 10vh;
+  justify-content: flex-end;
 }
 
 .delete-button {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .task-category {
-    text-align: center;
+  text-align: center;
 }
 
-.task-title-heading, .task-description-heading, .dueDateHeading, .priority-heading, .notes-heading {
-    text-decoration: underline;
+.task-title-heading,
+.task-description-heading,
+.dueDateHeading,
+.priority-heading,
+.notes-heading {
+  text-decoration: underline;
 }
 
-.task-title, .task-description, .dueDate, .priority, .notes {
-    font-size: 20px;
+.task-title,
+.task-description,
+.dueDate,
+.priority,
+.notes {
+  font-size: 20px;
 }
 
 .priority {
-    min-width: 100%;
-    text-align: center;
+  min-width: 100%;
+  text-align: center;
 }
 
 .high-priority {
-    background: rgb(179, 17, 17);
-    color: whitesmoke;
+  background: rgb(179, 17, 17);
+  color: whitesmoke;
 }
 
 .medium-priority {
-    background: rgb(39, 118, 207);
-    color: whitesmoke;
+  background: rgb(39, 118, 207);
+  color: whitesmoke;
 }
 
 .low-priority {
-    background: rgb(23, 161, 23);
-    color: whitesmoke;
+  background: rgb(23, 161, 23);
+  color: whitesmoke;
 }
 
 .task-options-wrapper {
-    display: flex;
-    justify-content: right;
-    padding: 0 20px 0 20px;
-    max-width: fit-content;
-    height: 100%;
-    background: var(--redish);
-    color: whitesmoke;
+  display: flex;
+  justify-content: right;
+  padding: 0 20px 0 20px;
+  max-width: fit-content;
+  height: 100%;
+  background: var(--redish);
+  color: whitesmoke;
 }
 
 .task-container.expand > * {
-    height: 100%;
+  height: 100%;
 }
 
 .task-container.expand > .task-category {
-    align-items: center;
+  align-items: center;
 }
 
 .task-container.expand > .title-wrapper,
@@ -247,13 +260,13 @@ body {
 .task-container.expand > .dueDate-wrapper,
 .task-container.expand > .priority-wrapper,
 .task-container.expand > .notes-wrapper {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
 }
 
 .notes-wrapper {
-    min-width: 20vw;
+  min-width: 20vw;
 }
 
 .notes {
@@ -262,290 +275,292 @@ body {
 }
 
 .task-container.expand > .task-options-wrapper {
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    padding-top: 5px;
-    padding-bottom: 5px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .expand-button {
-    justify-content: center;    
-    height: 100%;
-    max-width: 50px;
+  justify-content: center;
+  height: 100%;
+  max-width: 50px;
 }
 
 .task-container.expand > .expand-button {
-    align-items: center;
-    transform: rotate(180deg);
-    transition: all 0.5s;
+  align-items: center;
+  transform: rotate(180deg);
+  transition: all 0.5s;
 }
 
 .task-options-wrapper > * {
-    max-width: 50px;
+  max-width: 50px;
 }
 
- .complete> .title-wrapper> .task-title, .complete> .description-wrapper> .task-description, .complete> .dueDate-wrapper> .dueDate, .complete> .notes-wrapper> .notes {
-    text-decoration: line-through;
- }
+.complete > .title-wrapper > .task-title,
+.complete > .description-wrapper > .task-description,
+.complete > .dueDate-wrapper > .dueDate,
+.complete > .notes-wrapper > .notes {
+  text-decoration: line-through;
+}
 
-.complete>.delete-button {
-    text-decoration: none;
+.complete > .delete-button {
+  text-decoration: none;
 }
 
 .float {
-    font-family: 'Roboto Slab', serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    width: 80px;
-    height: 80px;
-    bottom: 50px;
-    right: 50px;
-    background: var(--redish);
-    color: whitesmoke;
-    border-radius: 50px;
-    box-shadow: 2px 2px 3px #999;
-  }
-  
+  font-family: "Roboto Slab", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  bottom: 50px;
+  right: 50px;
+  background: var(--redish);
+  color: whitesmoke;
+  border-radius: 50px;
+  box-shadow: 2px 2px 3px #999;
+}
+
 .float:hover {
-    transition: all 0.5s;
-    transform: scale(1.3);
-  }
-  
-  #myfloat {
-      font-size: 60px;
-  }
-  
+  transition: all 0.5s;
+  transform: scale(1.3);
+}
+
+#myfloat {
+  font-size: 60px;
+}
+
 #myfloat-new-category {
-    width: 80px;
-    height: 80px;
-    bottom: 250px;
-    right: 50px;
-  }
-  
+  width: 80px;
+  height: 80px;
+  bottom: 250px;
+  right: 50px;
+}
+
 #myfloat-new-task {
-    width: 80px;
-    height: 80px;
-    bottom: 150px;
-    right: 50px;
-  }
-  
+  width: 80px;
+  height: 80px;
+  bottom: 150px;
+  right: 50px;
+}
+
 .modal {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: fit-content;
-    width: 40vh;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--sidebar);
-    z-index: 1;
-    border: solid 2px black;
-    padding: 5px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: fit-content;
+  width: 40vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--sidebar);
+  z-index: 1;
+  border: solid 2px black;
+  padding: 5px 0 20px 0;
 }
 
 .modal-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
-.modal-wrapper> * {
-    width: 90%;
+.modal-wrapper > * {
+  width: 90%;
 }
 
 .modal-heading {
-    text-align: center;
+  text-align: center;
 }
 
 .close-button {
-    margin-right: 5%;
-    align-self: flex-end;
-    color: crimson;
-    font-weight: bolder;
+  margin-right: 5%;
+  align-self: flex-end;
+  color: crimson;
+  font-weight: bolder;
 }
 
 .category-container {
-    display: flex;
-    justify-content: center;
-   gap: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .delete-cat {
-    color: crimson;
-    font-weight: bolder;
+  color: crimson;
+  font-weight: bolder;
 }
 
-  .hidden {
+.hidden {
+  display: none;
+}
+
+@media all and (max-width: 500px) {
+  .nav {
+    justify-content: space-around;
+    padding-right: 0;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: -45%;
+    width: 50vw;
+    transition: all 0.5s;
+    padding: 10px 6px 10px 10px;
+  }
+
+  .logo {
     display: none;
   }
 
+  .menu {
+    display: block;
+  }
 
-@media all and (max-width:500px) {
+  .menu-toggle {
+    display: block;
+    align-self: flex-end;
+  }
 
-    .nav {
-        justify-content: space-around;
-        padding-right: 0;
-    }
+  .expanded {
+    transform: rotate(180deg);
+    transition: all 0.5s;
+  }
 
-    .sidebar {
-        position:fixed;
-        left: -45%;
-        width: 50vw;    
-        transition: all 0.5s;
-        padding: 10px 6px 10px 10px;
-    }
+  .main-wrapper {
+    display: flex;
+  }
 
-    .logo {
-        display: none;
-    }
-    
-    .menu {
-        display: block;
-    }
+  .content-area {
+    width: 100vw;
+    padding: 25px;
+  }
 
-    .menu-toggle {
-        display: block;
-        align-self: flex-end;
-    }
-    
-    .expanded {
-        transform: rotate(180deg);
-        transition: all 0.5s;
-    }
+  .taskList-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .main-wrapper {
-        display: flex;
-    }
+  .task-container {
+    flex-direction: column;
+    justify-content: center;
+    width: 80vw;
+    min-height: 15vh;
+    padding-top: 15px;
+    padding: 20px 0 0 0;
+    gap: 5px;
+  }
 
-    .content-area {
-        width: 100vw;
-        padding: 25px;
-    }
+  .task-container > * {
+    gap: 10px;
+  }
 
-    .taskList-container {
-        flex-direction: column;
-        align-items: center;
-    }
+  .task-container.expand {
+    justify-content: center;
+  }
 
-    .task-container {
-        flex-direction: column;
-        justify-content: center;
-        width: 80vw;
-        min-height: 15vh;
-        padding-top: 15px;
-        padding: 20px 0 0 0;
-        gap: 5px;
-    }
+  .task-container.expand > * {
+    height: fit-content;
+  }
 
-    .task-container> * {
-        gap: 10px;
-    }
-    
+  .task-container.expand > .task-options-wrapper {
+    flex-direction: row;
+  }
 
-    .task-container.expand {
-       justify-content: center;
-  
-    }
+  .expand-button {
+    height: auto;
+  }
 
-    .task-container.expand > * {
-        height: fit-content;
-    }
+  .task-options-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: unset;
+    height: initial;
+    justify-content: space-evenly;
+    padding: 0;
+  }
 
-    .task-container.expand > .task-options-wrapper {
-        flex-direction: row;
-    }
+  .slide {
+    left: 0;
+    transition: all 0.5s;
+  }
 
-    .expand-button {
-        height: auto;
-    }
+  .float {
+    bottom: 40px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    font-size: small;
+  }
 
-    .task-options-wrapper {
-        display: flex;
-        width: 100%;
-        max-width: unset;
-        height: initial;
-        justify-content: space-evenly;
-        padding: 0;
-    }
+  #myfloat {
+    font-size: 40px;
+  }
 
-    .slide {
-        left: 0;
-        transition: all 0.5s;
-    }
+  #myfloat-new-category {
+    bottom: 200px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+  }
 
-    .float {
-        bottom: 40px;
-        right: 25px;
-        width: 60px;
-        height: 60px;
-        font-size: small;
-      }
+  #myfloat-new-task {
+    bottom: 120px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+  }
 
-      #myfloat {
-          font-size: 40px;
-      }
+  .modal {
+    width: 75vw;
+  }
 
-      #myfloat-new-category {
-        bottom: 200px;
-        right: 25px;
-        width: 60px;
-        height: 60px;
-      }
-
-      #myfloat-new-task {
-        bottom: 120px;
-        right: 25px;
-        width: 60px;
-        height: 60px;
-
-      }
-
-      .modal {
-        width: 75vw;
-    }
-
-    .toggle-darkmode {
-        margin-bottom: 1rem;
-    }
+  .toggle-darkmode {
+    margin-bottom: 1rem;
+  }
 }
 
-body.darkmode>.nav {
-    filter: invert(100%) hue-rotate(240deg);
+body.darkmode > .nav {
+  filter: invert(100%) hue-rotate(240deg);
 }
 
-body.darkmode>.options-content {
-    filter: invert(100%) hue-rotate(240deg);
+body.darkmode > .options-content {
+  filter: invert(100%) hue-rotate(240deg);
 }
 
-body.darkmode>.main-wrapper>.sidebar {
-    filter: invert(100%) hue-rotate(240deg);
+body.darkmode > .main-wrapper > .sidebar {
+  filter: invert(100%) hue-rotate(240deg);
 }
 
-body.darkmode> .main-wrapper>.content-area {
-    background: var(--darkbackground);
-    color: whitesmoke;
+body.darkmode > .main-wrapper > .content-area {
+  background: var(--darkbackground);
+  color: whitesmoke;
 }
 
-body.darkmode> .main-wrapper> .content-area>.taskList-container>.task-container {
-    background: var(--darktask);
-    color: whitesmoke;
+body.darkmode
+  > .main-wrapper
+  > .content-area
+  > .taskList-container
+  > .task-container {
+  background: var(--darktask);
+  color: whitesmoke;
 }
 
-body.darkmode> .modalContent> .modal {
-    filter: invert(100%) hue-rotate(240deg);
+body.darkmode > .modalContent > .modal {
+  filter: invert(100%) hue-rotate(240deg);
 }
 
-body.darkmode>.task-options-wrapper {
-    filter: invert(100%) hue-rotate(240deg);
+body.darkmode > .task-options-wrapper {
+  filter: invert(100%) hue-rotate(240deg);
 }
 
-body.darkmode>.modal {
-    filter: invert(100%) hue-rotate(240deg);
+body.darkmode > .modal {
+  filter: invert(100%) hue-rotate(240deg);
 }
