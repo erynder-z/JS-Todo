@@ -1,29 +1,23 @@
-import {
-  activeView,
-} from './activeView';
-import {
-  addClassComplete,
-} from './addClasses';
-import {
-  clearContentArea,
-} from './clearContent';
-import {
-  showDueToday,
-  showDueWeek,
-  showCategory,
-} from './filteredTasks';
-import {
-  createEditTaskModal,
-} from './modal';
-import showAllTasks from './showAllTasks';
-import {
-  populateStorage,
-} from './storage';
+import { activeView } from "./activeView";
+import { addClassComplete } from "./addClasses";
+import { clearContentArea } from "./clearContent";
+import { showDueToday, showDueWeek, showCategory } from "./filteredTasks";
+import { createEditTaskModal } from "./modal";
+import showAllTasks from "./showAllTasks";
+import { populateStorage } from "./storage";
 
 const tasks = [];
 
 const createTask = () => {
-  const taskFactory = (category, title, description, dueDate, priority, notes, status) => ({
+  const taskFactory = (
+    category,
+    title,
+    description,
+    dueDate,
+    priority,
+    notes,
+    status
+  ) => ({
     category,
     title,
     description,
@@ -33,14 +27,21 @@ const createTask = () => {
     status,
 
     toggleStatus() {
-      this.status === 'open' ? this.status = 'done' : this.status = 'open';
+      this.status === "open" ? (this.status = "done") : (this.status = "open");
     },
 
     spliceTask(objectID) {
       tasks.splice(objectID, 1);
     },
 
-    editProperties(currentCategory, currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes) {
+    editProperties(
+      currentCategory,
+      currentTitle,
+      currentDescription,
+      currentDueDate,
+      currentPriority,
+      currentNotes
+    ) {
       this.category = currentCategory;
       this.title = currentTitle;
       this.description = currentDescription;
@@ -50,14 +51,22 @@ const createTask = () => {
     },
   });
 
-  const category = document.getElementById('categoryInput');
-  const title = document.getElementById('titleInput');
-  const description = document.getElementById('descriptionInput');
-  const dueDate = document.getElementById('dueDateInput');
-  const priority = document.getElementById('priorityInput');
-  const notes = document.getElementById('notesInput');
+  const category = document.getElementById("categoryInput");
+  const title = document.getElementById("titleInput");
+  const description = document.getElementById("descriptionInput");
+  const dueDate = document.getElementById("dueDateInput");
+  const priority = document.getElementById("priorityInput");
+  const notes = document.getElementById("notesInput");
 
-  const newTask = taskFactory(category.value.toLowerCase(), title.value, description.value, dueDate.value, priority.value, notes.value, 'open');
+  const newTask = taskFactory(
+    category.value.toLowerCase(),
+    title.value,
+    description.value,
+    dueDate.value,
+    priority.value,
+    notes.value,
+    "open"
+  );
   tasks.push(newTask);
   // Assign ID to task DOM-Element corresponding to it's position in the tasks-array
   const newTaskID = tasks.indexOf(newTask);
@@ -73,10 +82,13 @@ const deleteTask = (objectID) => {
   clearContentArea();
   populateStorage();
 
-  return activeView === 'dueToday' ? showDueToday(tasks)
-    : activeView === 'dueWeek' ? showDueWeek(tasks)
-      : activeView.id === 'all' ? showAllTasks()
-        : showCategory(activeView);
+  return activeView === "dueToday"
+    ? showDueToday(tasks)
+    : activeView === "dueWeek"
+    ? showDueWeek(tasks)
+    : activeView.id === "all"
+    ? showAllTasks()
+    : showCategory(activeView);
 };
 
 const markTaskComplete = (objectID) => {
@@ -93,7 +105,15 @@ const retrieveTaskDetails = (objectID) => {
   const currentDueDate = obj.dueDate;
   const currentPriority = obj.priority;
   const currentNotes = obj.notes;
-  createEditTaskModal(objectID, currentCategory, currentTitle, currentDescription, currentDueDate, currentPriority, currentNotes);
+  createEditTaskModal(
+    objectID,
+    currentCategory,
+    currentTitle,
+    currentDescription,
+    currentDueDate,
+    currentPriority,
+    currentNotes
+  );
 };
 
 // Update task DOM Element ID, when the tasks-array is modified
@@ -103,10 +123,4 @@ const updateObjectID = () => {
   });
 };
 
-export {
-  tasks,
-  createTask,
-  deleteTask,
-  markTaskComplete,
-  retrieveTaskDetails,
-};
+export { tasks, createTask, deleteTask, markTaskComplete, retrieveTaskDetails };

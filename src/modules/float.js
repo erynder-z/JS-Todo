@@ -1,34 +1,34 @@
-import {
-  toggleNewTaskModal,
-} from './modal';
+import { toggleNewTaskModal } from "./modal";
 
 const floatMenu = () => {
   let toggleIsHidden = true;
-  const toggleFloatNewCategory = document.getElementById('myfloat-new-category');
-  const toggleFloatNewTask = document.getElementById('myfloat-new-task');
-  const toggleFloat = document.getElementById('myfloat');
+  const toggleFloatNewCategory = document.getElementById(
+    "myfloat-new-category"
+  );
+  const toggleFloatNewTask = document.getElementById("myfloat-new-task");
+  const toggleFloat = document.getElementById("myfloat");
 
-  toggleFloat.addEventListener('click', () => {
+  toggleFloat.addEventListener("click", () => {
     handleToogle();
   });
 
-  toggleFloatNewCategory.addEventListener('click', () => {
+  toggleFloatNewCategory.addEventListener("click", () => {
     handleToogle();
   });
 
-  toggleFloatNewTask.addEventListener('click', () => {
+  toggleFloatNewTask.addEventListener("click", () => {
     handleToogle();
     toggleNewTaskModal();
   });
 
   function showToggle() {
-    toggleFloatNewCategory.classList.remove('hidden');
-    toggleFloatNewTask.classList.remove('hidden');
+    toggleFloatNewCategory.classList.remove("hidden");
+    toggleFloatNewTask.classList.remove("hidden");
   }
 
   function hideToggle() {
-    toggleFloatNewCategory.classList.add('hidden');
-    toggleFloatNewTask.classList.add('hidden');
+    toggleFloatNewCategory.classList.add("hidden");
+    toggleFloatNewTask.classList.add("hidden");
   }
 
   function handleToogle() {
