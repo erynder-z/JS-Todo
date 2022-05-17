@@ -570,3 +570,113 @@ body.darkmode > .task-options-wrapper {
 body.darkmode > .modal {
   filter: invert(100%) hue-rotate(240deg);
 }
+
+.login-modal-overlay {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--nav);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.login-modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--background);
+  z-index: 10;
+}
+
+.login-modal-overlay.hidden,
+.btnLogout.hidden {
+  display: none;
+}
+
+form {
+  width: 380px;
+  margin: 4em auto;
+  padding: 3em 2em 2em 2em;
+  background: var(--background);
+  border: 1px solid var(--redish);
+}
+
+.group {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+#txtEmail,
+#txtPassword {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  -webkit-appearance: none;
+  display: block;
+  background: #fafafa;
+  color: #636363;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #757575;
+}
+
+#txtEmail:focus,
+#txtPassword:focus {
+  outline: none;
+}
+
+input:focus ~ label,
+input.used ~ label {
+  color: blueviolet;
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 0.3em 0 1em 0;
+  width: 100%;
+  vertical-align: middle;
+  background: var(--redish);
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  letter-spacing: 1px;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.button:focus {
+  outline: 0;
+}
+
+.button:hover {
+  background: #db456f;
+}
+
+.btnLogout {
+  position: relative;
+  display: flex;
+  padding: 12px 24px;
+  margin: 0 auto;
+  vertical-align: middle;
+  background: var(--redish);
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  letter-spacing: 1px;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
