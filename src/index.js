@@ -11,6 +11,10 @@ import welcomeScreen from "./modules/welcome";
 import switchTheme from "./modules/darkmode";
 import firebaseAuthentication from "./modules/authentication";
 
+const loginModal = document.querySelector(".login-modal-overlay");
+const offlineBtn = document.getElementById("offlineBtn");
+const btnLogout = document.getElementById("btnLogout");
+
 const startOffline = () => {
   retrieveStorage();
   retrieveStorageCategories();
@@ -21,6 +25,7 @@ const startOffline = () => {
   createNewTaskModal();
   switchTheme();
   welcomeScreen();
+  btnLogout.classList.add("hidden");
 };
 
 const startOnline = () => {
@@ -32,9 +37,6 @@ const startOnline = () => {
   switchTheme();
   welcomeScreen();
 };
-
-const loginModal = document.querySelector(".login-modal-overlay");
-const offlineBtn = document.querySelector(".offlineBtn");
 
 offlineBtn.addEventListener("click", () => {
   loginModal.classList.add("hidden");
