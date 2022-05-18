@@ -1,6 +1,8 @@
+import { mode } from "..";
 import { activateNewCategories, activateSidebar } from "./buttons";
 import { createNewTaskModal } from "./modal";
 import { populateStorageCategories } from "./storage";
+import { populateStorageCategoriesFirebase } from "./firestore";
 
 const categories = ["Uncategorized", "Work", "Hobby", "Health", "Chore"];
 
@@ -40,7 +42,9 @@ const createNewCategoryModal = () => {
       toggleNewCatModal();
       appendCategoryToSidebar(catInput.value);
     }
-    populateStorageCategories();
+    mode === "offline"
+      ? populateStorageCategories()
+      : populateStorageCategoriesFirebase();
   });
 
   modal.appendChild(closeBtn);
@@ -126,7 +130,9 @@ const deleteCustomCategoriesModal = (categoryList) => {
 
 const deleteCat = (elementID, element) => {
   categories.splice(elementID, 1);
-  populateStorageCategories();
+  mode === "offline"
+    ? populateStorageCategories()
+    : populateStorageCategoriesFirebase();
   deleteCategoryFromSidebar(element);
 };
 

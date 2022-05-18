@@ -10,6 +10,13 @@ import {
 } from "firebase/auth";
 import { startOnline } from "..";
 import { clearMainContent } from "./clearContent";
+import {
+  retrieveStorageFirebase,
+  retrieveStorageCategoriesFirebase,
+} from "./firestore";
+import { clearTasks } from "./tasks";
+
+let currentUser;
 
 const firebaseAuthentication = () => {
   const txtEmail = document.querySelector("#txtEmail");
@@ -67,8 +74,6 @@ const firebaseAuthentication = () => {
         loginEmail,
         loginPassword
       );
-
-      console.log(userCredentials.user);
     } catch (error) {
       console.log(error);
       showLoginError(error);
@@ -86,8 +91,6 @@ const firebaseAuthentication = () => {
         loginEmail,
         loginPassword
       );
-
-      console.log(userCredentials.user);
     } catch (error) {
       console.log(error);
       showLoginError(error);
@@ -99,13 +102,14 @@ const firebaseAuthentication = () => {
   const monitorAuthState = async () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log(user);
         startOnline();
         showLoginState(user);
+        currentUser = user;
         loginModal.classList.add("hidden");
         hideLoginError();
+        retrieveStorageFirebase();
+        retrieveStorageCategoriesFirebase();
       } else {
-        clearMainContent();
         showLoginForm();
 
         lblAuthState.innerHTML = "You're not signed in!";
@@ -117,9 +121,13 @@ const firebaseAuthentication = () => {
     await signOut(auth);
   };
 
-  btnLogout.addEventListener("click", logout);
+  btnLogout.addEventListener("click", () => {
+    logout();
+    clearTasks();
+    clearMainContent();
+  });
 
   monitorAuthState();
 };
 
-export default firebaseAuthentication;
+export { firebaseAuthentication, currentUser };
