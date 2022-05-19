@@ -22,7 +22,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-connectFirestoreEmulator(db, "localhost", 8080);
+/* connectFirestoreEmulator(db, "localhost", 8080); */
 
 const taskFactory = (
   category,
