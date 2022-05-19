@@ -1,72 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do-List</title>
     <script src="main.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
 
-<body>
-    <nav id="navbar" class="nav">
-        <div class="top-left-container">
-            <div id="logo" class="logo">JS_Todo</div>
-            <div id="showSide" class="menu"><i class="fas fa-bars"></i></div>
-        </div>
-        <div class="top-middle-container">
-            <div id="searchBtn" class="search"><i class="fas fa-search"></i> Search</div>
-        </div>
-        <div class="top-right-container">
-            <div class="options-selector">About
-                <a id="options-menu" onclick="void(0)"></a>
-                <div class="options-content">
-                    <div id="option1">created by:</div>
-                    <div id="option2">Erynder-Z</div>
-                    <a href="https://github.com/erynder-z" target="_blank">My GitHub</a>
-                </div>
+  <body>
+    <div class="login-modal-overlay">
+      <div class="login-modal-body">
+        <div id="login">
+          <div class="login-header">
+            <h1>Sign in</h1>
+          </div>
+          <form>
+            <div class="group">
+              <input id="txtEmail" type="email" />
+              <label>Email</label>
             </div>
+            <div class="group">
+              <input id="txtPassword" type="password" />
+              <label>Password</label>
+            </div>
+            <div id="divLoginError" class="group">
+              <div id="lblLoginErrorMessage" class="errorlabel">&nbsp;</div>
+            </div>
+            <button id="btnLogin" type="button" class="button">Log in</button>
+            <button id="btnSignup" type="button" class="button">Sign up</button>
+          </form>
+          <div class="info-container">
+            <li>
+              Signing in will wllow you to save your tasks online using Google
+              Firebase backend
+            </li>
+            <li>
+              Using the app offline saves your tasks in your browser cache using
+              Web Storage API
+            </li>
+          </div>
+          <button id="offlineBtn" class="button">USE OFFLINE</button>
         </div>
+      </div>
+    </div>
+
+    <nav id="navbar" class="nav">
+      <div class="top-left-container">
+        <div id="logo" class="logo">JS_Todo</div>
+        <div id="showSide" class="menu"><i class="fas fa-bars"></i></div>
+      </div>
+      <div class="top-middle-container">
+        <div id="searchBtn" class="search">
+          <i class="fas fa-search"></i>Search
+        </div>
+      </div>
+      <div class="top-right-container">
+        <div class="options-selector">
+          About
+          <a id="options-menu" onclick="void(0)"></a>
+          <div class="options-content">
+            <div id="option1">created by:</div>
+            <div id="option2">Erynder-Z</div>
+            <a href="https://github.com/erynder-z" target="_blank">My GitHub</a>
+          </div>
+        </div>
+      </div>
     </nav>
 
     <div id="modalContent" class="modalContent"></div>
 
     <div class="main-wrapper">
-        <div id="sidebar" class="sidebar">
-            <div id="upperSidebar" class="upper-sidebar">
-                <div id="all" class="side-today"><i class="fas fa-list-ol"></i> All Tasks</div>
-                <div id="today" class="side-today"><i class="far fa-calendar"></i> Today</div>
-                <div id="week" class="side-week"><i class="fas fa-calendar-alt"></i> Due within a week</div>
-                <div id="work" class="side-category" data-category><i class="fas fa-briefcase"></i> Work</div>
-                <div id="hobby" class="side-category" data-category><i class="fas fa-icons"></i> Hobby</div>
-                <div id="health" class="side-category" data-category><i class="fas fa-heartbeat"></i> Health</div>
-                <div id="chore" class="side-category" data-category><i class="fas fa-thumbs-down"></i> Chore</div>
-            </div>
-            
-            <div id="manageCustomCategories" class="manage-category"><i class="fas fa-tasks"></i> Manage custom categories</div>
-            <div id="toggleDarkmode" class="toggle-darkmode"><i class="fas fa-adjust"></i> Change theme</div>
-            <div id="toggleSide" class="menu-toggle"><i class="fas fa-chevron-right"></i></div>
-
+      <div id="sidebar" class="sidebar">
+        <div id="upperSidebar" class="upper-sidebar">
+          <div id="all" class="side-today">
+            <i class="fas fa-list-ol"></i> All Tasks
+          </div>
+          <div id="today" class="side-today">
+            <i class="far fa-calendar"></i> Today
+          </div>
+          <div id="week" class="side-week">
+            <i class="fas fa-calendar-alt"></i> Due within a week
+          </div>
+          <div id="work" class="side-category" data-category>
+            <i class="fas fa-briefcase"></i> Work
+          </div>
+          <div id="hobby" class="side-category" data-category>
+            <i class="fas fa-icons"></i> Hobby
+          </div>
+          <div id="health" class="side-category" data-category>
+            <i class="fas fa-heartbeat"></i> Health
+          </div>
+          <div id="chore" class="side-category" data-category>
+            <i class="fas fa-thumbs-down"></i> Chore
+          </div>
         </div>
-        <div id="mainContent" class="content-area"></div>
+
+        <div id="manageCustomCategories" class="manage-category">
+          <i class="fas fa-tasks"></i> Manage custom categories
+        </div>
+        <div id="toggleDarkmode" class="toggle-darkmode">
+          <i class="fas fa-adjust"></i> Change theme
+        </div>
+        <div class="user-container">
+          <div id="lblAuthState" class="authlabel"></div>
+          <button id="btnLogout" class="btnLogout">LOGOUT</button>
+        </div>
+
+        <div id="toggleSide" class="menu-toggle">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+      <div id="mainContent" class="content-area"></div>
     </div>
 
     <div class="float-wrapper">
-        <div id="float-menu">
-            <div id="myfloat" class="float">
-                +
-            </div>
-            <div id="myfloat-new-category" class="float hidden">
-                Category
-            </div>
-            <div id="myfloat-new-task" class="float hidden">
-                Task
-            </div>
-        </div>
+      <div id="float-menu">
+        <div id="myfloat" class="float"><i class="fas fa-plus fa-sm"></i></div>
+        <div id="myfloat-new-category" class="float hidden">Category</div>
+        <div id="myfloat-new-task" class="float hidden">Task</div>
+      </div>
     </div>
-
-</body>
-
+  </body>
 </html>
