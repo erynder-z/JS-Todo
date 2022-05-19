@@ -19,7 +19,7 @@ const createNewTaskModal = () => {
   const closeBtn = document.createElement("div");
   closeBtn.classList.add("close-button");
   closeBtn.onclick = toggleNewTaskModal;
-  closeBtn.innerText = "X";
+  closeBtn.innerHTML = "&times;";
 
   const wrapper = document.createElement("div");
   wrapper.classList.add("modal-wrapper");
@@ -167,7 +167,7 @@ const createEditTaskModal = (
   const closeBtn = document.createElement("div");
   closeBtn.classList.add("close-button");
   closeBtn.onclick = toggleEditTaskModal;
-  closeBtn.innerText = "X";
+  closeBtn.innerHTML = "&times;";
 
   const wrapper = document.createElement("div");
   wrapper.classList.add("modal-wrapper");
@@ -305,7 +305,7 @@ const createSearchModal = () => {
   const closeBtn = document.createElement("div");
   closeBtn.classList.add("close-button");
   closeBtn.onclick = toggleSearchModal;
-  closeBtn.innerText = "X";
+  closeBtn.innerHTML = "&times;";
 
   const wrapper = document.createElement("div");
   wrapper.classList.add("modal-wrapper");

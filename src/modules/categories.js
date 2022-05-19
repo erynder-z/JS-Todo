@@ -16,7 +16,7 @@ const createNewCategoryModal = () => {
   const closeBtn = document.createElement("div");
   closeBtn.classList.add("close-button");
   closeBtn.onclick = toggleNewCatModal;
-  closeBtn.innerText = "X";
+  closeBtn.innerHTML = "&times;";
 
   const wrapper = document.createElement("div");
   wrapper.classList.add("modal-wrapper");
@@ -84,7 +84,7 @@ const deleteCustomCategoriesModal = (categoryList) => {
   const closeBtn = document.createElement("div");
   closeBtn.classList.add("close-button");
   closeBtn.onclick = toggleDeleteCatModal;
-  closeBtn.innerText = "X";
+  closeBtn.innerHTML = "&times;";
 
   const wrapper = document.createElement("div");
   wrapper.classList.add("modal-wrapper");
@@ -106,7 +106,7 @@ const deleteCustomCategoriesModal = (categoryList) => {
       container.setAttribute("id", categories.indexOf(element));
       container.classList.add("category-container");
 
-      const cat = document.createElement("div");
+      const cat = document.createElement("li");
       cat.classList.add("cat");
       cat.textContent = element;
       container.appendChild(cat);
