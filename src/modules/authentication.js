@@ -52,7 +52,8 @@ const firebaseAuthentication = () => {
   };
 
   const showLoginState = (user) => {
-    lblAuthState.innerHTML = `You're logged in as ${user.displayName} (uid: ${user.uid}, email: ${user.email}) `;
+    lblAuthState.innerHTML = `Logged in as:<br>
+     ${user.email} `;
   };
 
   const hideLoginError = () => {
@@ -112,7 +113,7 @@ const firebaseAuthentication = () => {
       } else {
         showLoginForm();
 
-        lblAuthState.innerHTML = "You're not signed in!";
+        lblAuthState.innerHTML = "Not signed in";
       }
     });
   };

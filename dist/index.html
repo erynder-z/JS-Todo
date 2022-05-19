@@ -16,8 +16,8 @@
     <div class="login-modal-overlay">
       <div class="login-modal-body">
         <div id="login">
-          <div class="header">
-            <h1>Sign in to continue</h1>
+          <div class="login-header">
+            <h1>Sign in</h1>
           </div>
           <form>
             <div class="group">
@@ -34,6 +34,16 @@
             <button id="btnLogin" type="button" class="button">Log in</button>
             <button id="btnSignup" type="button" class="button">Sign up</button>
           </form>
+          <div class="info-container">
+            <li>
+              Signing in will wllow you to save your tasks online using Google
+              Firebase backend
+            </li>
+            <li>
+              Using the app offline saves your tasks in your browser cache using
+              Web Storage API
+            </li>
+          </div>
           <button id="offlineBtn" class="button">USE OFFLINE</button>
         </div>
       </div>
@@ -46,7 +56,7 @@
       </div>
       <div class="top-middle-container">
         <div id="searchBtn" class="search">
-          <i class="fas fa-search"></i> Search
+          <i class="fas fa-search"></i>Search
         </div>
       </div>
       <div class="top-right-container">
@@ -96,19 +106,21 @@
         <div id="toggleDarkmode" class="toggle-darkmode">
           <i class="fas fa-adjust"></i> Change theme
         </div>
-        <button id="btnLogout" class="btnLogout">LOGOUT</button>
+        <div class="user-container">
+          <div id="lblAuthState" class="authlabel"></div>
+          <button id="btnLogout" class="btnLogout">LOGOUT</button>
+        </div>
+
         <div id="toggleSide" class="menu-toggle">
           <i class="fas fa-chevron-right"></i>
         </div>
       </div>
-      <div id="mainContent" class="content-area">
-        <div id="lblAuthState" class="authlabel"></div>
-      </div>
+      <div id="mainContent" class="content-area"></div>
     </div>
 
     <div class="float-wrapper">
       <div id="float-menu">
-        <div id="myfloat" class="float">+</div>
+        <div id="myfloat" class="float"><i class="fas fa-plus fa-sm"></i></div>
         <div id="myfloat-new-category" class="float hidden">Category</div>
         <div id="myfloat-new-task" class="float hidden">Task</div>
       </div>
