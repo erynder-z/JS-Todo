@@ -38,7 +38,12 @@ body {
   height: 7vh;
   background: var(--nav);
   color: var(--blackish);
-  padding-right: 10vw;
+}
+
+.top-right-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .logo {
@@ -61,15 +66,28 @@ body {
   width: 85%;
 }
 
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.search > i {
+  margin-right: 1rem;
+}
+
 .menu {
   display: none;
 }
 
 .options-selector {
   position: relative;
-  display: inline-block;
   display: flex;
   justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  padding: 0 1rem;
 }
 
 .options-selector:hover .options-content,
@@ -134,6 +152,17 @@ body {
 
 .manage-category {
   margin-top: auto;
+}
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+  border-top: solid 1px black;
 }
 
 .menu-toggle {
@@ -356,9 +385,10 @@ body {
 .modal {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   height: fit-content;
-  width: 40vh;
+  width: 50vh;
+
   position: fixed;
   top: 50%;
   left: 50%;
@@ -381,15 +411,21 @@ body {
   width: 90%;
 }
 
+.modal-wrapper > p {
+  text-align: center;
+}
+
 .modal-heading {
   text-align: center;
 }
 
 .close-button {
+  font-size: 2rem;
   margin-right: 5%;
   align-self: flex-end;
   color: crimson;
   font-weight: bolder;
+  cursor: pointer;
 }
 
 .category-container {
@@ -401,13 +437,200 @@ body {
 .delete-cat {
   color: crimson;
   font-weight: bolder;
+  cursor: pointer;
+  margin-left: 2rem;
 }
 
 .hidden {
   display: none;
 }
 
-@media all and (max-width: 500px) {
+body.darkmode > .nav {
+  filter: invert(100%) hue-rotate(240deg);
+}
+
+body.darkmode > .options-content {
+  filter: invert(100%) hue-rotate(240deg);
+}
+
+body.darkmode > .main-wrapper > .sidebar {
+  filter: invert(100%) hue-rotate(240deg);
+}
+
+body.darkmode > .main-wrapper > .content-area {
+  background: var(--darkbackground);
+  color: whitesmoke;
+}
+
+body.darkmode
+  > .main-wrapper
+  > .content-area
+  > .taskList-container
+  > .task-container {
+  background: var(--darktask);
+  color: whitesmoke;
+}
+
+body.darkmode > .modalContent > .modal {
+  filter: invert(100%) hue-rotate(240deg);
+}
+
+body.darkmode > .task-options-wrapper {
+  filter: invert(100%) hue-rotate(240deg);
+}
+
+body.darkmode > .modal {
+  filter: invert(100%) hue-rotate(240deg);
+}
+
+.login-modal-overlay {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--nav);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.login-modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  background-color: var(--background);
+  z-index: 10;
+  width: 33%;
+  max-height: 90%;
+}
+
+.login-modal-overlay.hidden,
+.btnLogout.hidden {
+  display: none;
+}
+
+#login {
+  max-width: 100%;
+}
+
+.login-header {
+  text-align: center;
+}
+
+form {
+  padding: 3rem 2rem 2rem 2rem;
+  background: var(--background);
+  border: 1px solid var(--redish);
+}
+
+.group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+#txtEmail,
+#txtPassword {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  -webkit-appearance: none;
+  display: block;
+  background: #fafafa;
+  color: #636363;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #757575;
+}
+
+#txtEmail:focus,
+#txtPassword:focus {
+  outline: none;
+}
+
+input:focus ~ label,
+input.used ~ label {
+  color: blueviolet;
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 0.3em 0 1em 0;
+  width: 100%;
+  vertical-align: middle;
+  background: var(--redish);
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  letter-spacing: 1px;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.button:focus {
+  outline: 0;
+}
+
+.button:hover {
+  background: #db456f;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+
+.info-container > li {
+  margin: 0.3rem 0;
+}
+
+.btnLogout {
+  position: relative;
+  display: flex;
+  padding: 12px 24px;
+  margin: 0 auto;
+  vertical-align: middle;
+  background: var(--redish);
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  letter-spacing: 1px;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-top: 1rem;
+}
+
+input,
+select {
+  height: 2.5rem;
+  padding: 0.5rem;
+}
+
+textarea {
+  padding: 0.5rem;
+}
+
+.add-button {
+  height: 2.5rem;
+  margin-top: 2rem;
+  background-color: var(--redish);
+  color: #fff;
+  border: none;
+}
+
+@media all and (max-width: 768px) {
   .nav {
     justify-content: space-around;
     padding-right: 0;
@@ -531,42 +754,24 @@ body {
   .toggle-darkmode {
     margin-bottom: 1rem;
   }
-}
 
-body.darkmode > .nav {
-  filter: invert(100%) hue-rotate(240deg);
-}
+  .login-modal-body {
+    height: 100%;
+    max-height: 100%;
+    width: 100%;
+    padding: 1rem;
+  }
 
-body.darkmode > .options-content {
-  filter: invert(100%) hue-rotate(240deg);
-}
+  form {
+    width: 100%;
+    padding: 1rem;
+  }
 
-body.darkmode > .main-wrapper > .sidebar {
-  filter: invert(100%) hue-rotate(240deg);
-}
+  .group {
+    margin-bottom: 0;
+  }
 
-body.darkmode > .main-wrapper > .content-area {
-  background: var(--darkbackground);
-  color: whitesmoke;
-}
-
-body.darkmode
-  > .main-wrapper
-  > .content-area
-  > .taskList-container
-  > .task-container {
-  background: var(--darktask);
-  color: whitesmoke;
-}
-
-body.darkmode > .modalContent > .modal {
-  filter: invert(100%) hue-rotate(240deg);
-}
-
-body.darkmode > .task-options-wrapper {
-  filter: invert(100%) hue-rotate(240deg);
-}
-
-body.darkmode > .modal {
-  filter: invert(100%) hue-rotate(240deg);
+  .info-container {
+    margin: 1rem 0;
+  }
 }

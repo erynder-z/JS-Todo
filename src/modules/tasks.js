@@ -1,7 +1,9 @@
+import { getMode } from "..";
 import { activeView } from "./activeView";
 import { addClassComplete } from "./addClasses";
 import { clearContentArea } from "./clearContent";
 import { showDueToday, showDueWeek, showCategory } from "./filteredTasks";
+import { populateStorageFirebase } from "./firestore";
 import { createEditTaskModal } from "./modal";
 import showAllTasks from "./showAllTasks";
 import { populateStorage } from "./storage";
@@ -72,7 +74,7 @@ const createTask = () => {
   const newTaskID = tasks.indexOf(newTask);
   newTask.id = newTaskID;
 
-  populateStorage();
+  getMode() === "offline" ? populateStorage() : populateStorageFirebase();
 };
 
 const deleteTask = (objectID) => {
@@ -80,7 +82,7 @@ const deleteTask = (objectID) => {
 
   updateObjectID();
   clearContentArea();
-  populateStorage();
+  getMode() === "offline" ? populateStorage() : populateStorageFirebase();
 
   return activeView === "dueToday"
     ? showDueToday(tasks)
@@ -94,7 +96,7 @@ const deleteTask = (objectID) => {
 const markTaskComplete = (objectID) => {
   tasks[objectID].toggleStatus();
   addClassComplete(objectID);
-  populateStorage();
+  getMode() === "offline" ? populateStorage() : populateStorageFirebase();
 };
 
 const retrieveTaskDetails = (objectID) => {
@@ -123,4 +125,15 @@ const updateObjectID = () => {
   });
 };
 
-export { tasks, createTask, deleteTask, markTaskComplete, retrieveTaskDetails };
+const clearTasks = () => {
+  tasks.length = 0;
+};
+
+export {
+  tasks,
+  createTask,
+  deleteTask,
+  markTaskComplete,
+  retrieveTaskDetails,
+  clearTasks,
+};

@@ -1,6 +1,8 @@
-import { activateNewCategories, activateSidebar } from "./buttons";
+import { mode } from "..";
+import { activateNewCategories } from "./buttons";
 import { createNewTaskModal } from "./modal";
 import { populateStorageCategories } from "./storage";
+import { populateStorageCategoriesFirebase } from "./firestore";
 
 const categories = ["Uncategorized", "Work", "Hobby", "Health", "Chore"];
 
@@ -14,7 +16,7 @@ const createNewCategoryModal = () => {
   const closeBtn = document.createElement("div");
   closeBtn.classList.add("close-button");
   closeBtn.onclick = toggleNewCatModal;
-  closeBtn.innerText = "X";
+  closeBtn.innerHTML = "&times;";
 
   const wrapper = document.createElement("div");
   wrapper.classList.add("modal-wrapper");
@@ -40,7 +42,9 @@ const createNewCategoryModal = () => {
       toggleNewCatModal();
       appendCategoryToSidebar(catInput.value);
     }
-    populateStorageCategories();
+    getMode() === "offline"
+      ? populateStorageCategories()
+      : populateStorageCategoriesFirebase();
   });
 
   modal.appendChild(closeBtn);
@@ -80,7 +84,7 @@ const deleteCustomCategoriesModal = (categoryList) => {
   const closeBtn = document.createElement("div");
   closeBtn.classList.add("close-button");
   closeBtn.onclick = toggleDeleteCatModal;
-  closeBtn.innerText = "X";
+  closeBtn.innerHTML = "&times;";
 
   const wrapper = document.createElement("div");
   wrapper.classList.add("modal-wrapper");
@@ -102,7 +106,7 @@ const deleteCustomCategoriesModal = (categoryList) => {
       container.setAttribute("id", categories.indexOf(element));
       container.classList.add("category-container");
 
-      const cat = document.createElement("div");
+      const cat = document.createElement("li");
       cat.classList.add("cat");
       cat.textContent = element;
       container.appendChild(cat);
@@ -126,7 +130,9 @@ const deleteCustomCategoriesModal = (categoryList) => {
 
 const deleteCat = (elementID, element) => {
   categories.splice(elementID, 1);
-  populateStorageCategories();
+  getMode() === "offline"
+    ? populateStorageCategories()
+    : populateStorageCategoriesFirebase();
   deleteCategoryFromSidebar(element);
 };
 
