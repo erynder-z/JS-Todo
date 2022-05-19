@@ -6,10 +6,9 @@ import {
   getDoc,
   connectFirestoreEmulator,
 } from "firebase/firestore";
-
+import { getAuth } from "firebase/auth";
 import { appendCategoryToSidebar, categories } from "./categories";
 import { tasks } from "./tasks";
-import { currentUser } from "./authentication";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAl8gtz0i_XnGFuN5GSi4PC3gG8mrm1O1Q",
@@ -25,7 +24,6 @@ const db = getFirestore(app);
 
 connectFirestoreEmulator(db, "localhost", 8080);
 
-// recreate tasks via factory function after JSON is retrieved from localstorage
 const taskFactory = (
   category,
   title,
@@ -70,7 +68,8 @@ const taskFactory = (
 
 async function populateStorageFirebase() {
   const storageString = JSON.stringify(tasks);
-  const userID = String(currentUser.uid);
+  const auth = getAuth();
+  const userID = auth.currentUser.uid;
 
   try {
     await setDoc(doc(db, "todos", userID), {
@@ -82,7 +81,8 @@ async function populateStorageFirebase() {
 }
 
 async function retrieveStorageFirebase() {
-  const userID = String(currentUser.uid);
+  const auth = getAuth();
+  const userID = auth.currentUser.uid;
   const docRef = doc(db, "todos", userID);
   const docSnap = await getDoc(docRef);
 
@@ -116,7 +116,8 @@ const mapData = (storageData) => {
 
 async function populateStorageCategoriesFirebase() {
   const storageString = JSON.stringify(categories);
-  const userID = String(currentUser.uid);
+  const auth = getAuth();
+  const userID = auth.currentUser.uid;
 
   try {
     await setDoc(doc(db, "categories", userID), {
@@ -128,7 +129,8 @@ async function populateStorageCategoriesFirebase() {
 }
 
 async function retrieveStorageCategoriesFirebase() {
-  const userID = String(currentUser.uid);
+  const auth = getAuth();
+  const userID = auth.currentUser.uid;
   const docRef = doc(db, "categories", userID);
   const docSnap = await getDoc(docRef);
 

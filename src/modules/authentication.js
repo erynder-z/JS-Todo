@@ -16,8 +16,6 @@ import {
 } from "./firestore";
 import { clearTasks } from "./tasks";
 
-let currentUser;
-
 const firebaseAuthentication = () => {
   const txtEmail = document.querySelector("#txtEmail");
   const txtPassword = document.querySelector("#txtPassword");
@@ -105,7 +103,6 @@ const firebaseAuthentication = () => {
       if (user) {
         startOnline();
         showLoginState(user);
-        currentUser = user;
         loginModal.classList.add("hidden");
         hideLoginError();
         retrieveStorageFirebase();
@@ -131,4 +128,4 @@ const firebaseAuthentication = () => {
   monitorAuthState();
 };
 
-export { firebaseAuthentication, currentUser };
+export default firebaseAuthentication;

@@ -1,4 +1,4 @@
-import { mode } from "..";
+import { getMode } from "..";
 import { activeView } from "./activeView";
 import { addClassComplete } from "./addClasses";
 import { clearContentArea } from "./clearContent";
@@ -74,7 +74,7 @@ const createTask = () => {
   const newTaskID = tasks.indexOf(newTask);
   newTask.id = newTaskID;
 
-  mode === "offline" ? populateStorage() : populateStorageFirebase();
+  getMode() === "offline" ? populateStorage() : populateStorageFirebase();
 };
 
 const deleteTask = (objectID) => {
@@ -82,7 +82,7 @@ const deleteTask = (objectID) => {
 
   updateObjectID();
   clearContentArea();
-  mode === "offline" ? populateStorage() : populateStorageFirebase();
+  getMode() === "offline" ? populateStorage() : populateStorageFirebase();
 
   return activeView === "dueToday"
     ? showDueToday(tasks)
@@ -96,7 +96,7 @@ const deleteTask = (objectID) => {
 const markTaskComplete = (objectID) => {
   tasks[objectID].toggleStatus();
   addClassComplete(objectID);
-  mode === "offline" ? populateStorage() : populateStorageFirebase();
+  getMode() === "offline" ? populateStorage() : populateStorageFirebase();
 };
 
 const retrieveTaskDetails = (objectID) => {

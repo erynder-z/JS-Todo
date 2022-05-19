@@ -1,5 +1,5 @@
 import { mode } from "..";
-import { activateNewCategories, activateSidebar } from "./buttons";
+import { activateNewCategories } from "./buttons";
 import { createNewTaskModal } from "./modal";
 import { populateStorageCategories } from "./storage";
 import { populateStorageCategoriesFirebase } from "./firestore";
@@ -42,7 +42,7 @@ const createNewCategoryModal = () => {
       toggleNewCatModal();
       appendCategoryToSidebar(catInput.value);
     }
-    mode === "offline"
+    getMode() === "offline"
       ? populateStorageCategories()
       : populateStorageCategoriesFirebase();
   });
@@ -130,7 +130,7 @@ const deleteCustomCategoriesModal = (categoryList) => {
 
 const deleteCat = (elementID, element) => {
   categories.splice(elementID, 1);
-  mode === "offline"
+  getMode() === "offline"
     ? populateStorageCategories()
     : populateStorageCategoriesFirebase();
   deleteCategoryFromSidebar(element);

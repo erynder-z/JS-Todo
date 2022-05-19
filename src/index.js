@@ -1,22 +1,22 @@
 import "./normalize.css";
 import "./style.css";
-
-import { async } from "regenerator-runtime/runtime";
+import "regenerator-runtime/runtime";
 import floatMenu from "./modules/float";
 import { createNewTaskModal } from "./modules/modal";
 import { activateNav, activateSidebar } from "./modules/buttons";
 import { toggleSidebarNav } from "./modules/sidebar";
 import { clearMainContent } from "./modules/clearContent";
+import { retrieveStorage, retrieveStorageCategories } from "./modules/storage";
+import firebaseAuthentication from "./modules/authentication";
 import welcomeScreen from "./modules/welcome";
 import switchTheme from "./modules/darkmode";
-import { retrieveStorage, retrieveStorageCategories } from "./modules/storage";
-import { firebaseAuthentication } from "./modules/authentication";
 
 const loginModal = document.querySelector(".login-modal-overlay");
 const offlineBtn = document.getElementById("offlineBtn");
 const btnLogout = document.getElementById("btnLogout");
 
 let mode = "";
+const getMode = () => mode;
 
 const startOffline = () => {
   mode = "offline";
@@ -48,4 +48,4 @@ const start = (() => {
   firebaseAuthentication();
 })();
 
-export { startOnline, mode };
+export { startOnline, getMode };
