@@ -7,6 +7,8 @@ import {
   signInWithEmailAndPassword,
   connectAuthEmulator,
   AuthErrorCodes,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
 import { startOnline } from "..";
 import { clearMainContent } from "./clearContent";
@@ -21,6 +23,7 @@ const firebaseAuthentication = () => {
   const txtPassword = document.querySelector("#txtPassword");
   const btnLogin = document.querySelector("#btnLogin");
   const btnSignup = document.querySelector("#btnSignup");
+  const googleLogin = document.querySelector("#btnGoogle");
   const btnLogout = document.querySelector("#btnLogout");
   const lblAuthState = document.querySelector("#lblAuthState");
   const divLoginError = document.querySelector("#divLoginError");
@@ -38,7 +41,7 @@ const firebaseAuthentication = () => {
 
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
-  /*   connectAuthEmulator(auth, "http://localhost:9099"); */
+  /*  connectAuthEmulator(auth, "http://localhost:9099"); */
 
   const showLoginError = (error) => {
     divLoginError.style.display = "block";
@@ -124,6 +127,13 @@ const firebaseAuthentication = () => {
     clearTasks();
     clearMainContent();
   });
+
+  async function loginWithGoogle() {
+    const provider = new GoogleAuthProvider();
+    await signInWithPopup(getAuth(), provider);
+  }
+
+  googleLogin.addEventListener("click", loginWithGoogle);
 
   monitorAuthState();
 };
