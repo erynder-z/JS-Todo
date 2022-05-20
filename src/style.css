@@ -136,7 +136,10 @@ body {
   background: var(--sidebar);
   color: var(--blackish);
   padding: 10px;
-  gap: 20px;
+}
+
+.sidebar > * {
+  padding-bottom: 1rem;
 }
 
 .sidebar > div,
@@ -149,10 +152,14 @@ body {
 .upper-sidebar {
   display: flex;
   flex-direction: column;
+
   padding: 10px;
   gap: 20px;
 }
 
+.upper-sidebar > * {
+  padding-bottom: 0.75rem;
+}
 .manage-category {
   margin-top: auto;
 }
@@ -164,7 +171,7 @@ body {
   align-items: center;
   text-align: center;
   width: 100%;
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
 .menu-toggle {
@@ -692,7 +699,19 @@ textarea {
     left: -45%;
     width: 50vw;
     transition: all 0.2s;
-    padding: 10px 6px 10px 10px;
+    padding: 10px 6px 20px 10px;
+  }
+
+  .sidebar > * {
+    padding-bottom: 0.75rem;
+  }
+
+  .upper-sidebar {
+    gap: 0;
+  }
+
+  .upper-sidebar > * {
+    padding-bottom: 0.75rem;
   }
 
   .logo {
@@ -710,7 +729,7 @@ textarea {
   }
 
   .expanded {
-    transform: rotate(180deg);
+    transform: scaleX(-1);
   }
 
   /* MAIN CONTENT */
@@ -831,6 +850,6 @@ textarea {
   }
 
   .info-container {
-    margin: 1rem 0;
+    margin: 1rem;
   }
 }

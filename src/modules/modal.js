@@ -214,7 +214,12 @@ const createEditTaskModal = (
   const descriptionInput = document.createElement("input");
   descriptionInput.type = "text";
   descriptionInput.id = "descriptionInput";
-  descriptionInput.value = currentDescription;
+  /* descriptionInput.value = currentDescription; */
+  if (!currentDescription) {
+    descriptionInput.placeholder = "description";
+  } else {
+    descriptionInput.value = currentDescription;
+  }
 
   const dueDateInput = document.createElement("input");
   dueDateInput.type = "date";
@@ -248,7 +253,11 @@ const createEditTaskModal = (
 
   const notesInput = document.createElement("textarea");
   notesInput.id = "notesInput";
-  notesInput.value = currentNotes;
+  if (!currentNotes) {
+    notesInput.placeholder = "notes";
+  } else {
+    notesInput.value = currentNotes;
+  }
   notesInput.rows = "4";
 
   const addBtn = document.createElement("button");
@@ -294,6 +303,8 @@ const createEditTaskModal = (
 };
 
 const toggleEditTaskModal = () => {
+  const modalDiv = document.getElementById("modalContent");
+  modalDiv.classList.toggle("hidden");
   const getModal = document.getElementById("editModal");
   getModal.remove();
 };
