@@ -127,6 +127,8 @@ const toggleNewTaskModal = (
   priorityInput,
   notesInput
 ) => {
+  const modalDiv = document.getElementById("modalContent");
+  modalDiv.classList.toggle("hidden");
   const getModal = document.getElementById("inputModal");
   getModal.classList.toggle("hidden");
   if (categoryInput) {
@@ -160,6 +162,7 @@ const createEditTaskModal = (
 ) => {
   const modalDiv = document.getElementById("modalContent");
 
+  modalDiv.classList.toggle("hidden");
   const modal = document.createElement("div");
   modal.id = "editModal";
   modal.classList.add("modal");
@@ -298,6 +301,7 @@ const toggleEditTaskModal = () => {
 const createSearchModal = () => {
   const modalDiv = document.getElementById("modalContent");
 
+  modalDiv.classList.toggle("hidden");
   const modal = document.createElement("div");
   modal.id = "searchModal";
   modal.classList.add("modal");
@@ -342,6 +346,8 @@ const createSearchModal = () => {
 };
 
 const toggleSearchModal = () => {
+  const modalDiv = document.getElementById("modalContent");
+  modalDiv.classList.toggle("hidden");
   const getModal = document.getElementById("searchModal");
   getModal.remove();
 };

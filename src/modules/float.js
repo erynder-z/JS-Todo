@@ -18,6 +18,7 @@ const floatMenu = () => {
 
   toggleFloatNewTask.addEventListener("click", () => {
     handleToogle();
+
     toggleNewTaskModal();
   });
 

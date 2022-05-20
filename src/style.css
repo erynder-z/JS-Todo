@@ -28,7 +28,7 @@ body {
   margin: 0;
   font-family: "Noto Sans", sans-serif;
 }
-
+/* NAVBAR */
 .nav {
   position: sticky;
   top: 0;
@@ -38,6 +38,7 @@ body {
   height: 7vh;
   background: var(--nav);
   color: var(--blackish);
+  padding-right: 1rem;
 }
 
 .top-right-container {
@@ -119,12 +120,14 @@ body {
   color: greenyellow;
 }
 
+/* MAIN CONTENT */
 .main-wrapper {
   display: flex;
   min-height: 100%;
   align-items: stretch;
 }
 
+/* SIDEBAR */
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -162,13 +165,13 @@ body {
   text-align: center;
   width: 100%;
   padding: 1rem;
-  border-top: solid 1px black;
 }
 
 .menu-toggle {
   display: none;
 }
 
+/* MAIN CONTENT AREA */
 .heading-container {
   height: fit-content;
 }
@@ -187,12 +190,14 @@ body {
   text-align: center;
 }
 
+/* TASK ELEMENTS */
 .taskList-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
   min-height: fit-content;
+  transition: all 0.5s ease;
 }
 
 .task-container {
@@ -205,6 +210,7 @@ body {
   border: solid 1px black;
   gap: 15px;
   padding: 0 0 0 20px;
+  transition: all 0.5s ease;
 }
 
 .task-container > * {
@@ -213,19 +219,20 @@ body {
   align-items: center;
   gap: 20px;
   flex: 1 1 100%;
-  transition: all 0.5s;
+  transition: all 0.5s ease;
 }
 
 .task-container.expand {
   display: flex;
   min-height: 10vh;
   justify-content: flex-end;
-  transition: all 0.5s;
+  transition: all 0.5s ease;
 }
 
 .delete-button {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .task-category {
@@ -246,7 +253,6 @@ body {
 .priority,
 .notes {
   font-size: 20px;
-  transition: all 0.5s;
 }
 
 .priority {
@@ -281,7 +287,7 @@ body {
 
 .task-container.expand > * {
   height: 100%;
-  transition: all 0.5s;
+  transition: all 0.5s ease;
 }
 
 .task-container.expand > .task-category {
@@ -319,13 +325,14 @@ body {
   justify-content: center;
   height: 100%;
   max-width: 50px;
-  transition: all 0.5s;
+  transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 .task-container.expand > .expand-button {
   align-items: center;
   transform: rotate(180deg);
-  transition: all 0.5s;
+  transition: all 0.5s ease;
 }
 
 .task-options-wrapper > * {
@@ -343,6 +350,7 @@ body {
   text-decoration: none;
 }
 
+/* FLOAT MENU */
 .float {
   font-family: "Roboto Slab", serif;
   display: flex;
@@ -357,10 +365,11 @@ body {
   color: whitesmoke;
   border-radius: 50px;
   box-shadow: 2px 2px 3px #999;
+  transition: all 0.5s ease;
 }
 
 .float:hover {
-  transition: all 0.5s;
+  transition: all 0.5s ease;
   transform: scale(1.3);
 }
 
@@ -382,20 +391,39 @@ body {
   right: 50px;
 }
 
+/* MODALS */
+
+.modalContent {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--nav);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+  overflow: auto;
+  background-color: rgba(50, 50, 50, 0.5);
+  backdrop-filter: blur(5px);
+}
+
 .modal {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: fit-content;
   width: 50vh;
-
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: var(--sidebar);
   z-index: 1;
-  border: solid 2px black;
+  border-radius: 2px;
+  border: solid 1px black;
   padding: 5px 0 20px 0;
 }
 
@@ -445,6 +473,101 @@ body {
   display: none;
 }
 
+.login-modal-overlay {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--nav);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+  overflow: auto;
+  background-image: url("notepad.jpg");
+  background-size: cover;
+}
+
+.login-modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  background-color: rgba(228, 216, 220, 0.8);
+  z-index: 10;
+  width: 33%;
+  margin: auto 0;
+}
+
+.login-modal-overlay.hidden,
+.btnLogout.hidden {
+  display: none;
+}
+
+#login {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.login-header {
+  text-align: center;
+}
+
+form {
+  padding: 3rem 2rem 2rem 2rem;
+  /*  background: var(--background); */
+  border: 1px solid var(--redish);
+}
+
+.group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+#txtEmail,
+#txtPassword {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  -webkit-appearance: none;
+  display: block;
+  background: #fafafa;
+  color: #636363;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #757575;
+}
+
+#txtEmail:focus,
+#txtPassword:focus {
+  outline: none;
+}
+
+input:focus ~ label,
+input.used ~ label {
+  color: blueviolet;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+
+.info-container > li {
+  margin: 0.3rem 0;
+}
+
+.authlabel {
+  inline-size: 100%;
+  overflow-wrap: break-word;
+  padding-top: 1rem;
+  border-top: solid 1px black;
+}
+
+/* DARKMODE */
 body.darkmode > .nav {
   filter: invert(100%) hue-rotate(240deg);
 }
@@ -483,80 +606,7 @@ body.darkmode > .modal {
   filter: invert(100%) hue-rotate(240deg);
 }
 
-.login-modal-overlay {
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--nav);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 5;
-}
-
-.login-modal-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 3rem;
-  background-color: var(--background);
-  z-index: 10;
-  width: 33%;
-  max-height: 90%;
-}
-
-.login-modal-overlay.hidden,
-.btnLogout.hidden {
-  display: none;
-}
-
-#login {
-  max-width: 100%;
-}
-
-.login-header {
-  text-align: center;
-}
-
-form {
-  padding: 3rem 2rem 2rem 2rem;
-  background: var(--background);
-  border: 1px solid var(--redish);
-}
-
-.group {
-  position: relative;
-  margin-bottom: 1rem;
-}
-
-#txtEmail,
-#txtPassword {
-  font-size: 18px;
-  padding: 10px 10px 10px 5px;
-  -webkit-appearance: none;
-  display: block;
-  background: #fafafa;
-  color: #636363;
-  width: 100%;
-  border: none;
-  border-radius: 0;
-  border-bottom: 1px solid #757575;
-}
-
-#txtEmail:focus,
-#txtPassword:focus {
-  outline: none;
-}
-
-input:focus ~ label,
-input.used ~ label {
-  color: blueviolet;
-}
-
+/* BUTTONS */
 .button {
   position: relative;
   display: inline-block;
@@ -583,16 +633,6 @@ input.used ~ label {
   background: #db456f;
 }
 
-.info-container {
-  display: flex;
-  flex-direction: column;
-  margin: 2rem 0;
-}
-
-.info-container > li {
-  margin: 0.3rem 0;
-}
-
 .btnLogout {
   position: relative;
   display: flex;
@@ -612,6 +652,10 @@ input.used ~ label {
   margin-top: 1rem;
 }
 
+.btnLogout:hover {
+  background: #db456f;
+}
+
 input,
 select {
   height: 2.5rem;
@@ -628,19 +672,26 @@ textarea {
   background-color: var(--redish);
   color: #fff;
   border: none;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background: #db456f;
 }
 
 @media all and (max-width: 768px) {
+  /* NAV */
   .nav {
     justify-content: space-around;
     padding-right: 0;
   }
 
+  /* SIDEBAR */
   .sidebar {
     position: fixed;
     left: -45%;
     width: 50vw;
-    transition: all 0.5s;
+    transition: all 0.2s;
     padding: 10px 6px 10px 10px;
   }
 
@@ -655,14 +706,14 @@ textarea {
   .menu-toggle {
     display: block;
     align-self: flex-end;
-    transition: all 0.5s;
+    transition: all 0.2s;
   }
 
   .expanded {
     transform: rotate(180deg);
-    transition: all 0.5s;
   }
 
+  /* MAIN CONTENT */
   .main-wrapper {
     display: flex;
   }
@@ -672,6 +723,7 @@ textarea {
     padding: 25px;
   }
 
+  /* TASK ELEMENTS */
   .taskList-container {
     flex-direction: column;
     align-items: center;
@@ -705,6 +757,7 @@ textarea {
 
   .expand-button {
     height: auto;
+    cursor: pointer;
   }
 
   .task-options-wrapper {
@@ -718,9 +771,10 @@ textarea {
 
   .slide {
     left: 0;
-    transition: all 0.5s;
+    transition: all 0.2s;
   }
 
+  /* FLOAT MENU */
   .float {
     bottom: 40px;
     right: 25px;
@@ -747,12 +801,17 @@ textarea {
     height: 60px;
   }
 
+  /* MODALS */
   .modal {
-    width: 75vw;
+    width: 85%;
   }
 
   .toggle-darkmode {
     margin-bottom: 1rem;
+  }
+
+  .login-modal-overlay {
+    background-position: right;
   }
 
   .login-modal-body {

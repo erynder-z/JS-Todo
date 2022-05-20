@@ -1,4 +1,4 @@
-import { mode } from "..";
+import { getMode } from "..";
 import { activateNewCategories } from "./buttons";
 import { createNewTaskModal } from "./modal";
 import { populateStorageCategories } from "./storage";
@@ -8,7 +8,7 @@ const categories = ["Uncategorized", "Work", "Hobby", "Health", "Chore"];
 
 const createNewCategoryModal = () => {
   const modalDiv = document.getElementById("modalContent");
-
+  modalDiv.classList.toggle("hidden");
   const modal = document.createElement("div");
   modal.id = "newCategoryModal";
   modal.classList.add("modal");
@@ -56,6 +56,8 @@ const createNewCategoryModal = () => {
 };
 
 const toggleNewCatModal = () => {
+  const modalDiv = document.getElementById("modalContent");
+  modalDiv.classList.toggle("hidden");
   const getModal = document.getElementById("newCategoryModal");
   getModal.remove();
   createNewTaskModal();
@@ -77,6 +79,7 @@ const appendCategoryToSidebar = (newCategory) => {
 const deleteCustomCategoriesModal = (categoryList) => {
   const modalDiv = document.getElementById("modalContent");
 
+  modalDiv.classList.toggle("hidden");
   const modal = document.createElement("div");
   modal.id = "deleteCategoryModal";
   modal.classList.add("modal");
@@ -143,6 +146,8 @@ const deleteCategoryFromSidebar = (element) => {
 };
 
 const toggleDeleteCatModal = () => {
+  const modalDiv = document.getElementById("modalContent");
+  modalDiv.classList.toggle("hidden");
   const getModal = document.getElementById("deleteCategoryModal");
   getModal.remove();
 };
